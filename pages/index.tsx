@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { OrbitControls, useCubeTexture, useFBX } from "@react-three/drei";
 import { useRef } from "react";
 import { Glitch, EffectComposer, Bloom } from "@react-three/postprocessing";
+// @ts-ignore
 import { GlitchMode, Resizer, KernelSize } from "postprocessing";
 import "vanilla-tilt";
 
@@ -71,23 +72,8 @@ const Home: NextPage = () => {
                 enableZoom={false}
               />
               <EffectComposer>
-                <Glitch
-                  delay={[3, 10]} // min and max glitch delay
-                  duration={[0.6, 1.0]} // min and max glitch duration
-                  strength={[0.3, 1.0]} // min and max glitch strength
-                  mode={GlitchMode.SPORADIC} // glitch mode
-                  active // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
-                  ratio={0} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
-                />
-                <Bloom
-                  intensity={0.5} // The bloom intensity.
-                  blurPass={undefined} // A blur pass.
-                  width={Resizer.AUTO_SIZE} // render width
-                  height={Resizer.AUTO_SIZE} // render height
-                  kernelSize={KernelSize.LARGE} // blur kernel size
-                  luminanceThreshold={0.5} // luminance threshold. Raise this value to mask out darker elements in the scene.
-                  luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-                />
+                <Glitch />
+                <Bloom intensity={0.5} luminanceThreshold={0.5} />
               </EffectComposer>
             </Suspense>
           </Canvas>
@@ -209,6 +195,7 @@ export default Home;
 
 function Scene() {
   const {
+    // @ts-ignore
     children: [{ geometry }],
   } = useFBX("rose.fbx");
   const envMap = useCubeTexture(
