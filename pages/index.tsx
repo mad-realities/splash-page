@@ -1,22 +1,11 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense } from "react";
 import { OrbitControls, useCubeTexture, useFBX } from "@react-three/drei";
 import { useRef } from "react";
-import { useEffect } from "react";
-import {
-  Glitch,
-  HueSaturation,
-  EffectComposer,
-  Scanline,
-  Sepia,
-  Bloom,
-} from "@react-three/postprocessing";
-import { GlitchMode, BlendFunction, Resizer, KernelSize } from "postprocessing";
+import { Glitch, EffectComposer, Bloom } from "@react-three/postprocessing";
+import { GlitchMode, Resizer, KernelSize } from "postprocessing";
+import "vanilla-tilt";
 
 const Home: NextPage = () => {
   return (
@@ -37,137 +26,178 @@ const Home: NextPage = () => {
       />
       <div
         style={{
-          backgroundColor: "#0d1218",
-          top: "50%",
-          left: "50%",
           width: "50vh",
           height: "70vh",
+          position: "absolute",
+          top: "50%",
+          left: "50%",
           marginTop: "-35vh",
           marginLeft: "-25vh",
-          position: "absolute",
-          borderRadius: "30vh 30vh 10px 10px",
-          overflow: "hidden",
         }}
       >
         <div
           style={{
-            background: "url(glitter.gif)",
-            mixBlendMode: "screen",
-            position: "absolute",
-            left: 0,
-            top: 0,
-            width: "100%",
-            height: "100%",
+            backgroundColor: "#0d1218",
+            width: "50vh",
+            height: "70vh",
+            borderRadius: "30vh 30vh 10px 10px",
+            overflow: "hidden",
+            position: "relative",
           }}
-        />
-        <Canvas dpr={2} style={{ position: "absolute" }}>
-          <Suspense fallback={null}>
-            <Scene />
-            <OrbitControls
-              minPolarAngle={Math.PI / 2}
-              maxPolarAngle={Math.PI / 2}
-              enablePan={false}
-              enableZoom={false}
-            />
-            <EffectComposer>
-              <Glitch
-                delay={[3, 10]} // min and max glitch delay
-                duration={[0.6, 1.0]} // min and max glitch duration
-                strength={[0.3, 1.0]} // min and max glitch strength
-                mode={GlitchMode.SPORADIC} // glitch mode
-                active // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
-                ratio={0} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
-              />
-              <Bloom
-                intensity={0.5} // The bloom intensity.
-                blurPass={undefined} // A blur pass.
-                width={Resizer.AUTO_SIZE} // render width
-                height={Resizer.AUTO_SIZE} // render height
-                kernelSize={KernelSize.LARGE} // blur kernel size
-                luminanceThreshold={0.5} // luminance threshold. Raise this value to mask out darker elements in the scene.
-                luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-              />
-            </EffectComposer>
-          </Suspense>
-        </Canvas>
-        <div
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            pointerEvents: "none",
-          }}
+          data-tilt
+          data-tilt-glare-prerender
+          data-tilt-glare
+          data-tilt-reverse
+          data-tilt-max-glare="0.5"
         >
           <div
             style={{
-              boxShadow: "inset 0 0 0 1px #fff2bd",
-              margin: "2vh",
-              flex: 1,
-              borderRadius: "30vh 30vh 8px 8px",
-              overflow: "hidden",
+              background: "url(glitter.gif)",
+              mixBlendMode: "screen",
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              height: "100%",
             }}
-          ></div>
+          />
+          <Canvas dpr={2} style={{ position: "absolute" }}>
+            <Suspense fallback={null}>
+              <Scene />
+              <OrbitControls
+                minPolarAngle={Math.PI / 2}
+                maxPolarAngle={Math.PI / 2}
+                enablePan={false}
+                enableZoom={false}
+              />
+              <EffectComposer>
+                <Glitch
+                  delay={[3, 10]} // min and max glitch delay
+                  duration={[0.6, 1.0]} // min and max glitch duration
+                  strength={[0.3, 1.0]} // min and max glitch strength
+                  mode={GlitchMode.SPORADIC} // glitch mode
+                  active // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
+                  ratio={0} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
+                />
+                <Bloom
+                  intensity={0.5} // The bloom intensity.
+                  blurPass={undefined} // A blur pass.
+                  width={Resizer.AUTO_SIZE} // render width
+                  height={Resizer.AUTO_SIZE} // render height
+                  kernelSize={KernelSize.LARGE} // blur kernel size
+                  luminanceThreshold={0.5} // luminance threshold. Raise this value to mask out darker elements in the scene.
+                  luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
+                />
+              </EffectComposer>
+            </Suspense>
+          </Canvas>
           <div
             style={{
-              color: "#fff2bd",
-              fontFamily: "Pilowlava",
-              fontSize: "5vh",
-              textTransform: "uppercase",
-              padding: "0 2vh 2vh 2vh",
-              position: "relative",
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              pointerEvents: "none",
             }}
           >
-            Mad Realities
+            <div
+              style={{
+                boxShadow: "inset 0 0 0 1px #fff2bd",
+                margin: "2vh",
+                flex: 1,
+                borderRadius: "30vh 30vh 8px 8px",
+                overflow: "hidden",
+              }}
+            ></div>
+            <div
+              style={{
+                color: "#fff2bd",
+                fontFamily: "Pilowlava",
+                fontSize: "5vh",
+                textTransform: "uppercase",
+                padding: "0 2vh 2vh 2vh",
+                position: "relative",
+              }}
+            >
+              Mad Realities
+              <div
+                style={{
+                  fontFamily: "system-ui",
+                  fontSize: "1vh",
+                  position: "absolute",
+                  right: "2vh",
+                  textAlign: "right",
+                  bottom: "2vh",
+                  fontWeight: 600,
+                }}
+              >
+                SEASON 0 PASS
+                <br />
+                LIMITED AVAILABILITY
+              </div>
+            </div>
             <div
               style={{
                 fontFamily: "system-ui",
-                fontSize: "1vh",
-                position: "absolute",
-                right: "2vh",
-                textAlign: "right",
-                bottom: "2vh",
+                padding: "2vh",
+                backgroundColor: "#d39bff",
+                color: "#490081",
                 fontWeight: 600,
+                fontSize: "3vh",
+                display: "flex",
+                flexDirection: "column",
               }}
             >
-              SEASON 0 PASS
-              <br />
-              LIMITED AVAILABILITY
+              <span style={{ borderTop: "1px solid", paddingTop: "0.5vh" }}>
+                UNIQUE ¹⁄₁
+              </span>
+              <div
+                style={{
+                  fontSize: "0.5vh",
+                  position: "absolute",
+                  width: "14vh",
+                  overflow: "hidden",
+                  right: "2vh",
+                  textAlign: "justify",
+                  bottom: "2vh",
+                  fontWeight: 400,
+                  letterSpacing: -0.1,
+                }}
+              >
+                Put some random text in here, not sure if it needs to say
+                anything or if it is just cool to have little tiny text
+                everywhere. It kinda seems like the latter~
+              </div>
             </div>
           </div>
           <div
+            className="js-tilt-glare"
             style={{
-              fontFamily: "system-ui",
-              padding: "2vh",
-              backgroundColor: "#d39bff",
-              color: "#490081",
-              fontWeight: 600,
-              fontSize: "3vh",
-              display: "flex",
-              flexDirection: "column",
+              position: "absolute",
+              top: "0",
+              left: "0",
+              width: "100%",
+              height: "100%",
+              overflow: "hidden",
+              pointerEvents: "none",
             }}
           >
-            <span style={{ borderTop: "1px solid", paddingTop: "0.5vh" }}>
-              UNIQUE ¹⁄₁
-            </span>
             <div
+              className="js-tilt-glare-inner"
               style={{
-                fontSize: "0.5vh",
                 position: "absolute",
-                width: "14vh",
-                overflow: "hidden",
-                right: "2vh",
-                textAlign: "justify",
-                bottom: "2vh",
-                fontWeight: 400,
-                letterSpacing: -0.1,
+                top: "50%",
+                left: "50%",
+                pointerEvents: "none",
+                backgroundImage: `linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)`,
+                transform: "rotate(180deg) translate(-50%, -50%)",
+                transformOrigin: "0% 0%",
+                width: "100vh",
+                height: "140vh",
+                opacity: "0",
               }}
-            >
-              Put some random text in here, not sure if it needs to say anything
-              or if it is just cool to have little tiny text everywhere. It
-              kinda seems like the latter~
-            </div>
+            />
           </div>
         </div>
       </div>
