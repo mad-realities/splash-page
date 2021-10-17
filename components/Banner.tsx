@@ -17,6 +17,7 @@ const Container = styled.div`
 
     color: white;
     font-size: 16px;
+    text-align: center;
     font-weight: semibold;
 `;
 
