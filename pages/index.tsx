@@ -8,6 +8,7 @@ import { Glitch, EffectComposer, Bloom } from "@react-three/postprocessing";
 import { GlitchMode, Resizer, KernelSize } from "postprocessing";
 import "vanilla-tilt";
 
+
 const Home: NextPage = () => {
   return (
     <div style={{ background: "black", width: "100vw", height: "100vh" }}>
