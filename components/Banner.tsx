@@ -18,6 +18,7 @@ const Container = styled.div`
     color: white;
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
 `;
 
 export default Banner;

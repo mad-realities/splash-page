@@ -80,11 +80,11 @@ const Container = styled.div`
 `;
 
 const GlitterBackground = styled.div`
-    display: flex;
-    flex-flow: column;
-    background-color: black;
+  display: flex;
+  flex-flow: column;
+  background-color: black;
 
-    position: relative;
+  position: relative;
 `;
 
 const Background = styled.div`
@@ -108,6 +108,16 @@ const Section = styled.div`
   min-height: 80vh;
 
   z-index: 1;
+
+  @media (max-width: 600px) {
+    flex-flow: column;
+    align-items: center;
+    padding: 0 50px;
+
+    > div {
+      padding: 50px 0;
+    }
+  }
 `;
 
 const WhiteSection = styled(Section)`
