@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import InviteCard from '../components/InviteCard';
 import Banner from '../components/Banner';
-
+import TopNav from '../components/TopNav';
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +12,7 @@ const Home: NextPage = () => {
       <Background />
       <Banner />
       <Section>
+        <TopNav />
         <InviteCard />
         <Intro>
             <div style={{ color: "#CB9FF9", fontSize: '30px' }}>welcome to the colosseum</div>
