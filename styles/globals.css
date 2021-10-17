@@ -7,6 +7,11 @@ body {
   cursor: url("../public/holographic_pixel_cursor.png"), auto;
 }
 
+a:hover,
+button:hover {
+  cursor: url("../public/holographic_pixel_pointer.png"), pointer;
+}
+
 a {
   color: inherit;
   text-decoration: none;
