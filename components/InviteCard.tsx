@@ -36,6 +36,17 @@ const InviteCard = () => {
           data-tilt-reverse
           data-tilt-max-glare="0.5"
         >
+          <div
+            style={{
+              background: "url(glitter.gif)",
+              mixBlendMode: "screen",
+              position: "absolute",
+              left: 0,
+              top: 0,
+              width: "100%",
+              height: "100%",
+            }}
+          />
           <Canvas dpr={2} style={{ position: "absolute" }}>
             <Suspense fallback={null}>
               <Scene />
