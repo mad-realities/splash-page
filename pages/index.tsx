@@ -12,8 +12,8 @@ const Home: NextPage = () => {
       <GlitterBackground>
       <Background />
       <Banner />
+      <TopNav />
       <Section>
-        <TopNav />
         <InviteCard />
         <Intro>
             <Title>welcome to the colosseum</Title>
