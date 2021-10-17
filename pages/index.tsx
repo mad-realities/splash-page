@@ -8,12 +8,13 @@ import Banner from '../components/Banner';
 const Home: NextPage = () => {
   return (
     <Container>
+      <GlitterBackground>
       <Background />
       <Banner />
       <Section>
         <InviteCard />
         <Intro>
-            <div style={{ color: "#CB9FF9", fontSize: '30px' }}>welcome to the colosseum</div>
+            <Title>welcome to the colosseum</Title>
             <div style={{ color: 'white' }}>
             a new interactive dating show that anyone can participate in, powered by crypto
             </div>
@@ -22,18 +23,53 @@ const Home: NextPage = () => {
       </Section>
 
       <Section>
-          <Intro style={{ flex: 1 }}>
-            <div style={{ color: "#CB9FF9", fontSize: '30px' }}>co-create season 0</div>
+          <Intro style={{ flex: 1, padding: '200px 0' }}>
+            <Title>co-create season 0</Title>
             <div style={{ color: 'white' }}>
             vote in the bachelor(ettes).<br/>
             then, help them find love every week by voting in their match.
             </div>
             <Button>join our discord</Button>
           </Intro>
-          <div style={{ position: 'relative', height: '100%', flex: 1}}>
-            <Image src="/candidate-cards.png" alt="candidate cards" layout="fill" />
+          <div style={{ position: 'relative', flex: 1}}>
+            <Image src="/candidate-cards.png" alt="candidate cards" layout="fill" objectFit="contain" />
           </div>
       </Section>
+
+      <Section>
+        <div style={{ padding: '100px 0', flex: 1, textAlign: 'center'}}>
+          <Title>roadmap</Title>
+          <div style={{ marginTop: '30px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
+            Crowdfund<br/>
+            Pilot (Episode 0)<br/>
+            Community-Driven Casting<br/><br/>
+
+            Season 0<br/>
+            Episode 1-6: Every week, find love for the bachelor(ette) of the episode<br/>
+            Episode 7: Fan-Favorite couple goes on a second date<br/>
+          </div>
+        </div>
+      </Section>
+
+      <Section>
+        <div style={{ padding: '100px 0', flex: 1, textAlign: 'center', maxWidth: '500px'}}>
+          <Title>be a founding member of the first decentralized tv show</Title>
+          <div style={{ marginTop: '45px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
+            audience owned and audience governed. creating content that drives chaotic and entertaining social experiences<br/><br/>
+            mad realities is the MTV of a new kind of tv, with infinite possibliites.
+          </div>
+        </div>
+      </Section>
+    </GlitterBackground>
+
+    <WhiteSection>
+      <div style={{ padding: '100px 0', textAlign: 'center'}}>
+        <Title>create with us</Title>
+        <DiscordButton>join our discord</DiscordButton>
+      </div>
+    </WhiteSection>
+
+    <ImageRepeat />
     </Container>
   );
 };
@@ -41,9 +77,14 @@ const Home: NextPage = () => {
 const Container = styled.div`
   display: flex;
   flex-flow: column;
-  background-color: black;
+`;
 
-  position: relative;
+const GlitterBackground = styled.div`
+    display: flex;
+    flex-flow: column;
+    background-color: black;
+
+    position: relative;
 `;
 
 const Background = styled.div`
@@ -62,10 +103,18 @@ const Background = styled.div`
 const Section = styled.div`
   display: flex;
   flex-flow: row;
+  justify-content: center;
   padding: 0 100px;
   min-height: 80vh;
 
   z-index: 1;
+`;
+
+const WhiteSection = styled(Section)`
+  margin-top: -40px;
+  background-color: white;
+  z-index: 2;
+  min-height: unset;
 `;
 
 const Intro = styled.div`
@@ -94,5 +143,28 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const DiscordButton = styled.button`
+  background-color: C4C4C4;
+  border-radius: 4px;
+  border: none;
+  padding: 12px 50px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+`;
+
+const Title = styled.div`
+  color: #CB9FF9;
+  font-size: 30px;
+  font-weight: bold;
+`;
+
+const ImageRepeat = styled.div`
+  background-image: url("simp-card.png");
+  background-repeat: repeat;
+
+  height: 344px; // enough for two rows
+`;
 export default Home;
 
