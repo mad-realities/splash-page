@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           </Intro>
       </Section>
 
-      <Section>
+      <Section style={{ padding: '100px'}}>
           <Intro style={{ flex: 1, padding: '200px 0' }}>
             <Title>co-create season 0</Title>
             <div style={{ color: 'white' }}>
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
         </div>
       </Section>
 
-      <Section>
+      <Section style={{ paddingBottom: '100px'}}>
         <div style={{ padding: '100px 0', flex: 1, textAlign: 'center', maxWidth: '500px'}}>
           <Title>be a founding member of the first decentralized tv show</Title>
           <div style={{ marginTop: '45px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
@@ -107,7 +107,6 @@ const Section = styled.div`
   flex-flow: row;
   justify-content: center;
   padding: 0 100px;
-  min-height: 80vh;
 
   z-index: 1;
 
