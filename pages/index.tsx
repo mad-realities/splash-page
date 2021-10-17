@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 import InviteCard from '../components/InviteCard';
 import Banner from '../components/Banner';
+import TopNav from '../components/TopNav';
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +13,7 @@ const Home: NextPage = () => {
       <Background />
       <Banner />
       <Section>
+        <TopNav />
         <InviteCard />
         <Intro>
             <Title>welcome to the colosseum</Title>
