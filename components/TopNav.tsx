@@ -33,7 +33,7 @@ const Container = styled.div`
     justify-content: space-between;
 
     color: white;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
 
     > div {
