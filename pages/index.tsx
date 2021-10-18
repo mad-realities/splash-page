@@ -11,9 +11,9 @@ const Home: NextPage = () => {
   return (
     <Container>
       <Head>
-      <title>mad realities</title>
+        <title>mad realities</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        </Head>
+      </Head>
       <GlitterBackground>
       <Background />
       <Banner />
@@ -21,32 +21,32 @@ const Home: NextPage = () => {
       <Section>
         <InviteCard />
         <Intro>
-            <Title>welcome to the colosseum</Title>
-            <div style={{ color: 'white' }} className="body-text">
-            a new interactive dating show that anyone can participate in, powered by crypto
+            <div className="body-title">welcome to the colosseum</div>
+            <div className="body-text">
+            a new interactive dating show that anyone can participate in, powered by crypto.
             </div>
             <Button>buy a ticket</Button>
         </Intro>
       </Section>
 
-      <Section>
-          <Intro style={{ flex: 1}}>
-            <Title>co-create season 0</Title>
-            <div style={{ color: 'white' }} className="body-text">
+      <Section style={{alignItems: "stretch"}}>
+          <Intro>
+            <div className="body-title">co-create season 0</div>
+            <div className="body-text">
             vote in the bachelor(ettes).<br/>
             then, help them find love every week by voting in their match.
             </div>
             <Button>join our discord</Button>
           </Intro>
-          <div style={{ position: 'relative', flex: 1}}>
-            <Image src="/candidate-cards.png" alt="candidate cards" layout="fill" objectFit="contain" />
-          </div>
+          <ImageContainer>
+            <Image src="/candidate-cards.png" alt="candidate cards" layout="fill" objectFit="contain"  />
+          </ImageContainer>
       </Section>
 
       <Section>
-        <Intro style={{ flex: 1}}>
-          <Title>roadmap</Title>
-          <div className="body-text" style={{ marginTop: '30px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
+        <Intro>
+          <div className="body-title">roadmap</div>
+          <div className="body-text">
             Crowdfund<br/>
             Pilot (Episode 0)<br/>
             Community-Driven Casting<br/><br/>
@@ -60,8 +60,8 @@ const Home: NextPage = () => {
 
       <Section style={{paddingBottom: "100px"}}>
         <Intro>
-          <Title>be a founding member of the first decentralized tv show</Title>
-          <div className="body-text" style={{ marginTop: '45px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
+          <div className="body-title">be a founding member of the first decentralized tv show</div>
+          <div className="body-text">
             audience owned and audience governed. creating content that drives chaotic and entertaining social experiences<br/><br/>
             mad realities is the MTV of a new kind of tv, with infinite possibliites.
           </div>
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
 
     <WhiteSection>
       <div style={{ padding: '100px 0', textAlign: 'center'}}>
-        <Title>create with us</Title>
+        <div className="body-title">create with us</div>
         <DiscordButton>join our discord</DiscordButton>
       </div>
     </WhiteSection>
@@ -116,11 +116,7 @@ const Section = styled.div`
 
   z-index: 1;
 
-  @media (min-width: 601px) {
-    flex-flow: row;
-  }
-
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     flex-flow: column;
     align-items: center;
     padding: 0 50px;
@@ -141,17 +137,19 @@ const WhiteSection = styled(Section)`
 const Intro = styled.div`
   display: flex;
   flex-flow: column;
+  flex: 1;
   
   font-size: 24px;
 
   justify-content: center;
   align-items: flex-start;
-  padding: 80px;
+  padding: 40px 80px;
 
+  width: 100%;
   height: 100%;
 
-  > div, button {
-    margin-top: 20px;
+  > button {
+    margin-top: 36px;
   }
 `;
 
@@ -174,12 +172,19 @@ const DiscordButton = styled.button`
   font-size: 16px;
   cursor: pointer;
   margin-top: 20px;
+
+  @media (max-width: 600px) {
+    padding: 12px 40px;
+  }
 `;
 
-const Title = styled.div`
-  color: #CB9FF9;
-  font-size: 30px;
-  font-weight: bold;
+const ImageContainer = styled.div`
+  position: relative;
+  flex: 1;
+
+  @media (max-width: 600px) {
+    display: none; 
+  }
 `;
 
 const ImageRepeat = styled.div`
