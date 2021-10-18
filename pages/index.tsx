@@ -22,17 +22,17 @@ const Home: NextPage = () => {
         <InviteCard />
         <Intro>
             <Title>welcome to the colosseum</Title>
-            <div style={{ color: 'white' }}>
+            <div style={{ color: 'white' }} className="body-text">
             a new interactive dating show that anyone can participate in, powered by crypto
             </div>
             <Button>buy a ticket</Button>
-          </Intro>
+        </Intro>
       </Section>
 
-      <Section style={{ padding: '100px'}}>
-          <Intro style={{ flex: 1, padding: '200px 0' }}>
+      <Section>
+          <Intro style={{ flex: 1}}>
             <Title>co-create season 0</Title>
-            <div style={{ color: 'white' }}>
+            <div style={{ color: 'white' }} className="body-text">
             vote in the bachelor(ettes).<br/>
             then, help them find love every week by voting in their match.
             </div>
@@ -44,9 +44,9 @@ const Home: NextPage = () => {
       </Section>
 
       <Section>
-        <div style={{ padding: '100px 0', flex: 1, textAlign: 'center'}}>
+        <Intro style={{ flex: 1}}>
           <Title>roadmap</Title>
-          <div style={{ marginTop: '30px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
+          <div className="body-text" style={{ marginTop: '30px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
             Crowdfund<br/>
             Pilot (Episode 0)<br/>
             Community-Driven Casting<br/><br/>
@@ -55,17 +55,17 @@ const Home: NextPage = () => {
             Episode 1-6: Every week, find love for the bachelor(ette) of the episode<br/>
             Episode 7: Fan-Favorite couple goes on a second date<br/>
           </div>
-        </div>
+        </Intro>
       </Section>
 
-      <Section style={{ paddingBottom: '100px'}}>
-        <div style={{ padding: '100px 0', flex: 1, textAlign: 'center', maxWidth: '500px'}}>
+      <Section style={{paddingBottom: "100px"}}>
+        <Intro>
           <Title>be a founding member of the first decentralized tv show</Title>
-          <div style={{ marginTop: '45px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
+          <div className="body-text" style={{ marginTop: '45px', color: 'white', fontWeight: 600, fontSize: '24px'}}>
             audience owned and audience governed. creating content that drives chaotic and entertaining social experiences<br/><br/>
             mad realities is the MTV of a new kind of tv, with infinite possibliites.
           </div>
-        </div>
+        </Intro>
       </Section>
     </GlitterBackground>
 
@@ -111,9 +111,14 @@ const Section = styled.div`
   display: flex;
   flex-flow: row;
   justify-content: center;
+  align-items: center;
   padding: 0 100px;
 
   z-index: 1;
+
+  @media (min-width: 601px) {
+    flex-flow: row;
+  }
 
   @media (max-width: 600px) {
     flex-flow: column;
@@ -136,13 +141,14 @@ const WhiteSection = styled(Section)`
 const Intro = styled.div`
   display: flex;
   flex-flow: column;
-
+  
   font-size: 24px;
-  font-weight: bold;
 
   justify-content: center;
   align-items: flex-start;
   padding: 80px;
+
+  height: 100%;
 
   > div, button {
     margin-top: 20px;
