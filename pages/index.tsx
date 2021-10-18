@@ -21,11 +21,11 @@ const Home: NextPage = () => {
       <Section>
         <InviteCard />
         <Intro>
-            <div className="body-title">welcome to the colosseum</div>
+            <div className="body-title">welcome to the colosseum  🎬</div>
             <div className="body-text">
             a new interactive dating show that anyone can participate in, powered by crypto.
             </div>
-            <Button>buy a ticket</Button>
+            <Button>get your ticket</Button>
         </Intro>
       </Section>
 
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
         <Intro>
           <div className="body-title">be a founding member of the first decentralized tv show</div>
           <div className="body-text">
-            audience owned and audience governed. creating content that drives chaotic and entertaining social experiences<br/><br/>
+            audience owned and audience governed. creating content that drives chaotic and entertaining social experiences.<br/><br/>
             mad realities is the MTV of a new kind of tv, with infinite possibliites.
           </div>
         </Intro>
@@ -71,7 +71,7 @@ const Home: NextPage = () => {
 
     <WhiteSection>
       <div style={{ padding: '100px 0', textAlign: 'center'}}>
-        <div className="body-title">create with us</div>
+        <div className="body-title secondary">create with us</div>
         <DiscordButton>join our discord</DiscordButton>
       </div>
     </WhiteSection>
@@ -112,14 +112,14 @@ const Section = styled.div`
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  padding: 0 100px;
+  padding: 30px 100px;
 
   z-index: 1;
 
   @media (max-width: 768px) {
     flex-flow: column;
     align-items: center;
-    padding: 0 50px;
+    padding: 20px 30px;
 
     > div {
       padding: 50px 0;
@@ -129,9 +129,13 @@ const Section = styled.div`
 
 const WhiteSection = styled(Section)`
   margin-top: -40px;
-  background-color: white;
+  background-color: #d39bff;
   z-index: 2;
   min-height: unset;
+  
+  > div {
+    color: #490081 !important;
+  }  
 `;
 
 const Intro = styled.div`

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 const Banner = () => {
     return <Container>
-        Get early access by buying a ticket through our crowdfund
+        Get early access by buying a ticket through our crowdfund.
     </Container>
 };
 
@@ -18,7 +18,7 @@ const Container = styled.div`
     color: white;
     font-size: 16px;
     text-align: center;
-    font-weight: semibold;
+    font-weight: 600;
 `;
 
 export default Banner;

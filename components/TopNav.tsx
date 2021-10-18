@@ -21,6 +21,9 @@ const TopNav = () => {
 };
 
 const Container = styled.div`
+    position: absolute;
+    top: 40px;
+    
     padding: 40px 132px;
 
     display: flex;

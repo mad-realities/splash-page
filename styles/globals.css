@@ -17,16 +17,16 @@ a {
   text-decoration: none;
 }
 
-.nav-link {
-  color: #fef1c3;
-}
-
 .body-title {
   font-size: 34px;
   font-weight: bold;
   color: #d39bff;
   margin-bottom: 32px;
   font-family: system-ui;
+}
+
+.body-title.secondary {
+  color: #490081 !important;
 }
 
 .body-text {
