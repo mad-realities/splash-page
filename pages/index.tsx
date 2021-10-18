@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
 import Image from 'next/image'
+import Head from 'next/head'
 
 import InviteCard from '../components/InviteCard';
 import Banner from '../components/Banner';
@@ -9,6 +10,10 @@ import TopNav from '../components/TopNav';
 const Home: NextPage = () => {
   return (
     <Container>
+      <Head>
+      <title>mad realities</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </Head>
       <GlitterBackground>
       <Background />
       <Banner />
