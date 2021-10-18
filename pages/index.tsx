@@ -21,7 +21,7 @@ const Home: NextPage = () => {
       <Section>
         <InviteCard />
         <Intro>
-            <div className="body-title">welcome to the colosseum  🎬</div>
+            <div className="body-title">welcome to our genesis show: the colosseum  🎬</div>
             <div className="body-text">
             a new interactive dating show that anyone can participate in, powered by crypto. <br/><br/>
             holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
@@ -61,7 +61,10 @@ const Home: NextPage = () => {
 
       <Section style={{paddingBottom: "200px"}}>
         <Intro>
-          <div className="body-title">be a founding member of the first decentralized tv show</div>
+          <div className="body-title">
+            be a founding member of the first decentralized media network<br/>
+            audience owned and audience governed.
+          </div>
           <div className="body-text">
             audience owned and audience governed. creating content that drives chaotic and entertaining social experiences.<br/><br/>
             mad realities is the MTV of a new kind of tv, with infinite possibliites.
@@ -85,6 +88,7 @@ const Home: NextPage = () => {
 const Container = styled.div`
   display: flex;
   flex-flow: column;
+  overflow-x: hidden;
 `;
 
 const GlitterBackground = styled.div`
@@ -178,7 +182,7 @@ const DiscordButton = styled.button`
   cursor: pointer;
   margin-top: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     padding: 12px 40px;
   }
 `;
@@ -187,7 +191,7 @@ const ImageContainer = styled.div`
   position: relative;
   flex: 1;
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     display: none; 
   }
 `;
