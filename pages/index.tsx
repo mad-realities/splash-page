@@ -23,7 +23,8 @@ const Home: NextPage = () => {
         <Intro>
             <div className="body-title">welcome to the colosseum  🎬</div>
             <div className="body-text">
-            a new interactive dating show that anyone can participate in, powered by crypto.
+            a new interactive dating show that anyone can participate in, powered by crypto. <br/><br/>
+            holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
             </div>
             <Button>get your ticket</Button>
         </Intro>
@@ -31,7 +32,7 @@ const Home: NextPage = () => {
 
       <Section style={{alignItems: "stretch"}}>
           <Intro>
-            <div className="body-title">co-create season 0</div>
+            <div className="body-title">dropping soon: co-create season 0</div>
             <div className="body-text">
             vote in the bachelor(ettes).<br/>
             then, help them find love every week by voting in their match.
@@ -58,7 +59,7 @@ const Home: NextPage = () => {
         </Intro>
       </Section>
 
-      <Section style={{paddingBottom: "100px"}}>
+      <Section style={{paddingBottom: "200px"}}>
         <Intro>
           <div className="body-title">be a founding member of the first decentralized tv show</div>
           <div className="body-text">
@@ -112,7 +113,7 @@ const Section = styled.div`
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  padding: 30px 100px;
+  padding: 60px 100px;
 
   z-index: 1;
 
