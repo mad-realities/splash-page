@@ -17,12 +17,23 @@ a {
   text-decoration: none;
 }
 
-.nav-link {
-  color: "#FEF1C3";
+.body-title {
+  font-size: 34px;
+  font-weight: bold;
+  color: #d39bff;
+  margin-bottom: 32px;
+  font-family: system-ui;
+}
+
+.body-title.secondary {
+  color: #490081 !important;
 }
 
 .body-text {
   font-weight: 400 !important;
+  font-size: 18px;
+  color: white;
+  font-family: system-ui;
 }
 
 * {
