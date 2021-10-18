@@ -17,6 +17,14 @@ a {
   text-decoration: none;
 }
 
+.nav-link {
+  color: "#FEF1C3";
+}
+
+.body-text {
+  font-weight: 400 !important;
+}
+
 * {
   box-sizing: border-box;
 }
