@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
+import { FAQ_URL, DISCORD_INVITE_URL } from "../constants/urls";
 
 const TopNav = () => {
-    const FAQ_URL = "https://madrealities.notion.site/FAQ-d6308bae12e9468cb81f988cb8d4bed7";
-    const DISCORD_INVITE_URL = "https://discord.gg/Xhqu8E67ct";
 
     return (
         <Container>
