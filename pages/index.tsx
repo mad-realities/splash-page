@@ -1,11 +1,14 @@
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
-import Image from 'next/image'
-import Head from 'next/head'
+import Image from 'next/image';
+import Head from 'next/head';
+import Link from 'next/link';
 
 import InviteCard from '../components/InviteCard';
 import Banner from '../components/Banner';
 import TopNav from '../components/TopNav';
+
+import { DISCORD_INVITE_URL, CROWDFUND_URL } from '../constants/urls.js';
 
 const Home: NextPage = () => {
   return (
@@ -26,7 +29,9 @@ const Home: NextPage = () => {
             a new interactive dating show that anyone can participate in, powered by crypto. <br/><br/>
             holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
             </div>
-            <Button>get your ticket</Button>
+            <a href={CROWDFUND_URL} target="_blank"> 
+              <Button>get your ticket</Button>
+            </a>
         </Intro>
       </Section>
 
@@ -37,7 +42,9 @@ const Home: NextPage = () => {
             vote in the bachelor(ettes).<br/>
             then, help them find love every week by voting in their match.
             </div>
-            <Button>join our discord</Button>
+            <a href={DISCORD_INVITE_URL} target="_blank">
+              <Button>join our discord</Button>
+            </a>
           </Intro>
           <ImageContainer>
             <Image src="/candidate-cards.png" alt="candidate cards" layout="fill" objectFit="contain"  />
@@ -76,7 +83,9 @@ const Home: NextPage = () => {
     <WhiteSection>
       <div style={{ padding: '100px 0', textAlign: 'center'}}>
         <div className="body-title secondary">create with us</div>
-        <DiscordButton>join our discord</DiscordButton>
+        <a href={DISCORD_INVITE_URL} target="_blank">
+          <DiscordButton>join our discord</DiscordButton>
+        </a>
       </div>
     </WhiteSection>
 
@@ -157,7 +166,7 @@ const Intro = styled.div`
   width: 100%;
   height: 100%;
 
-  > button {
+  > a > button {
     margin-top: 36px;
   }
 `;
