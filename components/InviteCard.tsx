@@ -5,6 +5,7 @@ import { OrbitControls, useCubeTexture, useFBX } from "@react-three/drei";
 import { Glitch, EffectComposer, Bloom } from "@react-three/postprocessing";
 // @ts-ignore
 import { GlitchMode, Resizer, KernelSize } from "postprocessing";
+import BadTVEffect from "./BadTVEffect";
 
 const InviteCard = () => {
   const [x, setX] = useState(0);
@@ -72,10 +73,7 @@ const InviteCard = () => {
                 enablePan={false}
                 enableZoom={false}
               />
-              <EffectComposer>
-                <Glitch />
-                <Bloom intensity={0.5} luminanceThreshold={0.5} />
-              </EffectComposer>
+              <BadTVEffect></BadTVEffect>
             </Suspense>
           </Canvas>
           <div
