@@ -100,62 +100,32 @@ const InviteCard = () => {
             <div
               style={{
                 color: "#fff2bd",
-                fontFamily: "Pilowlava",
-                fontSize: "5vh",
+                fontFamily: "Pricedown",
+                fontSize: "7vh",
                 textTransform: "uppercase",
                 padding: "0 2vh 2vh 2vh",
                 position: "relative",
+                userSelect: "none",
+                marginTop: "-1vh",
               }}
             >
               Mad Realities
-              <div
-                style={{
-                  fontFamily: "system-ui",
-                  fontSize: "1vh",
-                  position: "absolute",
-                  right: "2vh",
-                  textAlign: "right",
-                  bottom: "2vh",
-                  fontWeight: 600,
-                }}
-              >
-                SEASON 0 PASS
-                <br />
-                LIMITED AVAILABILITY
-              </div>
             </div>
             <div
               style={{
-                fontFamily: "system-ui",
-                padding: "2vh",
+                padding: "2vh 2vh 1.5vh 2vh",
                 backgroundColor: "#d39bff",
                 color: "#490081",
                 fontWeight: 600,
                 fontSize: "3vh",
                 display: "flex",
                 flexDirection: "column",
+                userSelect: "none",
               }}
             >
               <span style={{ borderTop: "1px solid", paddingTop: "0.5vh" }}>
                 UNIQUE ¹⁄₁
               </span>
-              <div
-                style={{
-                  fontSize: "0.5vh",
-                  position: "absolute",
-                  width: "14vh",
-                  overflow: "hidden",
-                  right: "2vh",
-                  textAlign: "justify",
-                  bottom: "2vh",
-                  fontWeight: 400,
-                  letterSpacing: -0.1,
-                }}
-              >
-                Put some random text in here, not sure if it needs to say
-                anything or if it is just cool to have little tiny text
-                everywhere. It kinda seems like the latter~
-              </div>
             </div>
           </div>
           <div

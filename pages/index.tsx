@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
-import Image from 'next/image';
-import Head from 'next/head';
-import Link from 'next/link';
+import Image from "next/image";
+import Head from "next/head";
 
-import InviteCard from '../components/InviteCard';
-import Banner from '../components/Banner';
-import TopNav from '../components/TopNav';
+import InviteCard from "../components/InviteCard";
+import Banner from "../components/Banner";
+import TopNav from "../components/TopNav";
 
-import { DISCORD_INVITE_URL, CROWDFUND_URL } from '../constants/urls.js';
+import { DISCORD_INVITE_URL, CROWDFUND_URL } from "../constants/urls.js";
 
 const Home: NextPage = () => {
   return (
@@ -18,78 +17,141 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <GlitterBackground>
-      <Background />
-      <Banner />
-      <TopNav />
-      <Section>
-        <InviteCard />
-        <Intro>
-            <div className="body-title">welcome to our genesis show: the colosseum  🎬</div>
-            <div className="body-text">
-            a new interactive dating show that anyone can participate in, powered by crypto. <br/><br/>
-            holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
-            </div>
-            <a href={CROWDFUND_URL} target="_blank"> 
-              <Button>get your ticket</Button>
-            </a>
-        </Intro>
-      </Section>
-
-      <Section style={{alignItems: "stretch"}}>
+        <Background />
+        <Banner />
+        <TopNav />
+        <Section>
+          <InviteCard />
           <Intro>
-            <div className="body-title">dropping soon: co-create season 0</div>
-            <div className="body-text">
-            vote in the bachelor(ettes).<br/>
-            then, help them find love every week by voting in their match.
+            <div style={{ width: "500px" }}>
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "1.5rem",
+                  margin: "0 0 1rem 0",
+                  padding: 0,
+                }}
+              >
+                welcome to our genesis show
+              </p>
+              <h1
+                style={{
+                  fontFamily: "Outward",
+                  color: "white",
+                  fontSize: "12rem",
+                  fontWeight: 400,
+                  margin: "0 0 -1.5rem 0",
+                  padding: 0,
+                  textTransform: "uppercase",
+                }}
+              >
+                the colosseum
+              </h1>
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "1rem",
+                  margin: "1rem 0",
+                  padding: 0,
+                }}
+              >
+                a new interactive dating show that anyone can
+                <br />
+                participate in, powered by crypto.
+              </p>
+              <p
+                style={{
+                  color: "white",
+                  fontSize: "1rem",
+                  margin: 0,
+                  padding: 0,
+                }}
+              >
+                holders of an NFT rose ticket can vote in the cast,
+                <br />
+                decide outfits and scenes, and win exclusive prizes
+                <br />
+                for interacting.
+              </p>
+              <a href={CROWDFUND_URL} target="_blank">
+                <Button style={{ marginTop: "2rem" }}>get your ticket</Button>
+              </a>
             </div>
-            <a href={DISCORD_INVITE_URL} target="_blank">
-              <Button>join our discord</Button>
-            </a>
           </Intro>
-          <ImageContainer>
-            <Image src="/candidate-cards.png" alt="candidate cards" layout="fill" objectFit="contain"  />
-          </ImageContainer>
+        </Section>
+      </GlitterBackground>
+
+      <Section style={{ alignItems: "stretch" }}>
+        <Intro>
+          <div className="body-title">dropping soon: co-create season 0</div>
+          <div className="body-text">
+            vote in the bachelor(ettes).
+            <br />
+            then, help them find love every week by voting in their match.
+          </div>
+          <a href={DISCORD_INVITE_URL} target="_blank">
+            <Button>join our discord</Button>
+          </a>
+        </Intro>
+        <ImageContainer>
+          <Image
+            src="/candidate-cards.png"
+            alt="candidate cards"
+            layout="fill"
+            objectFit="contain"
+          />
+        </ImageContainer>
       </Section>
 
       <Section>
         <Intro>
           <div className="body-title">roadmap</div>
           <div className="body-text">
-            Crowdfund<br/>
-            Pilot (Episode 0)<br/>
-            Community-Driven Casting<br/><br/>
-
-            Season 0<br/>
-            Episode 1-6: Every week, find love for the bachelor(ette) of the episode<br/>
-            Episode 7: Fan-Favorite couple goes on a second date<br/>
+            Crowdfund
+            <br />
+            Pilot (Episode 0)
+            <br />
+            Community-Driven Casting
+            <br />
+            <br />
+            Season 0<br />
+            Episode 1-6: Every week, find love for the bachelor(ette) of the
+            episode
+            <br />
+            Episode 7: Fan-Favorite couple goes on a second date
+            <br />
           </div>
         </Intro>
       </Section>
 
-      <Section style={{paddingBottom: "200px"}}>
+      <Section style={{ paddingBottom: "200px" }}>
         <Intro>
           <div className="body-title">
-            be a founding member of the first decentralized media network<br/>
+            be a founding member of the first decentralized media network
+            <br />
             audience owned and audience governed.
           </div>
           <div className="body-text">
-            audience owned and audience governed. creating content that drives chaotic and entertaining social experiences.<br/><br/>
-            mad realities is the MTV of a new kind of tv, with infinite possibliites.
+            audience owned and audience governed. creating content that drives
+            chaotic and entertaining social experiences.
+            <br />
+            <br />
+            mad realities is the MTV of a new kind of tv, with infinite
+            possibliites.
           </div>
         </Intro>
       </Section>
-    </GlitterBackground>
 
-    <WhiteSection>
-      <div style={{ padding: '100px 0', textAlign: 'center'}}>
-        <div className="body-title secondary">create with us</div>
-        <a href={DISCORD_INVITE_URL} target="_blank">
-          <DiscordButton>join our discord</DiscordButton>
-        </a>
-      </div>
-    </WhiteSection>
+      <WhiteSection>
+        <div style={{ padding: "100px 0", textAlign: "center" }}>
+          <div className="body-title secondary">create with us</div>
+          <a href={DISCORD_INVITE_URL} target="_blank">
+            <DiscordButton>join our discord</DiscordButton>
+          </a>
+        </div>
+      </WhiteSection>
 
-    <ImageRepeat />
+      <ImageRepeat />
     </Container>
   );
 };
@@ -98,12 +160,14 @@ const Container = styled.div`
   display: flex;
   flex-flow: column;
   overflow-x: hidden;
+  r
 `;
 
 const GlitterBackground = styled.div`
   display: flex;
   flex-flow: column;
   background-color: black;
+  overflow: hidden;
 
   position: relative;
 `;
@@ -119,6 +183,7 @@ const Background = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  pointer-events: none;
 `;
 
 const Section = styled.div`
@@ -126,19 +191,8 @@ const Section = styled.div`
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  padding: 60px 100px;
-
-  z-index: 1;
-
-  @media (max-width: 768px) {
-    flex-flow: column;
-    align-items: center;
-    padding: 20px 30px;
-
-    > div {
-      padding: 50px 0;
-    }
-  }
+  width: 100vw;
+  height: 100vh;
 `;
 
 const WhiteSection = styled(Section)`
@@ -146,39 +200,32 @@ const WhiteSection = styled(Section)`
   background-color: #d39bff;
   z-index: 2;
   min-height: unset;
-  
+
   > div {
     color: #490081 !important;
-  }  
+  }
 `;
 
 const Intro = styled.div`
   display: flex;
   flex-flow: column;
   flex: 1;
-  
-  font-size: 24px;
 
   justify-content: center;
   align-items: flex-start;
-  padding: 40px 80px;
-
-  width: 100%;
-  height: 100%;
-
-  > a > button {
-    margin-top: 36px;
-  }
 `;
 
 const Button = styled.button`
-  background-color: #FEF1C3;
-  border-radius: 4px;
-  border: none;
+  background-color: yellow;
+  border: 8px outset yellow;
   padding: 12px 50px;
   font-weight: bold;
   font-size: 16px;
   cursor: pointer;
+  &:active {
+    background-color: goldenrod;
+    border: 8px inset goldenrod;
+  }
 `;
 
 const DiscordButton = styled.button`
@@ -201,7 +248,7 @@ const ImageContainer = styled.div`
   flex: 1;
 
   @media (max-width: 768px) {
-    display: none; 
+    display: none;
   }
 `;
 
@@ -212,4 +259,3 @@ const ImageRepeat = styled.div`
   height: 344px; // enough for two rows
 `;
 export default Home;
-
