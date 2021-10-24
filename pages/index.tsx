@@ -27,50 +27,58 @@ const Home: NextPage = () => {
         <div
           style={{
             position: "fixed",
-            top: "calc(2vw + 50px)",
-            left: "2vw",
-            width: "30vw",
-            height: "30vw",
-            overflow: "hidden",
-            opacity: 0.25,
-            boxShadow: "inset 2px 2px 0 white",
+            width: "100%",
+            maxWidth:'1600px'
           }}
         >
           <div
             style={{
-              width: "100vw",
-              height: "100vw",
-              boxShadow: "inset 0 0 0 2px white",
-              borderRadius: "50%",
-              margin: "-3vw",
+              position: "fixed",
+              top: "calc(2vw + 50px)",
+              left: "2vw",
+              width: "30vw",
+              height: "30vw",
+              overflow: "hidden",
+              opacity: 0.25,
+              boxShadow: "inset 2px 2px 0 white",
             }}
-          />
-        </div>
-        <div
-          style={{
-            position: "fixed",
-            top: "calc(2vw + 50px)",
-            right: "2vw",
-            width: "30vw",
-            height: "30vw",
-            overflow: "hidden",
-            opacity: 0.25,
-            boxShadow: "inset -2px 2px 0 white",
-            pointerEvents: "none",
-          }}
-        >
+          >
+            <div
+              style={{
+                width: "100vw",
+                height: "100vw",
+                boxShadow: "inset 0 0 0 2px white",
+                borderRadius: "50%",
+                margin: "-3vw",
+              }}
+            />
+          </div>
           <div
             style={{
-              width: "100vw",
-              height: "100vw",
-              boxShadow: "inset 0 0 0 2px white",
-              borderRadius: "50%",
-              margin: "-3vw",
-              position: "absolute",
-              right: 0,
+              position: "fixed",
+              top: "calc(2vw + 50px)",
+              right: "2vw",
+              width: "30vw",
+              height: "30vw",
+              overflow: "hidden",
+              opacity: 0.25,
+              boxShadow: "inset -2px 2px 0 white",
               pointerEvents: "none",
             }}
-          />
+          >
+            <div
+              style={{
+                width: "100vw",
+                height: "100vw",
+                boxShadow: "inset 0 0 0 2px white",
+                borderRadius: "50%",
+                margin: "-3vw",
+                position: "absolute",
+                right: 0,
+                pointerEvents: "none",
+              }}
+            />
+          </div>
         </div>
         <Section
           borderless
@@ -86,6 +94,7 @@ const Home: NextPage = () => {
               position: "relative",
               minWidth: unit(50),
               minHeight: unit(85),
+              transform: `translateX(var(--card-translate-x))`,
             }}
           >
             <ClientOnly>
@@ -438,7 +447,10 @@ const Container = styled.div`
   display: flex;
   flex-flow: column;
   overflow-x: hidden;
+  width: 100vw;
+  align-items: center;
   padding-top: 50px;
+  --card-translate-x: 5vh;
   --unit: 1vh;
   --direction: row;
   --top-section-height: calc(100vh - 2vw - 50px);
@@ -453,7 +465,8 @@ const Container = styled.div`
     visibility: hidden;
     display: none;
   }
-  @media (max-width: 800px) and (orientation: portrait) {
+  @media (max-width: 1000px) {
+    --card-translate-x: 0vh;
     --unit: 1.5vw;
     --direction: column;
     --top-section-height: auto;
@@ -475,6 +488,8 @@ const GlitterBackground = styled.div`
   display: flex;
   flex-flow: column;
   background-color: black;
+  width: 100vw;
+  align-items: center;
   overflow: hidden;
 
   position: relative;
@@ -501,6 +516,7 @@ const Section = styled.div<{ borderless?: boolean }>`
   align-items: center;
   width: var(--section-width);
   height: var(--section-height);
+  max-width: 1200px;
   margin: var(--section-margin);
   border-radius: 49vw 49vw 2vw 2vw;
   padding: 1vw;
