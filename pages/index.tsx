@@ -32,8 +32,8 @@ const Home: NextPage = () => {
             width: "30vw",
             height: "30vw",
             overflow: "hidden",
+            opacity: 0.25,
             boxShadow: "inset 2px 2px 0 white",
-            zIndex: 999999,
           }}
         >
           <div
@@ -54,8 +54,8 @@ const Home: NextPage = () => {
             width: "30vw",
             height: "30vw",
             overflow: "hidden",
+            opacity: 0.25,
             boxShadow: "inset -2px 2px 0 white",
-            zIndex: 999999,
             pointerEvents: "none",
           }}
         >
@@ -72,25 +72,39 @@ const Home: NextPage = () => {
             }}
           />
         </div>
-        <Section borderless>
-          <div style={{ flex: 1, position: "relative" }}>
+        <Section
+          borderless
+          style={{
+            flexDirection: "var(--direction)",
+            height: "var(--top-section-height)",
+          }}
+        >
+          <div
+            style={{
+              flexGrow: 1,
+              flexShrink: 0,
+              position: "relative",
+              minWidth: unit(50),
+              minHeight: unit(85),
+            }}
+          >
             <ClientOnly>
               <InviteCard />
             </ClientOnly>
           </div>
-          <div style={{ flex: 1, position: "relative" }}>
+          <div style={{ flex: 1, position: "relative", padding: "5vw" }}>
             <h1
               style={{
                 fontFamily: "Pricedown",
                 color: "white",
-                fontSize: "5rem",
+                fontSize: "4rem",
                 fontWeight: 400,
                 margin: 0,
                 padding: 0,
                 textTransform: "uppercase",
               }}
             >
-              mad realities
+              mad&nbsp;realities
             </h1>
             <p
               style={{
@@ -100,7 +114,7 @@ const Home: NextPage = () => {
                 padding: 0,
               }}
             >
-              welcome to our genesis show
+              welcome to our genesis&nbsp;show
             </p>
             <p
               style={{
@@ -110,9 +124,8 @@ const Home: NextPage = () => {
                 padding: 0,
               }}
             >
-              a new interactive dating show that anyone can
-              <br />
-              participate in, powered by crypto.
+              a new interactive dating show that anyone can participate in,
+              powered by&nbsp;crypto.
             </p>
             <p
               style={{
@@ -141,7 +154,10 @@ const Home: NextPage = () => {
               <TV />
             </ClientOnly>
           </div>
-          <Intro style={{ position: "relative", alignItems: "center" }}>
+          <Intro
+            className="landscape"
+            style={{ position: "relative", alignItems: "center" }}
+          >
             <div
               style={{
                 width: "500px",
@@ -184,13 +200,58 @@ const Home: NextPage = () => {
           </Intro>
         </Section>
 
+        <Intro
+          className="portrait"
+          style={{ position: "relative", alignItems: "stretch" }}
+        >
+          <div
+            style={{
+              background: "white",
+              padding: "3rem",
+              margin: "5vw",
+              boxShadow: "1rem 1rem 0 black",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "1.5rem",
+                lineHeight: 1.5,
+                margin: "0 0 1rem 0",
+                padding: 0,
+                fontWeight: 600,
+              }}
+            >
+              dropping soon:
+              <br />
+              co-create season 0
+            </p>
+            <p
+              style={{
+                fontSize: "1rem",
+                margin: "1rem 0 0 0",
+                padding: 0,
+                fontWeight: 600,
+              }}
+            >
+              vote in the bachelor(ettes). then, help them find love every week
+              by voting in their&nbsp;match.
+            </p>
+            <a href={DISCORD_INVITE_URL} target="_blank">
+              <Button style={{ marginTop: "2rem" }}>join our discord</Button>
+            </a>
+          </div>
+        </Intro>
+
         <Section style={{ position: "relative", background: "black" }}>
           <div style={{ position: "absolute", inset: 0 }}>
             <ClientOnly>
               <Pipes />
             </ClientOnly>
           </div>
-          <Intro style={{ position: "relative", alignItems: "center" }}>
+          <Intro
+            className="landscape"
+            style={{ position: "relative", alignItems: "center" }}
+          >
             <div
               style={{
                 width: "500px",
@@ -242,9 +303,92 @@ const Home: NextPage = () => {
           </Intro>
         </Section>
 
-        <Section style={{ color: "white", background: "black" }}>
-          <Intro style={{ alignItems: "center", textAlign: "center" }}>
+        <Intro
+          className="portrait"
+          style={{ position: "relative", alignItems: "center" }}
+        >
+          <div
+            style={{
+              background: "black",
+              color: "white",
+              padding: "3rem",
+              margin: "5vh",
+              boxShadow: "1rem 1rem 0 white",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "1.5rem",
+                lineHeight: 1.5,
+                margin: "0 0 1rem 0",
+                padding: 0,
+              }}
+            >
+              roadmap
+            </p>
+            <ul
+              style={{
+                fontSize: "1rem",
+                margin: "1rem 0 0 0",
+                padding: 0,
+              }}
+            >
+              <li>
+                Crowdfund
+                <ul>
+                  <li>Pilot (Episode 0)</li>
+                  <li>Community-Driven Casting</li>
+                </ul>
+              </li>
+              <li>
+                Season 0
+                <ul>
+                  <li>
+                    Episodes 1-6: Every week, find love for the bachelor(ette)
+                    of the&nbsp;episode
+                  </li>
+                  <li>
+                    Episode 7: Fan-Favorite couple goes on a second&nbsp;date
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </Intro>
+
+        <div
+          style={{ color: "white", position: "relative" }}
+          className="portrait"
+        >
+          <Intro
+            style={{
+              alignItems: "center",
+              textAlign: "center",
+              padding: "5vw",
+            }}
+          >
+            <p style={{ marginTop: "10%" }}>
+              be a founding member of the first decentralized media network
+              audience owned and audience&nbsp;governed.
+            </p>
             <p>
+              creating content that drives chaotic and entertaining
+              social&nbsp;experiences.
+            </p>
+            <p>
+              mad realities is the MTV of a new kind of tv, with
+              infinite&nbsp;possibliites.
+            </p>
+            <p style={{ margin: "5rem 0" }}>create with us</p>
+            <a href={DISCORD_INVITE_URL} target="_blank">
+              <Button>join our discord</Button>
+            </a>
+          </Intro>
+        </div>
+
+        <Section style={{ color: "white" }} className="landscape">
+          <Intro style={{ alignItems: "center", textAlign: "center" }}>
+            <p style={{ marginTop: "10%" }}>
               be a founding member of the first decentralized media network
               <br />
               audience owned and audience governed.
@@ -265,7 +409,17 @@ const Home: NextPage = () => {
         </Section>
       </GlitterBackground>
 
-      <Section>
+      <div
+        style={{
+          zIndex: 999999,
+          position: "relative",
+          background: "white",
+          width: "100vw",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
         <Intro style={{ fontFamily: "serif", alignItems: "center" }}>
           <Image src="/simp-card.png" width="294" height="172" />
           <p>u dropped this</p>
@@ -275,7 +429,7 @@ const Home: NextPage = () => {
           />
           simps and counting
         </Intro>
-      </Section>
+      </div>
     </Container>
   );
 };
@@ -285,11 +439,35 @@ const Container = styled.div`
   flex-flow: column;
   overflow-x: hidden;
   padding-top: 50px;
-  @media (orientation: landscape) {
-    --unit: 1vh;
+  --unit: 1vh;
+  --direction: row;
+  --top-section-height: calc(100vh - 2vw - 50px);
+  --section-height: calc(100vh - 2vw - 50px);
+  --section-width: 98vw;
+  --section-margin: 1vw;
+  .landscape {
+    visibility: visible;
+    display: flex;
   }
-  @media (orientation: portrait) {
-    --unit: 1vw;
+  .portrait {
+    visibility: hidden;
+    display: none;
+  }
+  @media (max-width: 800px) and (orientation: portrait) {
+    --unit: 1.5vw;
+    --direction: column;
+    --top-section-height: auto;
+    --section-height: 75vw;
+    --section-width: 90vw;
+    --section-margin: 5vw;
+    .landscape {
+      visibility: hidden;
+      display: none;
+    }
+    .portrait {
+      visibility: visible;
+      display: flex;
+    }
   }
 `;
 
@@ -321,9 +499,9 @@ const Section = styled.div<{ borderless?: boolean }>`
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  width: 98vw;
-  height: calc(100vh - 2vw - 50px);
-  margin: 1vw;
+  width: var(--section-width);
+  height: var(--section-height);
+  margin: var(--section-margin);
   border-radius: 49vw 49vw 2vw 2vw;
   padding: 1vw;
   overflow: ${({ borderless }) => (borderless ? "visible" : "hidden")};
