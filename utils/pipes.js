@@ -24,7 +24,13 @@ SOFTWARE.
 
 import * as THREE from "three";
 
+let hasRun = false;
+
 const pipes = (renderer) => {
+  if (hasRun) {
+    return;
+  }
+  hasRun = true;
   var gridBounds = new THREE.Box3(
     new THREE.Vector3(-10, -10, -10),
     new THREE.Vector3(10, 10, 10)
@@ -53,12 +59,11 @@ const pipes = (renderer) => {
     self.object3d = new THREE.Object3D();
     scene.add(self.object3d);
 
-    var color = randomInteger(0, 0xffffff);
-    var emissive = new THREE.Color(color).multiplyScalar(0.3);
+    var color = new THREE.Color(`hsl(${randomInteger(0, 360)}, 100%, 50%)`);
     self.material = new THREE.MeshPhongMaterial({
       specular: 0xa9fcff,
-      color: color,
-      emissive: emissive,
+      color,
+      emissive: color.multiplyScalar(0.5),
       shininess: 100,
     });
 

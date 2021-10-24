@@ -29,29 +29,29 @@ const Home: NextPage = () => {
           </ClientOnly>
           <Intro>
             <div style={{ width: "500px" }}>
+              <h1
+                style={{
+                  fontFamily: "Pricedown",
+                  color: "white",
+                  fontSize: "5rem",
+                  fontWeight: 400,
+                  margin: 0,
+                  padding: 0,
+                  textTransform: "uppercase",
+                }}
+              >
+                mad realities
+              </h1>
               <p
                 style={{
                   color: "white",
                   fontSize: "1.5rem",
-                  margin: "0 0 1rem 0",
+                  margin: "1rem 0",
                   padding: 0,
                 }}
               >
                 welcome to our genesis show
               </p>
-              <h1
-                style={{
-                  fontFamily: "Outward",
-                  color: "white",
-                  fontSize: "12rem",
-                  fontWeight: 400,
-                  margin: "0 0 -1.5rem 0",
-                  padding: 0,
-                  textTransform: "uppercase",
-                }}
-              >
-                the colosseum
-              </h1>
               <p
                 style={{
                   color: "white",

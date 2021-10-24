@@ -98,16 +98,18 @@ const InviteCard = () => {
             <div
               style={{
                 color: "#fff2bd",
-                fontFamily: "Pricedown",
-                fontSize: "7vh",
+                fontFamily: "Outward",
+                fontSize: "13vh",
                 textTransform: "uppercase",
-                padding: "0 2vh 2vh 2vh",
+                padding: "2vh 2vh 0 2vh",
                 position: "relative",
                 userSelect: "none",
                 marginTop: "-1vh",
+                textAlignLast: "justify",
+                width: '100%'
               }}
             >
-              Mad Realities
+              Mad Realities season 0
             </div>
             <div
               style={{

@@ -1,5 +1,6 @@
 import { Canvas, useThree } from "@react-three/fiber";
-import React from "react";
+import { Bloom } from "@react-three/postprocessing";
+import React, { useEffect } from "react";
 import pipes from "../utils/pipes";
 
 const Pipes = () => {
@@ -16,6 +17,8 @@ export default Pipes;
 
 const Scene = () => {
   const renderer = useThree();
-  pipes(renderer);
+  useEffect(() => {
+    pipes(renderer);
+  }, []);
   return null;
 };
