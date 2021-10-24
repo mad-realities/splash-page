@@ -47,10 +47,10 @@ const Scene = () => {
       flexDirection="row"
       centerAnchor
     >
-      <Box width="40" height="40" centerAnchor>
+      <Box width="60" height="40" centerAnchor>
         <Text
           color="#00FF00"
-          fontSize={0.4}
+          fontSize={0.3}
           font="/Steps-Mono.otf"
           outlineWidth={0.02}
           outlineColor="black"
@@ -59,10 +59,10 @@ const Scene = () => {
           CH
         </Text>
       </Box>
-      <Box width="100" height="40" centerAnchor>
+      <Box width="50" height="40" centerAnchor>
         <Text
           color="#00FF00"
-          fontSize={0.475}
+          fontSize={0.35}
           font="/Steps-Mono.otf"
           outlineWidth={0.02}
           outlineColor="black"

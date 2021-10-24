@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <Background />
         <Banner />
         <TopNav />
-        <Section>
+        <Section borderless>
           <ClientOnly>
             <InviteCard />
           </ClientOnly>
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
               <TV />
             </ClientOnly>
           </div>
-          <Intro style={{ position: "relative", alignItems: "flex-end" }}>
+          <Intro style={{ position: "relative", alignItems: "center" }}>
             <div
               style={{
                 width: "500px",
@@ -137,7 +137,6 @@ const Home: NextPage = () => {
               </a>
             </div>
           </Intro>
-          <Intro />
         </Section>
 
         <Section style={{ position: "relative", background: "black" }}>
@@ -146,8 +145,7 @@ const Home: NextPage = () => {
               <Pipes />
             </ClientOnly>
           </div>
-          <Intro />
-          <Intro style={{ position: "relative" }}>
+          <Intro style={{ position: "relative", alignItems: 'center' }}>
             <div
               style={{
                 width: "500px",
@@ -267,23 +265,24 @@ const Background = styled.div`
   pointer-events: none;
 `;
 
-const Section = styled.div`
+const Section = styled.div<{ borderless?: boolean }>`
   display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: center;
   width: 94vw;
-  height: 100vh;
+  height: 75vw;
   margin: 3vw;
-  border-radius: 999999px 999999px 20px 20px;
-  overflow: hidden;
+  border-radius: 47vw 47vw 2vw 2vw;
+  overflow: ${({ borderless }) => (borderless ? "visible" : "hidden")};
   position: relative;
   &:after {
+    display: ${({ borderless }) => (borderless ? "none" : "block")};
     content: "";
     position: absolute;
     inset: 1vw;
     box-shadow: inset 0 0 0 2px white;
-    border-radius: 999999px 999999px 20px 20px;
+    border-radius: 47vw 47vw 1vw 1vw;
   }
 `;
 
