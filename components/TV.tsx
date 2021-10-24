@@ -24,7 +24,7 @@ const Scene = () => {
   const three = useThree();
   three.scene.background = texture;
   const [width, height] = useAspect(three.size.width, three.size.height);
-  const [channel, setChannel] = useState(3);
+  const [channel, setChannel] = useState(0);
   useEffect(() => {
     three.scene.background = color;
     const timeout = setTimeout(() => (three.scene.background = texture), 1000);
@@ -33,9 +33,9 @@ const Scene = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (Math.random() > 0.5) {
-        setChannel((channel) => (channel + 1) % 84);
+        setChannel((channel) => (channel + 1) % 80);
       }
-    }, 2000);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
   return (
@@ -68,8 +68,8 @@ const Scene = () => {
           outlineColor="black"
           anchorY="top-baseline"
         >
-          {channel < 10 ? "0" : ""}
-          {channel}
+          {channel + 3 < 10 ? "0" : ""}
+          {channel + 3}
         </Text>
       </Box>
     </Flex>

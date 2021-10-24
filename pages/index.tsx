@@ -85,31 +85,60 @@ const Home: NextPage = () => {
         </Section>
       </GlitterBackground>
 
-      <Section style={{ alignItems: "stretch", position: "relative" }}>
+      <Section
+        style={{
+          alignItems: "stretch",
+          position: "relative",
+          height: `calc(0.75 * 100vw)`,
+        }}
+      >
         <div style={{ position: "absolute", inset: 0 }}>
           <ClientOnly>
             <TV />
           </ClientOnly>
         </div>
-        <Intro style={{ position: "relative" }}>
-          <div className="body-title">dropping soon: co-create season 0</div>
-          <div className="body-text">
-            vote in the bachelor(ettes).
-            <br />
-            then, help them find love every week by voting in their match.
+        <Intro style={{ position: "relative", alignItems: "flex-end" }}>
+          <div
+            style={{
+              width: "500px",
+              background: "white",
+              padding: "3rem",
+              boxShadow: "1rem 1rem 0 black",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "1.5rem",
+                lineHeight: 1.5,
+                margin: "0 0 1rem 0",
+                padding: 0,
+                fontWeight: 600,
+              }}
+            >
+              dropping soon:
+              <br />
+              co-create season 0
+            </p>
+            <p
+              style={{
+                fontSize: "1rem",
+                margin: "1rem 0 0 0",
+                padding: 0,
+                fontWeight: 600,
+              }}
+            >
+              vote in the bachelor(ettes).
+              <br />
+              then, help them find love every week
+              <br />
+              by voting in their match.
+            </p>
+            <a href={DISCORD_INVITE_URL} target="_blank">
+              <Button style={{ marginTop: "2rem" }}>join our discord</Button>
+            </a>
           </div>
-          <a href={DISCORD_INVITE_URL} target="_blank">
-            <Button>join our discord</Button>
-          </a>
         </Intro>
-        <ImageContainer>
-          <Image
-            src="/candidate-cards.png"
-            alt="candidate cards"
-            layout="fill"
-            objectFit="contain"
-          />
-        </ImageContainer>
+        <Intro />
       </Section>
 
       <Section>
