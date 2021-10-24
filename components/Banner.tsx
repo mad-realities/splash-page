@@ -10,9 +10,9 @@ const Banner = () => {
           style={{
             margin: "0 50vw",
             fontFamily: "Pricedown",
-            fontSize: "1.5rem",
+            fontSize: "2rem",
             textTransform: "uppercase",
-            transform: "translateY(-0.25rem)",
+            transform: "translateY(-0.5rem)",
           }}
         >
           mad realities
@@ -33,11 +33,11 @@ const Container = styled.div`
   width: 100%;
 
   color: yellow;
-  font-size: 0.75rem;
   text-align: center;
   font-weight: 600;
   z-index: 100;
-  height: 2rem;
+  top: 0;
+  height: 50px;
 `;
 
 export default Banner;

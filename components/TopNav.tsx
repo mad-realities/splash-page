@@ -18,8 +18,7 @@ const TopNav = () => {
 
 const Container = styled.div`
   position: absolute;
-  top: calc(50px + 4vh);
-  z-index: 999;
+  top: 2vw;
   width: 100%;
 
   display: flex;

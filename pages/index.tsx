@@ -11,6 +11,7 @@ import { DISCORD_INVITE_URL, CROWDFUND_URL } from "../constants/urls.js";
 import TV from "../components/TV";
 import Pipes from "../components/Pipes";
 import ClientOnly from "../components/ClientOnly";
+import unit from "../utils/unit";
 
 const Home: NextPage = () => {
   return (
@@ -26,10 +27,10 @@ const Home: NextPage = () => {
         <div
           style={{
             position: "fixed",
-            top: "calc(4vw + 30px)",
-            left: "4vw",
-            width: "26.5vw",
-            height: "26.5vw",
+            top: "calc(2vw + 50px)",
+            left: "2vw",
+            width: "30vw",
+            height: "30vw",
             overflow: "hidden",
             boxShadow: "inset 2px 2px 0 white",
             zIndex: 999999,
@@ -41,17 +42,17 @@ const Home: NextPage = () => {
               height: "100vw",
               boxShadow: "inset 0 0 0 2px white",
               borderRadius: "50%",
-              margin: "-4vw",
+              margin: "-3vw",
             }}
           />
         </div>
         <div
           style={{
             position: "fixed",
-            top: "calc(4vw + 30px)",
-            right: "4vw",
-            width: "26.5vw",
-            height: "26.5vw",
+            top: "calc(2vw + 50px)",
+            right: "2vw",
+            width: "30vw",
+            height: "30vw",
             overflow: "hidden",
             boxShadow: "inset -2px 2px 0 white",
             zIndex: 999999,
@@ -64,7 +65,7 @@ const Home: NextPage = () => {
               height: "100vw",
               boxShadow: "inset 0 0 0 2px white",
               borderRadius: "50%",
-              margin: "-4vw",
+              margin: "-3vw",
               position: "absolute",
               right: 0,
               pointerEvents: "none",
@@ -72,71 +73,67 @@ const Home: NextPage = () => {
           />
         </div>
         <Section borderless>
-          <ClientOnly>
-            <InviteCard />
-          </ClientOnly>
-          <Intro>
-            <div style={{ width: "500px" }}>
-              <h1
-                style={{
-                  fontFamily: "Pricedown",
-                  color: "white",
-                  fontSize: "5rem",
-                  fontWeight: 400,
-                  margin: 0,
-                  padding: 0,
-                  textTransform: "uppercase",
-                }}
-              >
-                mad realities
-              </h1>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "1.5rem",
-                  margin: "1rem 0",
-                  padding: 0,
-                }}
-              >
-                welcome to our genesis show
-              </p>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "1rem",
-                  margin: "1rem 0",
-                  padding: 0,
-                }}
-              >
-                a new interactive dating show that anyone can
-                <br />
-                participate in, powered by crypto.
-              </p>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "1rem",
-                  margin: 0,
-                  padding: 0,
-                }}
-              >
-                holders of an NFT rose ticket can vote in the cast,
-                <br />
-                decide outfits and scenes, and win exclusive prizes
-                <br />
-                for interacting.
-              </p>
-              <a href={CROWDFUND_URL} target="_blank">
-                <Button style={{ marginTop: "2rem" }}>get your ticket</Button>
-              </a>
-            </div>
-          </Intro>
+          <div style={{ flex: 1, position: "relative" }}>
+            <ClientOnly>
+              <InviteCard />
+            </ClientOnly>
+          </div>
+          <div style={{ flex: 1, position: "relative" }}>
+            <h1
+              style={{
+                fontFamily: "Pricedown",
+                color: "white",
+                fontSize: "5rem",
+                fontWeight: 400,
+                margin: 0,
+                padding: 0,
+                textTransform: "uppercase",
+              }}
+            >
+              mad realities
+            </h1>
+            <p
+              style={{
+                color: "white",
+                fontSize: "1.5rem",
+                margin: "1rem 0",
+                padding: 0,
+              }}
+            >
+              welcome to our genesis show
+            </p>
+            <p
+              style={{
+                color: "white",
+                fontSize: "1rem",
+                margin: "1rem 0",
+                padding: 0,
+              }}
+            >
+              a new interactive dating show that anyone can
+              <br />
+              participate in, powered by crypto.
+            </p>
+            <p
+              style={{
+                color: "white",
+                fontSize: "1rem",
+                margin: 0,
+                padding: 0,
+              }}
+            >
+              holders of an NFT rose ticket can vote in the cast, decide outfits
+              and scenes, and win exclusive prizes for&nbsp;interacting.
+            </p>
+            <a href={CROWDFUND_URL} target="_blank">
+              <Button style={{ marginTop: "2rem" }}>get your ticket</Button>
+            </a>
+          </div>
         </Section>
         <Section
           style={{
             alignItems: "stretch",
             position: "relative",
-            height: `calc(0.75 * 100vw)`,
           }}
         >
           <div style={{ position: "absolute", inset: 0 }}>
@@ -287,7 +284,13 @@ const Container = styled.div`
   display: flex;
   flex-flow: column;
   overflow-x: hidden;
-  r
+  padding-top: 50px;
+  @media (orientation: landscape) {
+    --unit: 1vh;
+  }
+  @media (orientation: portrait) {
+    --unit: 1vw;
+  }
 `;
 
 const GlitterBackground = styled.div`
@@ -318,10 +321,11 @@ const Section = styled.div<{ borderless?: boolean }>`
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  width: 94vw;
-  height: 75vw;
-  margin: 3vw;
-  border-radius: 47vw 47vw 2vw 2vw;
+  width: 98vw;
+  height: calc(100vh - 2vw - 50px);
+  margin: 1vw;
+  border-radius: 49vw 49vw 2vw 2vw;
+  padding: 1vw;
   overflow: ${({ borderless }) => (borderless ? "visible" : "hidden")};
   position: relative;
   &:after {
@@ -330,7 +334,7 @@ const Section = styled.div<{ borderless?: boolean }>`
     position: absolute;
     inset: 1vw;
     box-shadow: inset 0 0 0 2px white;
-    border-radius: 47vw 47vw 1vw 1vw;
+    border-radius: 49vw 49vw 1vw 1vw;
   }
 `;
 
