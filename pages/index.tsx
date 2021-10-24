@@ -8,6 +8,8 @@ import Banner from "../components/Banner";
 import TopNav from "../components/TopNav";
 
 import { DISCORD_INVITE_URL, CROWDFUND_URL } from "../constants/urls.js";
+import TV from "../components/TV";
+import ClientOnly from "../components/ClientOnly";
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +23,9 @@ const Home: NextPage = () => {
         <Banner />
         <TopNav />
         <Section>
-          <InviteCard />
+          <ClientOnly>
+            <InviteCard />
+          </ClientOnly>
           <Intro>
             <div style={{ width: "500px" }}>
               <p
@@ -81,8 +85,13 @@ const Home: NextPage = () => {
         </Section>
       </GlitterBackground>
 
-      <Section style={{ alignItems: "stretch" }}>
-        <Intro>
+      <Section style={{ alignItems: "stretch", position: "relative" }}>
+        <div style={{ position: "absolute", inset: 0 }}>
+          <ClientOnly>
+            <TV />
+          </ClientOnly>
+        </div>
+        <Intro style={{ position: "relative" }}>
           <div className="body-title">dropping soon: co-create season 0</div>
           <div className="body-text">
             vote in the bachelor(ettes).

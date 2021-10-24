@@ -17,7 +17,7 @@ extend({
   ShaderPass,
 });
 
-const BadTVEffect = () => {
+const BadTVEffect = ({ staticAmount = 0.1 }: { staticAmount?: number }) => {
   const { gl, scene, camera } = useThree();
   const composer = useRef<EffectComposer>();
   const shaderRef = useRef<ShaderPass>();
@@ -28,8 +28,7 @@ const BadTVEffect = () => {
     const a = clock.getElapsedTime();
     if (shaderRef.current) {
       shaderRef.current.uniforms.time.value = a + (Math.random() < 0.1 ? 5 : 0);
-      shaderRef.current.uniforms.rollSpeed.value =
-        Math.random() < 0.1 ? 1 : 0;
+      shaderRef.current.uniforms.rollSpeed.value = Math.random() < 0.05 ? 1 : 0;
     }
     if (staticRef.current) {
       staticRef.current.uniforms.time.value = a;
@@ -53,8 +52,8 @@ const BadTVEffect = () => {
         args={[FilmShader]}
       />
       <shaderPass
-        uniforms-distortion-value={2.0}
-        uniforms-distortion2-value={2.0}
+        uniforms-distortion-value={1.0}
+        uniforms-distortion2-value={1.0}
         uniforms-speed-value={0.3}
         uniforms-rollSpeed-value={0.01}
         ref={shaderRef}
@@ -69,7 +68,7 @@ const BadTVEffect = () => {
       />
       <shaderPass
         uniforms-size-value={2}
-        uniforms-amount-value={0.1}
+        uniforms-amount-value={staticAmount}
         ref={staticRef}
         attachArray="passes"
         args={[BadTVStatic]}
