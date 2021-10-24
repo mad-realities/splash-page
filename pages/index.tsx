@@ -374,7 +374,7 @@ const Home: NextPage = () => {
             style={{
               alignItems: "center",
               textAlign: "center",
-              padding: "5vw",
+              padding: "8vw",
             }}
           >
             <p style={{ marginTop: "10%" }}>
