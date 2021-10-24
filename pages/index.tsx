@@ -23,6 +23,54 @@ const Home: NextPage = () => {
         <Background />
         <Banner />
         <TopNav />
+        <div
+          style={{
+            position: "fixed",
+            top: "calc(4vw + 30px)",
+            left: "4vw",
+            width: "26.5vw",
+            height: "26.5vw",
+            overflow: "hidden",
+            boxShadow: "inset 2px 2px 0 white",
+            zIndex: 999999,
+          }}
+        >
+          <div
+            style={{
+              width: "100vw",
+              height: "100vw",
+              boxShadow: "inset 0 0 0 2px white",
+              borderRadius: "50%",
+              margin: "-4vw",
+            }}
+          />
+        </div>
+        <div
+          style={{
+            position: "fixed",
+            top: "calc(4vw + 30px)",
+            right: "4vw",
+            width: "26.5vw",
+            height: "26.5vw",
+            overflow: "hidden",
+            boxShadow: "inset -2px 2px 0 white",
+            zIndex: 999999,
+            pointerEvents: "none",
+          }}
+        >
+          <div
+            style={{
+              width: "100vw",
+              height: "100vw",
+              boxShadow: "inset 0 0 0 2px white",
+              borderRadius: "50%",
+              margin: "-4vw",
+              position: "absolute",
+              right: 0,
+              pointerEvents: "none",
+            }}
+          />
+        </div>
         <Section borderless>
           <ClientOnly>
             <InviteCard />
@@ -145,7 +193,7 @@ const Home: NextPage = () => {
               <Pipes />
             </ClientOnly>
           </div>
-          <Intro style={{ position: "relative", alignItems: 'center' }}>
+          <Intro style={{ position: "relative", alignItems: "center" }}>
             <div
               style={{
                 width: "500px",
