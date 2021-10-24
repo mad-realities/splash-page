@@ -28,7 +28,7 @@ const Home: NextPage = () => {
           style={{
             position: "fixed",
             width: "100%",
-            maxWidth:'1600px'
+            maxWidth: "1600px",
           }}
         >
           <div
@@ -83,6 +83,7 @@ const Home: NextPage = () => {
         <Section
           borderless
           style={{
+            //@ts-ignore
             flexDirection: "var(--direction)",
             height: "var(--top-section-height)",
           }}
