@@ -5,7 +5,10 @@ const TopNav = () => {
   return (
     <Container>
       <a href={FAQ_URL} target="_blank">
-        <text className="nav-link" style={{ paddingRight: 40 }}>
+        <text
+          className="nav-link"
+          style={{ paddingRight: "var(--top-nav-gap)" }}
+        >
           FAQ
         </text>
       </a>
@@ -18,7 +21,7 @@ const TopNav = () => {
 
 const Container = styled.div`
   position: absolute;
-  top: 2vw;
+  top: var(--top-nav-top);
   width: 100%;
 
   display: flex;

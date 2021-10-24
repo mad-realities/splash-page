@@ -458,6 +458,8 @@ const Container = styled.div`
   --section-height: calc(100vh - 2vw - 50px);
   --section-width: 98vw;
   --section-margin: 1vw;
+  --top-nav-top: 2vw;
+  --top-nav-gap: 40px;
   .landscape {
     visibility: visible;
     display: flex;
@@ -474,6 +476,8 @@ const Container = styled.div`
     --section-height: 75vw;
     --section-width: 90vw;
     --section-margin: 5vw;
+    --top-nav-top: 3vw;
+    --top-nav-gap: 20px;
     .landscape {
       visibility: hidden;
       display: none;
