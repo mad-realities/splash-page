@@ -94,7 +94,7 @@ const Home: NextPage = () => {
               flexShrink: 0,
               position: "relative",
               minWidth: unit(50),
-              minHeight: unit(85),
+              minHeight: unit(75),
               transform: `translateX(var(--card-translate-x))`,
             }}
           >
@@ -315,14 +315,14 @@ const Home: NextPage = () => {
 
         <Intro
           className="portrait"
-          style={{ position: "relative", alignItems: "center" }}
+          style={{ position: "relative", alignItems: "stretch" }}
         >
           <div
             style={{
               background: "black",
               color: "white",
               padding: "3rem",
-              margin: "5vh",
+              margin: "5vw",
               boxShadow: "1rem 1rem 0 white",
             }}
           >
@@ -468,7 +468,7 @@ const Container = styled.div`
   }
   @media (max-width: 1000px) {
     --card-translate-x: 0vh;
-    --unit: 1.5vw;
+    --unit: 1.75vw;
     --direction: column;
     --top-section-height: auto;
     --section-height: 75vw;
