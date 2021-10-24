@@ -84,142 +84,143 @@ const Home: NextPage = () => {
             </div>
           </Intro>
         </Section>
-      </GlitterBackground>
+        <Section
+          style={{
+            alignItems: "stretch",
+            position: "relative",
+            height: `calc(0.75 * 100vw)`,
+          }}
+        >
+          <div style={{ position: "absolute", inset: 0 }}>
+            <ClientOnly>
+              <TV />
+            </ClientOnly>
+          </div>
+          <Intro style={{ position: "relative", alignItems: "flex-end" }}>
+            <div
+              style={{
+                width: "500px",
+                background: "white",
+                padding: "3rem",
+                boxShadow: "1rem 1rem 0 black",
+              }}
+            >
+              <p
+                style={{
+                  fontSize: "1.5rem",
+                  lineHeight: 1.5,
+                  margin: "0 0 1rem 0",
+                  padding: 0,
+                  fontWeight: 600,
+                }}
+              >
+                dropping soon:
+                <br />
+                co-create season 0
+              </p>
+              <p
+                style={{
+                  fontSize: "1rem",
+                  margin: "1rem 0 0 0",
+                  padding: 0,
+                  fontWeight: 600,
+                }}
+              >
+                vote in the bachelor(ettes).
+                <br />
+                then, help them find love every week
+                <br />
+                by voting in their match.
+              </p>
+              <a href={DISCORD_INVITE_URL} target="_blank">
+                <Button style={{ marginTop: "2rem" }}>join our discord</Button>
+              </a>
+            </div>
+          </Intro>
+          <Intro />
+        </Section>
 
-      <Section
-        style={{
-          alignItems: "stretch",
-          position: "relative",
-          height: `calc(0.75 * 100vw)`,
-        }}
-      >
-        <div style={{ position: "absolute", inset: 0 }}>
-          <ClientOnly>
-            <TV />
-          </ClientOnly>
-        </div>
-        <Intro style={{ position: "relative", alignItems: "flex-end" }}>
-          <div
-            style={{
-              width: "500px",
-              background: "white",
-              padding: "3rem",
-              boxShadow: "1rem 1rem 0 black",
-            }}
-          >
-            <p
+        <Section style={{ position: "relative", background: "black" }}>
+          <div style={{ position: "absolute", inset: 0 }}>
+            <ClientOnly>
+              <Pipes />
+            </ClientOnly>
+          </div>
+          <Intro />
+          <Intro style={{ position: "relative" }}>
+            <div
               style={{
-                fontSize: "1.5rem",
-                lineHeight: 1.5,
-                margin: "0 0 1rem 0",
-                padding: 0,
-                fontWeight: 600,
+                width: "500px",
+                background: "black",
+                color: "white",
+                padding: "3rem",
+                boxShadow: "1rem 1rem 0 white",
               }}
             >
-              dropping soon:
+              <p
+                style={{
+                  fontSize: "1.5rem",
+                  lineHeight: 1.5,
+                  margin: "0 0 1rem 0",
+                  padding: 0,
+                }}
+              >
+                roadmap
+              </p>
+              <ul
+                style={{
+                  fontSize: "1rem",
+                  margin: "1rem 0 0 0",
+                  padding: 0,
+                }}
+              >
+                <li>
+                  Crowdfund
+                  <ul>
+                    <li>Pilot (Episode 0)</li>
+                    <li>Community-Driven Casting</li>
+                  </ul>
+                </li>
+
+                <li>
+                  Season 0
+                  <ul>
+                    <li>
+                      Episodes 1-6: Every week, find love for the bachelor(ette)
+                      of the episode
+                    </li>
+                    <li>
+                      Episode 7: Fan-Favorite couple goes on a second date
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </Intro>
+        </Section>
+
+        <Section style={{ color: "white", background: "black" }}>
+          <Intro style={{ alignItems: "center", textAlign: "center" }}>
+            <p>
+              be a founding member of the first decentralized media network
               <br />
-              co-create season 0
+              audience owned and audience governed.
             </p>
-            <p
-              style={{
-                fontSize: "1rem",
-                margin: "1rem 0 0 0",
-                padding: 0,
-                fontWeight: 600,
-              }}
-            >
-              vote in the bachelor(ettes).
-              <br />
-              then, help them find love every week
-              <br />
-              by voting in their match.
+            <p>
+              creating content that drives chaotic and entertaining social
+              experiences.
             </p>
+            <p>
+              mad realities is the MTV of a new kind of tv, with infinite
+              possibliites.
+            </p>
+            <p style={{ margin: "5rem 0" }}>create with us</p>
             <a href={DISCORD_INVITE_URL} target="_blank">
-              <Button style={{ marginTop: "2rem" }}>join our discord</Button>
+              <Button>join our discord</Button>
             </a>
-          </div>
-        </Intro>
-        <Intro />
-      </Section>
-
-      <Section style={{ position: "relative", background: "black" }}>
-        <div style={{ position: "absolute", inset: 0 }}>
-          <ClientOnly>
-            <Pipes />
-          </ClientOnly>
-        </div>
-        <Intro />
-        <Intro style={{ position: "relative" }}>
-          <div
-            style={{
-              width: "500px",
-              background: "black",
-              color: "white",
-              padding: "3rem",
-              boxShadow: "1rem 1rem 0 white",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "1.5rem",
-                lineHeight: 1.5,
-                margin: "0 0 1rem 0",
-                padding: 0,
-              }}
-            >
-              roadmap
-            </p>
-            <ul
-              style={{
-                fontSize: "1rem",
-                margin: "1rem 0 0 0",
-                padding: 0,
-              }}
-            >
-              <li>
-                Crowdfund
-                <ul>
-                  <li>Pilot (Episode 0)</li>
-                  <li>Community-Driven Casting</li>
-                </ul>
-              </li>
-
-              <li>
-                Season 0
-                <ul>
-                  <li>
-                    Episodes 1-6: Every week, find love for the bachelor(ette)
-                    of the episode
-                  </li>
-                  <li>Episode 7: Fan-Favorite couple goes on a second date</li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </Intro>
-      </Section>
-
-      <Section style={{ color: "white", background: "black" }}>
-        <Intro style={{ alignItems: "center", textAlign: "center" }}>
-          <p>
-            be a founding member of the first decentralized media network
-            <br />
-            audience owned and audience governed.
-          </p>
-          <p>
-            creating content that drives chaotic and entertaining social
-            experiences.
-          </p>
-          <p>
-            mad realities is the MTV of a new kind of tv, with infinite
-            possibliites.
-          </p>
-          <p style={{ margin: "5rem 0" }}>create with us</p>
-          <a href={DISCORD_INVITE_URL} target="_blank">
-            <Button>join our discord</Button>
-          </a>
-        </Intro>
-      </Section>
+          </Intro>
+        </Section>
+      </GlitterBackground>
 
       <Section>
         <Intro style={{ fontFamily: "serif", alignItems: "center" }}>
@@ -271,8 +272,19 @@ const Section = styled.div`
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  width: 94vw;
   height: 100vh;
+  margin: 3vw;
+  border-radius: 999999px 999999px 20px 20px;
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    inset: 1vw;
+    box-shadow: inset 0 0 0 2px white;
+    border-radius: 999999px 999999px 20px 20px;
+  }
 `;
 
 const WhiteSection = styled(Section)`

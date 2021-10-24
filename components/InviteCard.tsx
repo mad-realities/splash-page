@@ -37,6 +37,7 @@ const InviteCard = () => {
           )}deg) rotateY(${x * 30 - 15}deg)`,
           transformStyle: "preserve-3d",
           transformOrigin: "center center",
+          zIndex: 101
         }}
       >
         <div
