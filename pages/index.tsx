@@ -9,6 +9,7 @@ import TopNav from "../components/TopNav";
 
 import { DISCORD_INVITE_URL, CROWDFUND_URL } from "../constants/urls.js";
 import TV from "../components/TV";
+import Pipes from "../components/Pipes";
 import ClientOnly from "../components/ClientOnly";
 
 const Home: NextPage = () => {
@@ -141,55 +142,96 @@ const Home: NextPage = () => {
         <Intro />
       </Section>
 
-      <Section>
-        <Intro>
-          <div className="body-title">roadmap</div>
-          <div className="body-text">
-            Crowdfund
-            <br />
-            Pilot (Episode 0)
-            <br />
-            Community-Driven Casting
-            <br />
-            <br />
-            Season 0<br />
-            Episode 1-6: Every week, find love for the bachelor(ette) of the
-            episode
-            <br />
-            Episode 7: Fan-Favorite couple goes on a second date
-            <br />
+      <Section style={{ position: "relative", background: "black" }}>
+        <div style={{ position: "absolute", inset: 0 }}>
+          <ClientOnly>
+            <Pipes />
+          </ClientOnly>
+        </div>
+        <Intro />
+        <Intro style={{ position: "relative" }}>
+          <div
+            style={{
+              width: "500px",
+              background: "black",
+              color: "white",
+              padding: "3rem",
+              boxShadow: "1rem 1rem 0 white",
+            }}
+          >
+            <p
+              style={{
+                fontSize: "1.5rem",
+                lineHeight: 1.5,
+                margin: "0 0 1rem 0",
+                padding: 0,
+              }}
+            >
+              roadmap
+            </p>
+            <ul
+              style={{
+                fontSize: "1rem",
+                margin: "1rem 0 0 0",
+                padding: 0,
+              }}
+            >
+              <li>
+                Crowdfund
+                <ul>
+                  <li>Pilot (Episode 0)</li>
+                  <li>Community-Driven Casting</li>
+                </ul>
+              </li>
+
+              <li>
+                Season 0
+                <ul>
+                  <li>
+                    Episodes 1-6: Every week, find love for the bachelor(ette)
+                    of the episode
+                  </li>
+                  <li>Episode 7: Fan-Favorite couple goes on a second date</li>
+                </ul>
+              </li>
+            </ul>
           </div>
         </Intro>
       </Section>
 
-      <Section style={{ paddingBottom: "200px" }}>
-        <Intro>
-          <div className="body-title">
+      <Section style={{ color: "white", background: "black" }}>
+        <Intro style={{ alignItems: "center", textAlign: "center" }}>
+          <p>
             be a founding member of the first decentralized media network
             <br />
             audience owned and audience governed.
-          </div>
-          <div className="body-text">
-            audience owned and audience governed. creating content that drives
-            chaotic and entertaining social experiences.
-            <br />
-            <br />
+          </p>
+          <p>
+            creating content that drives chaotic and entertaining social
+            experiences.
+          </p>
+          <p>
             mad realities is the MTV of a new kind of tv, with infinite
             possibliites.
-          </div>
+          </p>
+          <p style={{ margin: "5rem 0" }}>create with us</p>
+          <a href={DISCORD_INVITE_URL} target="_blank">
+            <Button>join our discord</Button>
+          </a>
         </Intro>
       </Section>
 
-      <WhiteSection>
-        <div style={{ padding: "100px 0", textAlign: "center" }}>
-          <div className="body-title secondary">create with us</div>
-          <a href={DISCORD_INVITE_URL} target="_blank">
-            <DiscordButton>join our discord</DiscordButton>
-          </a>
-        </div>
-      </WhiteSection>
-
-      <ImageRepeat />
+      <Section>
+        <Intro style={{ fontFamily: "serif", alignItems: "center" }}>
+          <Image src="/simp-card.png" width="294" height="172" />
+          <p>u dropped this</p>
+          <img
+            src="https://hitwebcounter.com/counter/counter.php?page=7886950&style=0025&nbdigits=9&type=ip&initCount=0"
+            alt="web counter"
+          />
+          simps and counting
+        </Intro>
+      </Section>
     </Container>
   );
 };
@@ -290,10 +332,4 @@ const ImageContainer = styled.div`
   }
 `;
 
-const ImageRepeat = styled.div`
-  background-image: url("simp-card.png");
-  background-repeat: repeat;
-
-  height: 344px; // enough for two rows
-`;
 export default Home;
