@@ -96,7 +96,7 @@ const Home: NextPage = () => {
       </Section>
 
       <Section style={{ position: "relative" }}>
-        <div style={{ position: "absolute", inset: 0 }}>
+        <div style={{ position: "absolute", inset: 0, top: "30vh" }}>
             <Image src="/lines.png" layout="fill" objectFit="contain" className="image-overlay"/>
           </div>
         <Intro style={{ position: "relative", alignItems: "center" }}>
@@ -196,28 +196,55 @@ const Home: NextPage = () => {
       </Section>
 
       <Section>
+        <div
+          className="image-pinned"   
+          style={{marginLeft: "-20px"}}  
+        >
+          <Image 
+            src="/tv1.png" 
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
         <Intro style={{ alignItems: "center", textAlign: "center" }}>
           <h1 className="splash-page-h1">
             be a founding member of the first decentralized media network
           </h1>
           <p className="splash-page-p">
-            audience owned and audience governed.
-
-            creating content that drives chaotic and entertaining social
+            Audience owned and audience governed. Creating content that drives chaotic and entertaining social
             experiences.
           </p>
           <p className="splash-page-p">
-            mad realities is the MTV of a new kind of tv, with infinite
-            possibliites.
+            Mad Realities is the MTV of a new kind of TV, with infinite possibliites.
           </p>
-          <p className="splash-page-p" style={{ margin: "5rem 0" }}>create with us</p>
           <a href={DISCORD_INVITE_URL} target="_blank">
-            <Button>join our discord</Button>
+            <Button style={{marginTop: "1rem"}}>join our discord</Button>
           </a>
         </Intro>
+        <div
+          className="image-pinned"  
+          style={{marginRight: "-20px"}}     
+        >
+          <Image 
+            src="/tv2.png" 
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
       </Section>
 
-      <Section>
+      <Section
+        style={{
+          alignItems: "stretch",
+          position: "relative",
+          height: `calc(0.75 * 100vh)`,
+        }}
+      >
+        <div style={{ position: "absolute", inset: 0 }}>
+          <ClientOnly>
+            <TV />
+          </ClientOnly>
+        </div>
         <Intro style={{ fontFamily: "serif", alignItems: "center" }}>
           <Image src="/simp-card.png" width="294" height="172" />
           <p className="splash-page-p">u dropped this</p>

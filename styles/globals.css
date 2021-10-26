@@ -80,6 +80,12 @@ a:hover {
   color: #ad00ff;
 }
 
+.image-pinned {
+  height: 80vh;
+  width: 30vh;
+  position: relative;
+}
+
 @font-face {
   font-family: "Pricedown";
   src: url("/pricedown.otf");
