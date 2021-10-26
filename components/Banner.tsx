@@ -7,11 +7,11 @@ const Banner = () => {
       <Container>
         <MarqueeContainer>
             <Marquee gradient={false} speed={100}>
-                Get early access by buying a ticket through our crowdfund.
+                 Get early access by buying a ticket through our crowdfund. 
             </Marquee>
         </MarqueeContainer>
         <ImageContainer>
-            <Image src="/mad_realities_logo.png" height="106" width="526"/>
+            <Image src="/mad_realities_logo.png" height="79" width="391"/>
         </ImageContainer>
       </Container>
   );
@@ -26,7 +26,7 @@ const Container = styled.div`
 
 const ImageContainer = styled.div`
     position: absolute;
-    top: 2rem;
+    top: 2.25rem;
 `;
 
 const MarqueeContainer = styled.div`

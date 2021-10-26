@@ -42,7 +42,6 @@ const Home: NextPage = () => {
             {/* </div> */}
           </Intro>
         </Section>
-      </GlitterBackground>
 
       <Section
         style={{
@@ -65,22 +64,21 @@ const Home: NextPage = () => {
               boxShadow: "1rem 1rem 0 black",
             }}
           >
-            <p
-              style={{
-                fontSize: "1.5rem",
-                lineHeight: 1.5,
-                margin: "0 0 1rem 0",
-                padding: 0,
-                fontWeight: 600,
-              }}
-            >
-              dropping soon:
-              <br />
-              co-create season 0
-            </p>
+            {/* <p
+              // style={{
+              //   fontSize: "1.5rem",
+              //   lineHeight: 1.5,
+              //   margin: "0 0 1rem 0",
+              //   padding: 0,
+              //   fontWeight: 600,
+              // }}
+            // > */}
+            <h1 className="splash-page-h1 alt">
+              it starts with season 0
+            </h1>
+            {/* // </p> */}
             <p className="splash-page-p"
               style={{
-                fontWeight: 600,
                 color: "black"
               }}
             >
@@ -97,73 +95,122 @@ const Home: NextPage = () => {
         </Intro>
       </Section>
 
-      <Section style={{ position: "relative", background: "black" }}>
-        <Intro style={{ position: "relative" }}>
+      <Section style={{ position: "relative" }}>
+        <div style={{ position: "absolute", inset: 0 }}>
+            <Image src="/lines.png" layout="fill" objectFit="contain" className="image-overlay"/>
+          </div>
+        <Intro style={{ position: "relative", alignItems: "center" }}>
           <div
             style={{
-              width: "500px",
-              background: "black",
-              color: "white",
-              padding: "3rem",
-              boxShadow: "1rem 1rem 0 white",
+              // maxWidth: "500px",
+              // color: "white",
+              alignItems: "center",
+              textAlign: "center",
+              maxWidth: 600
+              // boxShadow: "1rem 1rem 0 white",
             }}
           >
-            <p
-              style={{
-                fontSize: "1.5rem",
-                lineHeight: 1.5,
-                margin: "0 0 1rem 0",
-                padding: 0,
-              }}
+            <h1
+              className="splash-page-h1"
+              // style={{
+              //   fontSize: "1.5rem",
+              //   lineHeight: 1.5,
+              //   margin: "0 0 1rem 0",
+              //   padding: 0,
+              // }}
             >
-              roadmap
-            </p>
-            <ul
+              come along for the journey
+            </h1>
+            <div style={{padding: "1rem 0"}}>
+            <span className="splash-page-p">
+                <span className="splash-page-highlighted-word pink-highlight-text">The Crowdfund</span>
+                <span className="splash-page-p">{" Backers will receive special NFTs that act as a ticket into the show."}</span>
+                <br />
+                <br />
+                <span className="splash-page-highlighted-word orange-highlight-text">Episode 0</span>
+                <span className="splash-page-p">{" We are starting this project off with a pilot, or as we like to call it, "}</span>
+                <span className="splash-page-highlighted-word orange-highlight-text">Episode 0</span>
+                <span className="splash-page-p">{". This November, be in the room where it happens."}</span>
+
+                <br/>
+                <br />
+
+                <span className="splash-page-highlighted-word yellow-highlight-text">NFT Ticket Drop</span>
+                <span className="splash-page-p">{" We will drop new tickets for purchase for those that did not get to participate in the initial crowdfund."}</span>
+
+                <br/>
+                <br />
+
+                <span className="splash-page-highlighted-word green-highlight-text">Community-Driven Casting Call</span>
+                <span className="splash-page-p">{" It is the community's job to nominate and collectively crowd-source contestants for the initial cast."}</span>
+
+                <br/>
+                <br />
+
+                <span className="splash-page-highlighted-word blue-highlight-text">Season 0</span>
+                <span className="splash-page-p">{" Season 0 will take place over 6 weeks "}</span>
+                <span className="splash-page-highlighted-word blue-highlight-text">Winter 2022</span>
+                <span className="splash-page-p">{" with new episodes aired every Sunday night. Vote in new contestants each week."}</span>
+
+                <br/>
+                <br />
+
+                <span className="splash-page-highlighted-word purple-highlight-text">The Mad Realities DAO</span>
+                <span className="splash-page-p">{" Down the line, "}</span>
+                <span className="splash-page-highlighted-word purple-highlight-text">Mad Realities</span>
+                <span className="splash-page-p">{" will be a DAO."}</span>
+            </span>
+            </div>
+              <a href={CROWDFUND_URL} target="_blank">
+                <Button style={{ marginTop: "1rem" }}>get your ticket</Button>
+              </a>
+
+            {/* <ul 
               style={{
                 fontSize: "1rem",
                 margin: "1rem 0 0 0",
                 padding: 0,
               }}
             >
-              <li>
+              <li className="splash-page-p">
                 Crowdfund
                 <ul>
-                  <li>Pilot (Episode 0)</li>
-                  <li>Community-Driven Casting</li>
+                  <li className="splash-page-p">Pilot (Episode 0)</li>
+                  <li className="splash-page-p">Community-Driven Casting</li>
                 </ul>
               </li>
 
-              <li>
+              <li className="splash-page-p">
                 Season 0
                 <ul>
-                  <li>
+                  <li className="splash-page-p">
                     Episodes 1-6: Every week, find love for the bachelor(ette)
                     of the episode
                   </li>
-                  <li>Episode 7: Fan-Favorite couple goes on a second date</li>
+                  <li className="splash-page-p">Episode 7: Fan-Favorite couple goes on a second date</li>
                 </ul>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </Intro>
       </Section>
 
-      <Section style={{ color: "white", background: "black" }}>
+      <Section>
         <Intro style={{ alignItems: "center", textAlign: "center" }}>
-          <p>
+          <h1 className="splash-page-h1">
             be a founding member of the first decentralized media network
-            <br />
+          </h1>
+          <p className="splash-page-p">
             audience owned and audience governed.
-          </p>
-          <p>
+
             creating content that drives chaotic and entertaining social
             experiences.
           </p>
-          <p>
+          <p className="splash-page-p">
             mad realities is the MTV of a new kind of tv, with infinite
             possibliites.
           </p>
-          <p style={{ margin: "5rem 0" }}>create with us</p>
+          <p className="splash-page-p" style={{ margin: "5rem 0" }}>create with us</p>
           <a href={DISCORD_INVITE_URL} target="_blank">
             <Button>join our discord</Button>
           </a>
@@ -173,7 +220,7 @@ const Home: NextPage = () => {
       <Section>
         <Intro style={{ fontFamily: "serif", alignItems: "center" }}>
           <Image src="/simp-card.png" width="294" height="172" />
-          <p>u dropped this</p>
+          <p className="splash-page-p">u dropped this</p>
           <img
             src="https://hitwebcounter.com/counter/counter.php?page=7886950&style=0025&nbdigits=9&type=ip&initCount=0"
             alt="web counter"
@@ -181,6 +228,7 @@ const Home: NextPage = () => {
           simps and counting
         </Intro>
       </Section>
+      </GlitterBackground>
     </Container>
   );
 };

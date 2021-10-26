@@ -24,6 +24,10 @@ a:hover {
   box-sizing: border-box;
 }
 
+.image-overlay {
+  mix-blend-mode: overlay;
+}
+
 .splash-page-h1 {
   font-size: 2.125rem;
   font-weight: 500;
@@ -31,6 +35,14 @@ a:hover {
   color: white;
   margin: 0;
   padding: 0 0 1rem 0; /* 1 rem padding on the bottom*/
+
+  @media (max-width: 768px) {
+    font-size: 1.875rem;
+  }
+}
+
+.splash-page-h1.alt {
+  color: black;
 }
 
 .splash-page-p {
@@ -38,6 +50,34 @@ a:hover {
   font-size: 1rem;
   margin: 0;
   padding: 1rem 0;
+}
+
+.splash-page-highlighted-word {
+  font-family: "Pricedown";
+}
+
+.pink-highlight-text {
+  color: #ff1f8c;
+}
+
+.orange-highlight-text {
+  color: #fead13;
+}
+
+.yellow-highlight-text {
+  color: #f9ff03;
+}
+
+.green-highlight-text {
+  color: #1def5e;
+}
+
+.blue-highlight-text {
+  color: #00b9f1;
+}
+
+.purple-highlight-text {
+  color: #ad00ff;
 }
 
 @font-face {

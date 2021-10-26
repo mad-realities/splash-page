@@ -72,6 +72,9 @@ const InviteCard = () => {
                 enablePan={false}
                 enableZoom={false}
               />
+                    <directionalLight intensity={0.5} />
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 15, 10]} angle={0.9} />
               <BadTVEffect></BadTVEffect>
             </Suspense>
           </Canvas>
@@ -104,11 +107,12 @@ const InviteCard = () => {
                 position: "relative",
                 userSelect: "none",
                 marginTop: "-1vh",
-                textAlignLast: "justify",
+                // textAlignLast: "justify",
                 width: '100%'
               }}
             >
-              Mad Realities season 0
+              {/* Mad Realities season 0 */}
+              mad realities
             </div>
             <div
               style={{
@@ -192,6 +196,8 @@ function Scene() {
     ref.current!.rotation.y = (Math.sin(a) - 0.5) / 4;
   });
 
+  console.log("rendering the rose")
+
   return (
     <group ref={ref}>
       <mesh
@@ -200,6 +206,7 @@ function Scene() {
         material-reflectivity={1}
         scale={13}
         position={[0, 0, -3.5]}
+        // position={[0, 0, -3.5]}
         rotation={[0.2, 0, 0]}
       />
     </group>
