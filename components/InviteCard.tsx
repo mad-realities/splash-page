@@ -22,15 +22,14 @@ const InviteCard = () => {
 
   return (
     <Container>
-      <div
+      <CardContainer
         style={{
           width: "50vh",
-          height: "70vh",
+          height: "60vh",
           position: "absolute",
           top: "50%",
           left: "50%",
-          marginTop: "-35vh",
-          marginLeft: "-25vh",
+          marginTop: "-25vh",
           transform: `perspective(1400px) rotateX(${-(
             y * 30 -
             15
@@ -42,8 +41,8 @@ const InviteCard = () => {
         <div
           style={{
             backgroundColor: "#0d1218",
-            width: "50vh",
-            height: "70vh",
+            width: "40vh",
+            height: "60vh",
             borderRadius: "30vh 30vh 10px 10px",
             overflow: "hidden",
             position: "relative",
@@ -155,7 +154,7 @@ const InviteCard = () => {
             />
           </div>
         </div>
-      </div>
+      </CardContainer>
     </Container>
   );
 };
@@ -164,6 +163,13 @@ const Container = styled.div`
   position: relative;
   min-height: 80vh;
   width: 50%;
+`;
+
+const CardContainer = styled.div`
+  margin-left: -19vh;
+  @media (max-width: 768px) {
+    margin-left: -19vh important!;
+  }
 `;
 
 export default InviteCard;

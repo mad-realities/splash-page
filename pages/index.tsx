@@ -6,6 +6,7 @@ import Head from "next/head";
 import InviteCard from "../components/InviteCard";
 import Banner from "../components/Banner";
 import TopNav from "../components/TopNav";
+import Button from "../components/Button";
 
 import { DISCORD_INVITE_URL, CROWDFUND_URL } from "../constants/urls.js";
 import TV from "../components/TV";
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <GlitterBackground>
-        <Background />
+        <NavyBackground />
         <Banner />
         <TopNav />
         <Section>
@@ -28,60 +29,17 @@ const Home: NextPage = () => {
             <InviteCard />
           </ClientOnly>
           <Intro>
-            <div style={{ width: "500px" }}>
-              <h1
-                style={{
-                  fontFamily: "Pricedown",
-                  color: "white",
-                  fontSize: "5rem",
-                  fontWeight: 400,
-                  margin: 0,
-                  padding: 0,
-                  textTransform: "uppercase",
-                }}
-              >
-                mad realities
+            {/* <div style={{ maxWidth: "500px" }}> */}
+              <h1 className="splash-page-h1">
+                a new interactive dating show that anyone can participate in, powered by crypto
               </h1>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "1.5rem",
-                  margin: "1rem 0",
-                  padding: 0,
-                }}
-              >
-                welcome to our genesis show
-              </p>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "1rem",
-                  margin: "1rem 0",
-                  padding: 0,
-                }}
-              >
-                a new interactive dating show that anyone can
-                <br />
-                participate in, powered by crypto.
-              </p>
-              <p
-                style={{
-                  color: "white",
-                  fontSize: "1rem",
-                  margin: 0,
-                  padding: 0,
-                }}
-              >
-                holders of an NFT rose ticket can vote in the cast,
-                <br />
-                decide outfits and scenes, and win exclusive prizes
-                <br />
-                for interacting.
+              <p className="splash-page-p">
+                Our shows will be powered by our community - holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
               </p>
               <a href={CROWDFUND_URL} target="_blank">
-                <Button style={{ marginTop: "2rem" }}>get your ticket</Button>
+                <Button style={{ marginTop: "1rem" }}>get your ticket</Button>
               </a>
-            </div>
+            {/* </div> */}
           </Intro>
         </Section>
       </GlitterBackground>
@@ -90,7 +48,7 @@ const Home: NextPage = () => {
         style={{
           alignItems: "stretch",
           position: "relative",
-          height: `calc(0.75 * 100vw)`,
+          height: `calc(0.75 * 100vh)`,
         }}
       >
         <div style={{ position: "absolute", inset: 0 }}>
@@ -101,7 +59,7 @@ const Home: NextPage = () => {
         <Intro style={{ position: "relative", alignItems: "flex-end" }}>
           <div
             style={{
-              width: "500px",
+              maxWidth: "500px",
               background: "white",
               padding: "3rem",
               boxShadow: "1rem 1rem 0 black",
@@ -120,12 +78,10 @@ const Home: NextPage = () => {
               <br />
               co-create season 0
             </p>
-            <p
+            <p className="splash-page-p"
               style={{
-                fontSize: "1rem",
-                margin: "1rem 0 0 0",
-                padding: 0,
                 fontWeight: 600,
+                color: "black"
               }}
             >
               vote in the bachelor(ettes).
@@ -135,20 +91,13 @@ const Home: NextPage = () => {
               by voting in their match.
             </p>
             <a href={DISCORD_INVITE_URL} target="_blank">
-              <Button style={{ marginTop: "2rem" }}>join our discord</Button>
+              <Button style={{ marginTop: "1rem" }}>join our discord</Button>
             </a>
           </div>
         </Intro>
-        <Intro />
       </Section>
 
       <Section style={{ position: "relative", background: "black" }}>
-        <div style={{ position: "absolute", inset: 0 }}>
-          <ClientOnly>
-            <Pipes />
-          </ClientOnly>
-        </div>
-        <Intro />
         <Intro style={{ position: "relative" }}>
           <div
             style={{
@@ -252,8 +201,8 @@ const GlitterBackground = styled.div`
   position: relative;
 `;
 
-const Background = styled.div`
-  background: url(glitter.gif);
+const NavyBackground = styled.div`
+  background-color: #08012F;
   background-size: cover;
   mix-blend-mode: screen;
   filter: blur(10px);
@@ -266,6 +215,20 @@ const Background = styled.div`
   pointer-events: none;
 `;
 
+// const Background = styled.div`
+//   background: url(glitter.gif);
+//   background-size: cover;
+//   mix-blend-mode: screen;
+//   filter: blur(10px);
+
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   pointer-events: none;
+// `;
+
 const Section = styled.div`
   display: flex;
   flex-flow: row;
@@ -273,6 +236,14 @@ const Section = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
+
+  @media (max-width: 768px) {
+    flex-flow: column;
+    align-items: center;
+    padding: 20px 30px;
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const WhiteSection = styled(Section)`
@@ -293,20 +264,26 @@ const Intro = styled.div`
 
   justify-content: center;
   align-items: flex-start;
-`;
 
-const Button = styled.button`
-  background-color: yellow;
-  border: 8px outset yellow;
-  padding: 12px 50px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  &:active {
-    background-color: goldenrod;
-    border: 8px inset goldenrod;
+  padding: 40px 40px;
+
+  @media (max-width: 768px) {
+    padding: 50px 0;
   }
 `;
+
+// const Button = styled.button`
+//   background-color: yellow;
+//   border: 8px outset yellow;
+//   padding: 12px 50px;
+//   font-weight: bold;
+//   font-size: 16px;
+//   cursor: pointer;
+//   &:active {
+//     background-color: goldenrod;
+//     border: 8px inset goldenrod;
+//   }
+// `;
 
 const DiscordButton = styled.button`
   background-color: C4C4C4;

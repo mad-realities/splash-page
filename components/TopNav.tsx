@@ -24,7 +24,7 @@ const Container = styled.div`
     top: 40px;
     z-index: 999;
 
-    padding: 40px 132px;
+    padding: 20px 30px;
 
     display: flex;
     flex-flow: row;
