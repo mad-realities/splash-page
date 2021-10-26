@@ -162,7 +162,7 @@ const InviteCard = () => {
 const Container = styled.div`
   position: relative;
   min-height: 80vh;
-  width: 50%;
+  width: 40%;
 `;
 
 const CardContainer = styled.div`
