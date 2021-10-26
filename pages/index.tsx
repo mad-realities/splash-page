@@ -161,8 +161,8 @@ const Home: NextPage = () => {
                 <span className="splash-page-p">{" will be a DAO."}</span>
             </span>
             </div>
-              <a href={CROWDFUND_URL} target="_blank">
-                <Button style={{ marginTop: "1rem" }}>get your ticket</Button>
+            <a href={CROWDFUND_URL} target="_blank">
+                <Button style={{ margin: "auto", marginTop: "2rem" }}>get your ticket</Button>
               </a>
 
             {/* <ul 

@@ -13,6 +13,7 @@ const Container = styled.div`
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
+    width: fit-content;
     &:active {
         background-color: goldenrod;
         border: 8px inset goldenrod;
