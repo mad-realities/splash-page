@@ -80,10 +80,16 @@ a:hover {
   color: #ad00ff;
 }
 
-.image-pinned {
+.tv-image-container {
   height: 80vh;
   width: 30vh;
   position: relative;
+}
+
+.image-hidden-mobile {
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 @font-face {

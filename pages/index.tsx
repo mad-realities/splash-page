@@ -29,17 +29,15 @@ const Home: NextPage = () => {
             <InviteCard />
           </ClientOnly>
           <Intro>
-            {/* <div style={{ maxWidth: "500px" }}> */}
-              <h1 className="splash-page-h1">
-                a new interactive dating show that anyone can participate in, powered by crypto
-              </h1>
-              <p className="splash-page-p">
-                Our shows will be powered by our community - holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
-              </p>
-              <a href={CROWDFUND_URL} target="_blank">
-                <Button style={{ marginTop: "1rem" }}>get your ticket</Button>
-              </a>
-            {/* </div> */}
+            <h1 className="splash-page-h1">
+              a new interactive dating show that anyone can participate in, powered by crypto
+            </h1>
+            <p className="splash-page-p">
+              Our shows will be powered by our community - holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
+            </p>
+            <a href={CROWDFUND_URL} target="_blank">
+              <Button style={{ marginTop: "1rem" }}>get your ticket</Button>
+            </a>
           </Intro>
         </Section>
 
@@ -64,29 +62,15 @@ const Home: NextPage = () => {
               boxShadow: "1rem 1rem 0 black",
             }}
           >
-            {/* <p
-              // style={{
-              //   fontSize: "1.5rem",
-              //   lineHeight: 1.5,
-              //   margin: "0 0 1rem 0",
-              //   padding: 0,
-              //   fontWeight: 600,
-              // }}
-            // > */}
             <h1 className="splash-page-h1 alt">
               it starts with season 0
             </h1>
-            {/* // </p> */}
             <p className="splash-page-p"
               style={{
                 color: "black"
               }}
             >
-              vote in the bachelor(ettes).
-              <br />
-              then, help them find love every week
-              <br />
-              by voting in their match.
+              Help our contestants find love by voting in new people each week. Season Zero will take place over 6 weeks this Winter with new episodes aired every Sunday night.
             </p>
             <a href={DISCORD_INVITE_URL} target="_blank">
               <Button style={{ marginTop: "1rem" }}>join our discord</Button>
@@ -102,22 +86,13 @@ const Home: NextPage = () => {
         <Intro style={{ position: "relative", alignItems: "center" }}>
           <div
             style={{
-              // maxWidth: "500px",
-              // color: "white",
               alignItems: "center",
               textAlign: "center",
               maxWidth: 600
-              // boxShadow: "1rem 1rem 0 white",
             }}
           >
             <h1
               className="splash-page-h1"
-              // style={{
-              //   fontSize: "1.5rem",
-              //   lineHeight: 1.5,
-              //   margin: "0 0 1rem 0",
-              //   padding: 0,
-              // }}
             >
               come along for the journey
             </h1>
@@ -163,7 +138,7 @@ const Home: NextPage = () => {
             </div>
             <a href={CROWDFUND_URL} target="_blank">
                 <Button style={{ margin: "auto", marginTop: "2rem" }}>get your ticket</Button>
-              </a>
+            </a>
 
             {/* <ul 
               style={{
@@ -197,7 +172,7 @@ const Home: NextPage = () => {
 
       <Section>
         <div
-          className="image-pinned"   
+          className="tv-image-container image-hidden-mobile"   // TODO: display properly on mobile
           style={{marginLeft: "-20px"}}  
         >
           <Image 
@@ -222,7 +197,7 @@ const Home: NextPage = () => {
           </a>
         </Intro>
         <div
-          className="image-pinned"  
+          className="tv-image-container image-hidden-mobile"  // TODO: display properly on mobile
           style={{marginRight: "-20px"}}     
         >
           <Image 

@@ -35,6 +35,12 @@ const Container = styled.div`
     font-size: 18px;
     font-weight: bold;
 
+    @media (max-width: 768px) {
+        top: 20px;
+        padding: 20px 20px;
+        font-size: 15px;
+    }
+
     > div {
         flex: 1;
     }
