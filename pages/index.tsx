@@ -35,9 +35,9 @@ const Home: NextPage = () => {
             <p className="splash-page-p">
               Our shows will be powered by our community - holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
             </p>
-            <a href={CROWDFUND_URL} target="_blank">
-              <Button style={{ marginTop: "1rem" }}>get your ticket</Button>
-            </a>
+            <ButtonLink href={CROWDFUND_URL} target="_blank">
+              get your ticket
+            </ButtonLink>
           </Intro>
         </Section>
 
@@ -45,7 +45,7 @@ const Home: NextPage = () => {
         style={{
           alignItems: "stretch",
           position: "relative",
-          height: `calc(0.75 * 100vh)`,
+          minHeight: "75vh",
         }}
       >
         <div style={{ position: "absolute", inset: 0 }}>
@@ -53,13 +53,15 @@ const Home: NextPage = () => {
             <TV />
           </ClientOnly>
         </div>
-        <Intro style={{ position: "relative", alignItems: "flex-end" }}>
+        <TVStatic style={{ position: "relative", alignItems: 'center' }}>
           <div
             style={{
               maxWidth: "500px",
               background: "white",
               padding: "3rem",
               boxShadow: "1rem 1rem 0 black",
+              display: 'flex',
+              flexFlow: 'column',
             }}
           >
             <h1 className="splash-page-h1 alt">
@@ -72,11 +74,15 @@ const Home: NextPage = () => {
             >
               Help our contestants find love by voting in new people each week. Season Zero will take place over 6 weeks this Winter with new episodes aired every Sunday night.
             </p>
-            <a href={DISCORD_INVITE_URL} target="_blank">
-              <Button style={{ marginTop: "1rem" }}>join our discord</Button>
-            </a>
+            <ButtonLink href={DISCORD_INVITE_URL} target="_blank">
+              join our discord
+            </ButtonLink>
+            
           </div>
-        </Intro>
+          <div style={{ position: 'relative', height: '50vh', width: '100%'}}>
+            <Image src="/candidates.png" layout="fill" objectFit="contain" />
+            </div>
+        </TVStatic>
       </Section>
 
       <Section style={{ position: "relative" }}>
@@ -86,6 +92,8 @@ const Home: NextPage = () => {
         <Intro style={{ position: "relative", alignItems: "center" }}>
           <div
             style={{
+              display: 'flex',
+              flexFlow: 'column',
               alignItems: "center",
               textAlign: "center",
               maxWidth: 600
@@ -136,36 +144,9 @@ const Home: NextPage = () => {
                 <span className="splash-page-p">{" will be a DAO."}</span>
             </span>
             </div>
-            <a href={CROWDFUND_URL} target="_blank">
-                <Button style={{ margin: "auto", marginTop: "2rem" }}>get your ticket</Button>
-            </a>
-
-            {/* <ul 
-              style={{
-                fontSize: "1rem",
-                margin: "1rem 0 0 0",
-                padding: 0,
-              }}
-            >
-              <li className="splash-page-p">
-                Crowdfund
-                <ul>
-                  <li className="splash-page-p">Pilot (Episode 0)</li>
-                  <li className="splash-page-p">Community-Driven Casting</li>
-                </ul>
-              </li>
-
-              <li className="splash-page-p">
-                Season 0
-                <ul>
-                  <li className="splash-page-p">
-                    Episodes 1-6: Every week, find love for the bachelor(ette)
-                    of the episode
-                  </li>
-                  <li className="splash-page-p">Episode 7: Fan-Favorite couple goes on a second date</li>
-                </ul>
-              </li>
-            </ul> */}
+            <ButtonLink href={CROWDFUND_URL} target="_blank">
+                get your ticket
+            </ButtonLink>
           </div>
         </Intro>
       </Section>
@@ -193,7 +174,7 @@ const Home: NextPage = () => {
             Mad Realities is the MTV of a new kind of TV, with infinite possibliites.
           </p>
           <a href={DISCORD_INVITE_URL} target="_blank">
-            <Button style={{marginTop: "1rem"}}>join our discord</Button>
+            join our discord
           </a>
         </Intro>
         <div
@@ -212,7 +193,7 @@ const Home: NextPage = () => {
         style={{
           alignItems: "stretch",
           position: "relative",
-          height: `calc(0.75 * 100vh)`,
+          height: '75vh',
         }}
       >
         <div style={{ position: "absolute", inset: 0 }}>
@@ -235,11 +216,26 @@ const Home: NextPage = () => {
   );
 };
 
+const ButtonLink = styled.a`
+  background-color: yellow;
+  border: 8px outset yellow;
+  padding: 12px 50px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 2rem;
+  text-align: center;
+  &:active {
+      background-color: goldenrod;
+      border: 8px inset goldenrod;
+  }
+`;
+
 const Container = styled.div`
   display: flex;
   flex-flow: column;
   overflow-x: hidden;
-  r
 `;
 
 const GlitterBackground = styled.div`
@@ -265,20 +261,6 @@ const NavyBackground = styled.div`
   pointer-events: none;
 `;
 
-// const Background = styled.div`
-//   background: url(glitter.gif);
-//   background-size: cover;
-//   mix-blend-mode: screen;
-//   filter: blur(10px);
-
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   pointer-events: none;
-// `;
-
 const Section = styled.div`
   display: flex;
   flex-flow: row;
@@ -291,7 +273,7 @@ const Section = styled.div`
     flex-flow: column;
     align-items: center;
     padding: 20px 30px;
-    height: 100%;
+    height: unset;
     width: 100%;
   }
 `;
@@ -319,43 +301,19 @@ const Intro = styled.div`
 
   @media (max-width: 768px) {
     padding: 50px 0;
+
+    > a {
+      align-self: center;
+    }
   }
 `;
 
-// const Button = styled.button`
-//   background-color: yellow;
-//   border: 8px outset yellow;
-//   padding: 12px 50px;
-//   font-weight: bold;
-//   font-size: 16px;
-//   cursor: pointer;
-//   &:active {
-//     background-color: goldenrod;
-//     border: 8px inset goldenrod;
-//   }
-// `;
-
-const DiscordButton = styled.button`
-  background-color: C4C4C4;
-  border-radius: 4px;
-  border: none;
-  padding: 12px 50px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
+const TVStatic = styled(Intro)`
+  display: flex;
+  flex-flow: row;
 
   @media (max-width: 768px) {
-    padding: 12px 40px;
-  }
-`;
-
-const ImageContainer = styled.div`
-  position: relative;
-  flex: 1;
-
-  @media (max-width: 768px) {
-    display: none;
+    flex-flow: column;
   }
 `;
 
