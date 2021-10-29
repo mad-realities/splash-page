@@ -24,7 +24,7 @@ const Container = styled.div`
     top: 40px;
     z-index: 999;
 
-    padding: 40px 132px;
+    padding: 20px 30px;
 
     display: flex;
     flex-flow: row;
@@ -34,6 +34,12 @@ const Container = styled.div`
     color: white;
     font-size: 18px;
     font-weight: bold;
+
+    @media (max-width: 768px) {
+        top: 20px;
+        padding: 20px 20px;
+        font-size: 15px;
+    }
 
     > div {
         flex: 1;

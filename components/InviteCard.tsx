@@ -1,40 +1,52 @@
-import React, { Suspense, useRef }  from 'react';
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useCubeTexture, useFBX } from "@react-three/drei";
 import { Glitch, EffectComposer, Bloom } from "@react-three/postprocessing";
 // @ts-ignore
 import { GlitchMode, Resizer, KernelSize } from "postprocessing";
-import "vanilla-tilt";
+import BadTVEffect from "./BadTVEffect";
 
 const InviteCard = () => {
-    return (
-        <Container>
-      <div
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+
+  useEffect(() => {
+    const listener = (e: MouseEvent) => {
+      setX(e.pageX / window.innerWidth);
+      setY(e.pageY / window.innerHeight);
+    };
+    window.addEventListener("mousemove", listener);
+    return () => window.removeEventListener("mousemove", listener);
+  }, []);
+
+  return (
+    <Container>
+      <CardContainer
         style={{
           width: "50vh",
-          height: "70vh",
+          height: "60vh",
           position: "absolute",
           top: "50%",
           left: "50%",
-          marginTop: "-35vh",
-          marginLeft: "-25vh",
+          marginTop: "-25vh",
+          transform: `perspective(1400px) rotateX(${-(
+            y * 30 -
+            15
+          )}deg) rotateY(${x * 30 - 15}deg)`,
+          transformStyle: "preserve-3d",
+          transformOrigin: "center center",
         }}
       >
         <div
           style={{
             backgroundColor: "#0d1218",
-            width: "50vh",
-            height: "70vh",
+            width: "40vh",
+            height: "60vh",
             borderRadius: "30vh 30vh 10px 10px",
             overflow: "hidden",
             position: "relative",
           }}
-          data-tilt
-          data-tilt-glare-prerender
-          data-tilt-glare
-          data-tilt-reverse
-          data-tilt-max-glare="0.5"
         >
           <div
             style={{
@@ -47,7 +59,11 @@ const InviteCard = () => {
               height: "100%",
             }}
           />
-          <Canvas dpr={2} style={{ position: "absolute" }}>
+          <Canvas
+            dpr={typeof window !== "undefined" ? window.devicePixelRatio : 1}
+            style={{ position: "absolute", width: "100%", height: "100%" }}
+            resize={{ scroll: false }}
+          >
             <Suspense fallback={null}>
               <Scene />
               <OrbitControls
@@ -56,10 +72,10 @@ const InviteCard = () => {
                 enablePan={false}
                 enableZoom={false}
               />
-              <EffectComposer>
-                <Glitch />
-                <Bloom intensity={0.5} luminanceThreshold={0.5} />
-              </EffectComposer>
+                    <directionalLight intensity={0.5} />
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 15, 10]} angle={0.9} />
+              <BadTVEffect></BadTVEffect>
             </Suspense>
           </Canvas>
           <div
@@ -84,66 +100,38 @@ const InviteCard = () => {
             <div
               style={{
                 color: "#fff2bd",
-                fontFamily: "Pilowlava",
-                fontSize: "5vh",
+                fontFamily: "Outward",
+                fontSize: "13vh",
                 textTransform: "uppercase",
-                padding: "0 2vh 2vh 2vh",
+                padding: "2vh 2vh 0 2vh",
                 position: "relative",
+                userSelect: "none",
+                marginTop: "-1vh",
+                // textAlignLast: "justify",
+                width: '100%'
               }}
             >
-              Mad Realities
-              <div
-                style={{
-                  fontFamily: "system-ui",
-                  fontSize: "1vh",
-                  position: "absolute",
-                  right: "2vh",
-                  textAlign: "right",
-                  bottom: "2vh",
-                  fontWeight: 600,
-                }}
-              >
-                SEASON 0 PASS
-                <br />
-                LIMITED AVAILABILITY
-              </div>
+              {/* Mad Realities season 0 */}
+              mad realities
             </div>
             <div
               style={{
-                fontFamily: "system-ui",
-                padding: "2vh",
+                padding: "2vh 2vh 1.5vh 2vh",
                 backgroundColor: "#d39bff",
                 color: "#490081",
                 fontWeight: 600,
                 fontSize: "3vh",
                 display: "flex",
                 flexDirection: "column",
+                userSelect: "none",
               }}
             >
               <span style={{ borderTop: "1px solid", paddingTop: "0.5vh" }}>
                 UNIQUE ¹⁄₁
               </span>
-              <div
-                style={{
-                  fontSize: "0.5vh",
-                  position: "absolute",
-                  width: "14vh",
-                  overflow: "hidden",
-                  right: "2vh",
-                  textAlign: "justify",
-                  bottom: "2vh",
-                  fontWeight: 400,
-                  letterSpacing: -0.1,
-                }}
-              >
-                Put some random text in here, not sure if it needs to say
-                anything or if it is just cool to have little tiny text
-                everywhere. It kinda seems like the latter~
-              </div>
             </div>
           </div>
           <div
-            className="js-tilt-glare"
             style={{
               position: "absolute",
               top: "0",
@@ -155,60 +143,72 @@ const InviteCard = () => {
             }}
           >
             <div
-              className="js-tilt-glare-inner"
               style={{
                 position: "absolute",
                 top: "50%",
                 left: "50%",
                 pointerEvents: "none",
                 backgroundImage: `linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%)`,
-                transform: "rotate(180deg) translate(-50%, -50%)",
+                transform: `rotate(${x * 180 - 90}deg) translate(-50%, -50%)`,
                 transformOrigin: "0% 0%",
                 width: "100vh",
                 height: "140vh",
-                opacity: "0",
+                opacity: (1 - y) / 2,
               }}
             />
           </div>
         </div>
-      </div>
-      </Container>
-    )
+      </CardContainer>
+    </Container>
+  );
 };
 
 const Container = styled.div`
   position: relative;
   min-height: 80vh;
-  width: 50%;
+  width: 40%;
+`;
+
+const CardContainer = styled.div`
+  margin-left: -19vh;
+  @media (max-width: 768px) {
+    margin-left: -19vh important!;
+  }
 `;
 
 export default InviteCard;
 
 function Scene() {
-    const {
-      // @ts-ignore
-      children: [{ geometry }],
-    } = useFBX("rose.fbx");
-    const envMap = useCubeTexture(
-      ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],
-      { path: "/" }
-    );
-    const ref = useRef<THREE.Group>();
-    useFrame(({ clock }) => {
-      const a = clock.getElapsedTime();
-      ref.current!.rotation.y = (Math.sin(a) - 0.5) / 4;
-    });
-    return (
-      <group ref={ref}>
-        <mesh
-          geometry={geometry}
-          material-envMap={envMap}
-          material-reflectivity={1}
-          scale={13}
-          position={[0, 0, -3.5]}
-          rotation={[0.2, 0, 0]}
-        />
-      </group>
-    );
-  }
-  
+  const {
+    // @ts-ignore
+    children: [{ geometry }],
+  } = useFBX("rose.fbx");
+
+  const envMap = useCubeTexture(
+    ["px.png", "nx.png", "py.png", "ny.png", "pz.png", "nz.png"],
+    { path: "/" }
+  );
+
+  const ref = useRef<THREE.Group>();
+
+  useFrame(({ clock }) => {
+    const a = clock.getElapsedTime();
+    ref.current!.rotation.y = (Math.sin(a) - 0.5) / 4;
+  });
+
+  console.log("rendering the rose")
+
+  return (
+    <group ref={ref}>
+      <mesh
+        geometry={geometry}
+        material-envMap={envMap}
+        material-reflectivity={1}
+        scale={13}
+        position={[0, 0, -3.5]}
+        // position={[0, 0, -3.5]}
+        rotation={[0.2, 0, 0]}
+      />
+    </group>
+  );
+}

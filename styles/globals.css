@@ -2,47 +2,150 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  cursor: url("../public/holographic_pixel_cursor.png"), auto;
+  font-family: "Helvetica", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  cursor: image-set("/cursor.png" 1x, "/cursor@2x.png" 2x), auto;
 }
 
 a:hover,
 button:hover {
-  cursor: url("../public/holographic_pixel_pointer.png"), pointer;
+  cursor: image-set("/pointer.png" 1x, "/pointer@2x.png" 2x), pointer;
 }
 
 a {
   color: inherit;
   text-decoration: none;
 }
-
-.body-title {
-  font-size: 34px;
-  font-weight: bold;
-  color: #d39bff;
-  margin-bottom: 32px;
-  font-family: system-ui;
-}
-
-.body-title.secondary {
-  color: #490081 !important;
-}
-
-.body-text {
-  font-weight: 400 !important;
-  font-size: 18px;
-  color: white;
-  font-family: system-ui;
+a:hover {
+  color: magenta;
 }
 
 * {
   box-sizing: border-box;
 }
 
+.image-overlay {
+  mix-blend-mode: overlay;
+}
+
+.splash-page-h1 {
+  font-size: 2.125rem;
+  font-weight: 500;
+  font-family: "Pricedown";
+  color: white;
+  margin: 0;
+  padding: 0 0 1rem 0; /* 1 rem padding on the bottom*/
+}
+
+@media (max-width: 768px) {
+  .splash-page-h1 {
+    font-size: 1.875rem;
+  }
+}
+
+.splash-page-h1.alt {
+  color: black;
+}
+
+.splash-page-p {
+  color: white;
+  font-size: 1rem;
+  margin: 0;
+  padding: 1rem 0;
+}
+
+.splash-page-highlighted-word {
+  font-family: "Pricedown";
+}
+
+.pink-highlight-text {
+  color: #ff1f8c;
+}
+
+.orange-highlight-text {
+  color: #fead13;
+}
+
+.yellow-highlight-text {
+  color: #f9ff03;
+}
+
+.green-highlight-text {
+  color: #1def5e;
+}
+
+.blue-highlight-text {
+  color: #00b9f1;
+}
+
+.purple-highlight-text {
+  color: #ad00ff;
+}
+
+.tv-image-container {
+  height: 80vh;
+  width: 30vh;
+  position: relative;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .tv-image-container {
+    height: 100vw;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-hidden-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .image-only-mobile {
+    display: none;
+  }
+}
+
 @font-face {
-  font-family: "Pilowlava";
-  src: url("/Pilowlava-Regular.woff");
+  font-family: "Pricedown";
+  src: url("/pricedown.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outward";
+  src: url("/outward.woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sporting Grotesque";
+  src: url("/SportingGrotesque-Regular.otf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sporting Grotesque";
+  src: url("/SportingGrotesque-Bold.otf");
+  font-style: bold;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Steps Mono";
+  src: url("/Steps-Mono.otf");
   font-style: normal;
   font-weight: 400;
   font-display: swap;

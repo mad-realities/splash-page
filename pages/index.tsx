@@ -1,14 +1,17 @@
 import type { NextPage } from "next";
 import styled from "@emotion/styled";
-import Image from 'next/image';
-import Head from 'next/head';
-import Link from 'next/link';
+import Image from "next/image";
+import Head from "next/head";
 
-import InviteCard from '../components/InviteCard';
-import Banner from '../components/Banner';
-import TopNav from '../components/TopNav';
+import InviteCard from "../components/InviteCard";
+import Banner from "../components/Banner";
+import TopNav from "../components/TopNav";
 
-import { DISCORD_INVITE_URL, CROWDFUND_URL } from '../constants/urls.js';
+
+import { DISCORD_INVITE_URL, CROWDFUND_URL } from "../constants/urls.js";
+import TV from "../components/TV";
+import Pipes from "../components/Pipes";
+import ClientOnly from "../components/ClientOnly";
 
 const Home: NextPage = () => {
   return (
@@ -16,83 +19,285 @@ const Home: NextPage = () => {
       <Head>
         <title>mad realities</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="/cover-photo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/cover-photo.png" />
+        <meta name="twitter:title" content="mad realities" />
+        <meta name="twitter:description" content="a new interactive dating show that anyone can participate in, powered by crypto" />
       </Head>
       <GlitterBackground>
-      <Background />
-      <Banner />
-      <TopNav />
-      <Section>
-        <InviteCard />
-        <Intro>
-            <div className="body-title">welcome to our genesis show: the colosseum  🎬</div>
-            <div className="body-text">
-            a new interactive dating show that anyone can participate in, powered by crypto. <br/><br/>
-            holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
-            </div>
-            <a href={CROWDFUND_URL} target="_blank"> 
-              <Button>get your ticket</Button>
-            </a>
-        </Intro>
-      </Section>
-
-      <Section style={{alignItems: "stretch"}}>
+        <NavyBackground />
+        <Banner />
+        <TopNav />
+        <Section>
+          <ClientOnly>
+            <InviteCard />
+          </ClientOnly>
           <Intro>
-            <div className="body-title">dropping soon: co-create season 0</div>
-            <div className="body-text">
-            vote in the bachelor(ettes).<br/>
-            then, help them find love every week by voting in their match.
-            </div>
-            <a href={DISCORD_INVITE_URL} target="_blank">
-              <Button>join our discord</Button>
-            </a>
+            <h1 className="splash-page-h1">
+              a new interactive dating show that anyone can participate in, powered by crypto
+            </h1>
+            <p className="splash-page-p">
+              Our shows will be powered by our community - holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
+            </p>
+            <ButtonLink href={CROWDFUND_URL} target="_blank" style={{ backgroundColor: "#FF1F8C", color: "#000", border: "8px outset #FF1F8C"}}>
+              get your ticket
+            </ButtonLink>
           </Intro>
-          <ImageContainer>
-            <Image src="/candidate-cards.png" alt="candidate cards" layout="fill" objectFit="contain"  />
-          </ImageContainer>
+        </Section>
+
+      <Section
+        style={{
+          alignItems: "stretch",
+          position: "relative",
+          minHeight: "75vh",
+        }}
+      >
+        <div style={{ position: "absolute", inset: 0 }}>
+          <ClientOnly>
+            <TV />
+          </ClientOnly>
+        </div>
+        <TVStatic style={{ position: "relative", alignItems: 'center' }}>
+          <div
+            style={{
+              maxWidth: "500px",
+              background: "white",
+              padding: "3rem",
+              boxShadow: "1rem 1rem 0 black",
+              display: 'flex',
+              flexFlow: 'column',
+            }}
+          >
+            <h1 className="splash-page-h1 alt">
+              it starts with season 0
+            </h1>
+            <p className="splash-page-p"
+              style={{
+                color: "black"
+              }}
+            >
+              Help our contestants find love by voting in new people each week. Season Zero will take place over 6 weeks this Winter with new episodes aired every Sunday night.
+            </p>
+            <ButtonLink href={DISCORD_INVITE_URL} target="_blank" style={{ backgroundColor: "#000000", color: "#FF1F8C", border: "8px outset #373737"}}>
+              join our discord
+            </ButtonLink>
+            
+          </div>
+          <CandidatesContainer>
+            <Image src="/candidates.png" layout="fill" objectFit="contain" />
+            </CandidatesContainer>
+        </TVStatic>
       </Section>
 
+      <Section style={{ position: "relative" }}>
+        <div style={{ position: "absolute", inset: 0, top: "30vh" }}>
+            <Image src="/lines.png" layout="fill" className="image-overlay"/>
+          </div>
+        <Intro style={{ position: "relative", alignItems: "center" }}>
+          <div
+            style={{
+              display: 'flex',
+              flexFlow: 'column',
+              alignItems: "center",
+              textAlign: "center",
+              maxWidth: 600
+            }}
+          >
+            <h1
+              className="splash-page-h1"
+            >
+              come along for the journey
+            </h1>
+            <div style={{padding: "1rem 0"}}>
+            <span className="splash-page-p">
+                <span className="splash-page-highlighted-word pink-highlight-text">The Crowdfund</span>
+                <span className="splash-page-p">{" Backers will receive special NFTs that act as a ticket into the show."}</span>
+                <br />
+                <br />
+                <span className="splash-page-highlighted-word orange-highlight-text">Episode 0</span>
+                <span className="splash-page-p">{" We are starting this project off with a pilot, or as we like to call it, "}</span>
+                <span className="splash-page-highlighted-word orange-highlight-text">Episode 0</span>
+                <span className="splash-page-p">{". This November, be in the room where it happens."}</span>
+
+                <br/>
+                <br />
+
+                <span className="splash-page-highlighted-word yellow-highlight-text">NFT Ticket Drop</span>
+                <span className="splash-page-p">{" We will drop new tickets for purchase for those that did not get to participate in the initial crowdfund."}</span>
+
+                <br/>
+                <br />
+
+                <span className="splash-page-highlighted-word green-highlight-text">Community-Driven Casting Call</span>
+                <span className="splash-page-p">{" It is the community's job to nominate and collectively crowd-source contestants for the initial cast."}</span>
+
+                <br/>
+                <br />
+
+                <span className="splash-page-highlighted-word blue-highlight-text">Season 0</span>
+                <span className="splash-page-p">{" Season 0 will take place over 6 weeks "}</span>
+                <span className="splash-page-highlighted-word blue-highlight-text">Winter 2022</span>
+                <span className="splash-page-p">{" with new episodes aired every Sunday night. Vote in new contestants each week."}</span>
+
+                <br/>
+                <br />
+
+                <span className="splash-page-highlighted-word purple-highlight-text">The Mad Realities DAO</span>
+                <span className="splash-page-p">{" Down the line, "}</span>
+                <span className="splash-page-highlighted-word purple-highlight-text">Mad Realities</span>
+                <span className="splash-page-p">{" will be a DAO."}</span>
+            </span>
+            </div>
+            <ButtonLink href={CROWDFUND_URL} target="_blank" style={{ backgroundColor: "#63FF00", color: "#000", border: "8px outset #63FF00"}}>
+                get your ticket
+            </ButtonLink>
+          </div>
+        </Intro>
+      </Section>
+
+      <WebOnly>
       <Section>
-        <Intro>
-          <div className="body-title">roadmap</div>
-          <div className="body-text">
-            Crowdfund<br/>
-            Pilot (Episode 0)<br/>
-            Community-Driven Casting<br/><br/>
+        
+        <div
+          className="tv-image-container"   // TODO: display properly on mobile
+          style={{marginLeft: "-20px"}}  
+        >
+          <Image 
+            src="/tv1.png" 
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
+        <Intro style={{ alignItems: "center", textAlign: "center" }}>
+          <h1 className="splash-page-h1">
+            be a founding member of the first decentralized media network
+          </h1>
+          <p className="splash-page-p font-bold">
+            Audience owned and audience governed. Creating content that drives chaotic and entertaining social
+            experiences.
+          </p>
+          <p className="splash-page-p font-bold">
+            Mad Realities is the MTV of a new kind of TV, with infinite possibliites.
+          </p>
+          <ButtonLink href={DISCORD_INVITE_URL} target="_blank" style={{ backgroundColor: "#00B9F1", color: "black", border: "8px outset #00B9F1"}}>
+            join our discord
+          </ButtonLink>
+        </Intro>
+        <div
+          className="tv-image-container image-hidden-mobile"  // TODO: display properly on mobile
+          style={{marginRight: "-20px"}}     
+        >
+          <Image 
+            src="/tv2.png" 
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
+       
+        
+      </Section>
+      </WebOnly>
 
-            Season 0<br/>
-            Episode 1-6: Every week, find love for the bachelor(ette) of the episode<br/>
-            Episode 7: Fan-Favorite couple goes on a second date<br/>
-          </div>
+      <MobileOnly>
+          <Section style={{ padding: '30px 0 0 0', flexFlow: 'row'}}>
+          <div
+          className="tv-image-container" 
+          style={{ marginLeft: '-10px'}}
+        >
+          <Image 
+            src="/tv1.png" 
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
+        <h1 style={{ padding: '0 20px', textAlign: 'center'}} className="splash-page-h1">
+            be a founding member of the first decentralized media network
+          </h1>
+          </Section>
+        </MobileOnly>
+
+        <MobileOnly>
+        <Section style={{ padding: '0 0 50px 0', flexFlow: 'row'}}>
+            <div style={{ display: 'flex', flexFlow: 'column', padding: '0 30px', textAlign: 'center', fontWeight: 'bold'}}>
+            <p className="splash-page-p">
+            Audience owned and audience governed. Creating content that drives chaotic and entertaining social
+            experiences.
+          </p>
+          <p className="splash-page-p">
+            Mad Realities is the MTV of a new kind of TV, with infinite possibliites.
+          </p>
+          <ButtonLink href={DISCORD_INVITE_URL} target="_blank" style={{ backgroundColor: "#00B9F1", color: "black", border: "8px outset #00B9F1"}}>
+            join our discord
+          </ButtonLink>
+            </div>
+
+            <div
+          className="tv-image-container"  
+          style={{ marginRight: '-5px'}}
+        >
+          <Image 
+            src="/tv2.png" 
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
+        </Section>
+       
+          </MobileOnly>
+
+      <Section
+        style={{
+          alignItems: "stretch",
+          position: "relative",
+          height: '75vh',
+        }}
+      >
+        <div style={{ position: "absolute", inset: 0 }}>
+          <ClientOnly>
+            <TV />
+          </ClientOnly>
+        </div>
+        <Intro style={{ fontFamily: "serif", alignItems: "center" }}>
+          <Image src="/simp-card.png" width="294" height="172" />
+          <p className="splash-page-p">u dropped this</p>
+          <img
+            src="https://hitwebcounter.com/counter/counter.php?page=7886950&style=0025&nbdigits=9&type=ip&initCount=0"
+            alt="web counter"
+          />
+          simps and counting
         </Intro>
       </Section>
-
-      <Section style={{paddingBottom: "200px"}}>
-        <Intro>
-          <div className="body-title">
-            be a founding member of the first decentralized media network<br/>
-            audience owned and audience governed.
-          </div>
-          <div className="body-text">
-            audience owned and audience governed. creating content that drives chaotic and entertaining social experiences.<br/><br/>
-            mad realities is the MTV of a new kind of tv, with infinite possibliites.
-          </div>
-        </Intro>
-      </Section>
-    </GlitterBackground>
-
-    <WhiteSection>
-      <div style={{ padding: '100px 0', textAlign: 'center'}}>
-        <div className="body-title secondary">create with us</div>
-        <a href={DISCORD_INVITE_URL} target="_blank">
-          <DiscordButton>join our discord</DiscordButton>
-        </a>
-      </div>
-    </WhiteSection>
-
-    <ImageRepeat />
+      </GlitterBackground>
+      <Footer>
+        <Socials>
+          <a href="https://www.instagram.com/mad.realities/"><img src="/instagram.svg" alt="Instagram" /></a>
+          <a href="https://twitter.com/madrealities"><img src="/twitter.svg" alt="Twitter" /></a>
+          <a href="https://discord.gg/rf6emN8K7M"><img src="/discord.svg" alt="Discord" /></a>
+        </Socials>
+        <div>
+        Made with 💗 on the internet️. © Mad Realities 2021. All rights reserved.
+        </div>
+      </Footer>
     </Container>
   );
 };
+
+const ButtonLink = styled.a`
+  background-color: yellow;
+  border: 8px outset yellow;
+  padding: 12px 50px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 2rem;
+  text-align: center;
+  &:active {
+      background-color: goldenrod;
+      border: 8px inset goldenrod;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
@@ -104,12 +309,13 @@ const GlitterBackground = styled.div`
   display: flex;
   flex-flow: column;
   background-color: black;
+  overflow: hidden;
 
   position: relative;
 `;
 
-const Background = styled.div`
-  background: url(glitter.gif);
+const NavyBackground = styled.div`
+  background-color: #08012F;
   background-size: cover;
   mix-blend-mode: screen;
   filter: blur(10px);
@@ -119,6 +325,20 @@ const Background = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
+  pointer-events: none;
+`;
+
+const CandidatesContainer = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 25px;
+  margin-left: 10px;
+
+  @media (max-width: 768px) {
+    height: 50vh;
+    margin-left: 0;
+  }
 `;
 
 const Section = styled.div`
@@ -126,18 +346,15 @@ const Section = styled.div`
   flex-flow: row;
   justify-content: center;
   align-items: center;
-  padding: 60px 100px;
-
-  z-index: 1;
+  width: 100vw;
+  height: 100vh;
 
   @media (max-width: 768px) {
     flex-flow: column;
     align-items: center;
     padding: 20px 30px;
-
-    > div {
-      padding: 50px 0;
-    }
+    height: unset;
+    width: 100%;
   }
 `;
 
@@ -146,70 +363,72 @@ const WhiteSection = styled(Section)`
   background-color: #d39bff;
   z-index: 2;
   min-height: unset;
-  
+
   > div {
     color: #490081 !important;
-  }  
+  }
 `;
 
 const Intro = styled.div`
   display: flex;
   flex-flow: column;
   flex: 1;
-  
-  font-size: 24px;
 
   justify-content: center;
   align-items: flex-start;
-  padding: 40px 80px;
 
-  width: 100%;
-  height: 100%;
-
-  > a > button {
-    margin-top: 36px;
-  }
-`;
-
-const Button = styled.button`
-  background-color: #FEF1C3;
-  border-radius: 4px;
-  border: none;
-  padding: 12px 50px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-`;
-
-const DiscordButton = styled.button`
-  background-color: C4C4C4;
-  border-radius: 4px;
-  border: none;
-  padding: 12px 50px;
-  font-weight: bold;
-  font-size: 16px;
-  cursor: pointer;
-  margin-top: 20px;
+  padding: 40px 40px;
 
   @media (max-width: 768px) {
-    padding: 12px 40px;
+    padding: 50px 0;
+
+    > a {
+      align-self: center;
+    }
   }
 `;
 
-const ImageContainer = styled.div`
-  position: relative;
-  flex: 1;
+const TVStatic = styled(Intro)`
+  display: flex;
+  flex-flow: row;
 
   @media (max-width: 768px) {
-    display: none; 
+    flex-flow: column;
   }
 `;
 
-const ImageRepeat = styled.div`
-  background-image: url("simp-card.png");
-  background-repeat: repeat;
-
-  height: 344px; // enough for two rows
+const MobileOnly = styled.div`
+  @media (min-width: 769px) {
+    display: none;
+  }
 `;
+
+const WebOnly = styled.div`
+  @media (max-width: 769px) {
+    display: none;
+  }
+`;
+
+const Footer = styled.div`
+  background-color: black;
+  color: white;
+  
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 20px;
+`;
+
+const Socials = styled.div`
+  > a + a {
+    margin-left: 20px;
+  }
+
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+  margin-bottom: 10px;
+`;
+
 export default Home;
-
