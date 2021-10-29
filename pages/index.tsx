@@ -19,11 +19,11 @@ const Home: NextPage = () => {
       <Head>
         <title>mad realities</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:image" content="/cover-photo.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="/cover-photo.png" />
         <meta name="twitter:title" content="mad realities" />
         <meta name="twitter:description" content="a new interactive dating show that anyone can participate in, powered by crypto" />
+        <meta property="og:image" content="/cover-photo.png" />
       </Head>
       <GlitterBackground>
         <NavyBackground />
