@@ -35,8 +35,10 @@ a:hover {
   color: white;
   margin: 0;
   padding: 0 0 1rem 0; /* 1 rem padding on the bottom*/
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
+  .splash-page-h1 {
     font-size: 1.875rem;
   }
 }
@@ -86,8 +88,25 @@ a:hover {
   position: relative;
 }
 
-.image-hidden-mobile {
-  @media (max-width: 768px) {
+.font-bold {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .tv-image-container {
+    height: 100vw;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-hidden-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .image-only-mobile {
     display: none;
   }
 }

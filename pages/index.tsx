@@ -6,7 +6,7 @@ import Head from "next/head";
 import InviteCard from "../components/InviteCard";
 import Banner from "../components/Banner";
 import TopNav from "../components/TopNav";
-import Button from "../components/Button";
+
 
 import { DISCORD_INVITE_URL, CROWDFUND_URL } from "../constants/urls.js";
 import TV from "../components/TV";
@@ -19,6 +19,11 @@ const Home: NextPage = () => {
       <Head>
         <title>mad realities</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:image" content="/cover-photo.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/cover-photo.png" />
+        <meta name="twitter:title" content="mad realities" />
+        <meta name="twitter:description" content="a new interactive dating show that anyone can participate in, powered by crypto" />
       </Head>
       <GlitterBackground>
         <NavyBackground />
@@ -35,7 +40,7 @@ const Home: NextPage = () => {
             <p className="splash-page-p">
               Our shows will be powered by our community - holders of an NFT rose ticket can vote in the cast, decide outfits and scenes, and win exclusive prizes for interacting.
             </p>
-            <ButtonLink href={CROWDFUND_URL} target="_blank">
+            <ButtonLink href={CROWDFUND_URL} target="_blank" style={{ backgroundColor: "#FF1F8C", color: "#000", border: "8px outset #FF1F8C"}}>
               get your ticket
             </ButtonLink>
           </Intro>
@@ -74,20 +79,20 @@ const Home: NextPage = () => {
             >
               Help our contestants find love by voting in new people each week. Season Zero will take place over 6 weeks this Winter with new episodes aired every Sunday night.
             </p>
-            <ButtonLink href={DISCORD_INVITE_URL} target="_blank">
+            <ButtonLink href={DISCORD_INVITE_URL} target="_blank" style={{ backgroundColor: "#000000", color: "#FF1F8C", border: "8px outset #373737"}}>
               join our discord
             </ButtonLink>
             
           </div>
-          <div style={{ position: 'relative', height: '50vh', width: '100%'}}>
+          <CandidatesContainer>
             <Image src="/candidates.png" layout="fill" objectFit="contain" />
-            </div>
+            </CandidatesContainer>
         </TVStatic>
       </Section>
 
       <Section style={{ position: "relative" }}>
         <div style={{ position: "absolute", inset: 0, top: "30vh" }}>
-            <Image src="/lines.png" layout="fill" objectFit="contain" className="image-overlay"/>
+            <Image src="/lines.png" layout="fill" className="image-overlay"/>
           </div>
         <Intro style={{ position: "relative", alignItems: "center" }}>
           <div
@@ -144,16 +149,18 @@ const Home: NextPage = () => {
                 <span className="splash-page-p">{" will be a DAO."}</span>
             </span>
             </div>
-            <ButtonLink href={CROWDFUND_URL} target="_blank">
+            <ButtonLink href={CROWDFUND_URL} target="_blank" style={{ backgroundColor: "#63FF00", color: "#000", border: "8px outset #63FF00"}}>
                 get your ticket
             </ButtonLink>
           </div>
         </Intro>
       </Section>
 
+      <WebOnly>
       <Section>
+        
         <div
-          className="tv-image-container image-hidden-mobile"   // TODO: display properly on mobile
+          className="tv-image-container"   // TODO: display properly on mobile
           style={{marginLeft: "-20px"}}  
         >
           <Image 
@@ -166,16 +173,16 @@ const Home: NextPage = () => {
           <h1 className="splash-page-h1">
             be a founding member of the first decentralized media network
           </h1>
-          <p className="splash-page-p">
+          <p className="splash-page-p font-bold">
             Audience owned and audience governed. Creating content that drives chaotic and entertaining social
             experiences.
           </p>
-          <p className="splash-page-p">
+          <p className="splash-page-p font-bold">
             Mad Realities is the MTV of a new kind of TV, with infinite possibliites.
           </p>
-          <a href={DISCORD_INVITE_URL} target="_blank">
+          <ButtonLink href={DISCORD_INVITE_URL} target="_blank" style={{ backgroundColor: "#00B9F1", color: "black", border: "8px outset #00B9F1"}}>
             join our discord
-          </a>
+          </ButtonLink>
         </Intro>
         <div
           className="tv-image-container image-hidden-mobile"  // TODO: display properly on mobile
@@ -187,7 +194,57 @@ const Home: NextPage = () => {
             objectFit='contain'
           />
         </div>
+       
+        
       </Section>
+      </WebOnly>
+
+      <MobileOnly>
+          <Section style={{ padding: '30px 0 0 0', flexFlow: 'row'}}>
+          <div
+          className="tv-image-container" 
+          style={{ marginLeft: '-10px'}}
+        >
+          <Image 
+            src="/tv1.png" 
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
+        <h1 style={{ padding: '0 20px', textAlign: 'center'}} className="splash-page-h1">
+            be a founding member of the first decentralized media network
+          </h1>
+          </Section>
+        </MobileOnly>
+
+        <MobileOnly>
+        <Section style={{ padding: '0 0 50px 0', flexFlow: 'row'}}>
+            <div style={{ display: 'flex', flexFlow: 'column', padding: '0 30px', textAlign: 'center', fontWeight: 'bold'}}>
+            <p className="splash-page-p">
+            Audience owned and audience governed. Creating content that drives chaotic and entertaining social
+            experiences.
+          </p>
+          <p className="splash-page-p">
+            Mad Realities is the MTV of a new kind of TV, with infinite possibliites.
+          </p>
+          <ButtonLink href={DISCORD_INVITE_URL} target="_blank" style={{ backgroundColor: "#00B9F1", color: "black", border: "8px outset #00B9F1"}}>
+            join our discord
+          </ButtonLink>
+            </div>
+
+            <div
+          className="tv-image-container"  
+          style={{ marginRight: '-5px'}}
+        >
+          <Image 
+            src="/tv2.png" 
+            layout='fill'
+            objectFit='contain'
+          />
+        </div>
+        </Section>
+       
+          </MobileOnly>
 
       <Section
         style={{
@@ -212,6 +269,16 @@ const Home: NextPage = () => {
         </Intro>
       </Section>
       </GlitterBackground>
+      <Footer>
+        <Socials>
+          <a href="https://www.instagram.com/mad.realities/"><img src="/instagram.svg" alt="Instagram" /></a>
+          <a href="https://twitter.com/madrealities"><img src="/twitter.svg" alt="Twitter" /></a>
+          <a href="https://discord.gg/rf6emN8K7M"><img src="/discord.svg" alt="Discord" /></a>
+        </Socials>
+        <div>
+        Made with 💗 on the internet️. © Mad Realities 2021. All rights reserved.
+        </div>
+      </Footer>
     </Container>
   );
 };
@@ -259,6 +326,19 @@ const NavyBackground = styled.div`
   left: 0;
   right: 0;
   pointer-events: none;
+`;
+
+const CandidatesContainer = styled.div`
+  position: relative;
+  height: 100%;
+  width: 100%;
+  margin-top: 25px;
+  margin-left: 10px;
+
+  @media (max-width: 768px) {
+    height: 50vh;
+    margin-left: 0;
+  }
 `;
 
 const Section = styled.div`
@@ -315,6 +395,40 @@ const TVStatic = styled(Intro)`
   @media (max-width: 768px) {
     flex-flow: column;
   }
+`;
+
+const MobileOnly = styled.div`
+  @media (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const WebOnly = styled.div`
+  @media (max-width: 769px) {
+    display: none;
+  }
+`;
+
+const Footer = styled.div`
+  background-color: black;
+  color: white;
+  
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 20px;
+`;
+
+const Socials = styled.div`
+  > a + a {
+    margin-left: 20px;
+  }
+
+  display: flex;
+  flex-flow: row;
+  align-items: flex-start;
+  margin-bottom: 10px;
 `;
 
 export default Home;
