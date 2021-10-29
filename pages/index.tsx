@@ -6,7 +6,7 @@ import Head from "next/head";
 import InviteCard from "../components/InviteCard";
 import Banner from "../components/Banner";
 import TopNav from "../components/TopNav";
-
+import Loading from "../components/Loading";
 
 import { DISCORD_INVITE_URL, CROWDFUND_URL } from "../constants/urls.js";
 import TV from "../components/TV";
@@ -26,6 +26,7 @@ const Home: NextPage = () => {
         <meta name="twitter:description" content="a new interactive dating show that anyone can participate in, powered by crypto" />
         <meta name="twitter:url" content="https://www.madrealities.xyz" />
       </Head>
+      <Loading />
       <GlitterBackground>
         <NavyBackground />
         <Banner />
@@ -114,12 +115,14 @@ const Home: NextPage = () => {
             <span className="splash-page-p">
                 <span className="splash-page-highlighted-word pink-highlight-text">The Crowdfund</span>
                 <span className="splash-page-p">{" Backers will receive special NFTs that act as a ticket into the show."}</span>
+
                 <br />
                 <br />
+
                 <span className="splash-page-highlighted-word orange-highlight-text">Episode 0</span>
                 <span className="splash-page-p">{" We are starting this project off with a pilot, or as we like to call it, "}</span>
                 <span className="splash-page-highlighted-word orange-highlight-text">Episode 0</span>
-                <span className="splash-page-p">{". This November, be in the room where it happens."}</span>
+                <span className="splash-page-p">{". This fall, be in the room where it happens."}</span>
 
                 <br/>
                 <br />
@@ -220,13 +223,19 @@ const Home: NextPage = () => {
 
         <MobileOnly>
         <Section style={{ padding: '0 0 50px 0', flexFlow: 'row'}}>
-            <div style={{ display: 'flex', flexFlow: 'column', padding: '0 30px', textAlign: 'center', fontWeight: 'bold'}}>
+            <div style={{ 
+              display: 'flex', 
+              flexFlow: 'column', 
+              padding: '0 30px', 
+              textAlign: 'left',
+              maxWidth: '70vw',
+            }}>
             <p className="splash-page-p">
-            Audience owned and audience governed. Creating content that drives chaotic and entertaining social
-            experiences.
-          </p>
+              <b>We believe the future of media is going to be entirely flipped on its head as web3 becomes more mainstream.</b> The creation of new forms of media will be collaborative, contributors will have ownership beyond zero-sum, meaningless credits, and the content will be formed around the sentiment of the community interacting with it as it is being created. 
+            </p>
+            
           <p className="splash-page-p">
-            Mad Realities is the MTV of a new kind of TV, with infinite possibliites.
+            <b>Mad Realities is the MTV of a new kind of TV, with infinite possibliites.</b> Our shows are social experiences from conception to consumption. Audience owned and audience governed.
           </p>
           <ButtonLink href={DISCORD_INVITE_URL} target="_blank" style={{ backgroundColor: "#00B9F1", color: "black", border: "8px outset #00B9F1"}}>
             join our discord
@@ -261,10 +270,11 @@ const Home: NextPage = () => {
         </div>
         <Intro style={{ fontFamily: "serif", alignItems: "center" }}>
           <Image src="/simp-card.png" width="294" height="172" />
-          <p className="splash-page-p">u dropped this</p>
+          <p className="splash-page-p" style={{zIndex: 997}}>u dropped this</p>
           <img
             src="https://hitwebcounter.com/counter/counter.php?page=7886950&style=0025&nbdigits=9&type=ip&initCount=0"
             alt="web counter"
+            style={{zIndex: 997}}
           />
           simps and counting
         </Intro>

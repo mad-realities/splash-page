@@ -101,18 +101,18 @@ const InviteCard = () => {
               style={{
                 color: "#fff2bd",
                 fontFamily: "Outward",
-                fontSize: "13vh",
+                fontSize: "10vh",
                 textTransform: "uppercase",
                 padding: "2vh 2vh 0 2vh",
                 position: "relative",
                 userSelect: "none",
                 marginTop: "-1vh",
-                // textAlignLast: "justify",
+                textAlignLast: "justify",
                 width: '100%'
               }}
             >
               {/* Mad Realities season 0 */}
-              mad realities
+              mad realities season 0
             </div>
             <div
               style={{
@@ -127,8 +127,23 @@ const InviteCard = () => {
               }}
             >
               <span style={{ borderTop: "1px solid", paddingTop: "0.5vh" }}>
-                UNIQUE ¹⁄₁
+                ADMIT ONE
               </span>
+              <div
+                style={{
+                  fontSize: "0.5vh",
+                  position: "absolute",
+                  width: "14vh",
+                  overflow: "hidden",
+                  right: "2vh",
+                  textAlign: "justify",
+                  bottom: "2vh",
+                  fontWeight: 400,
+                  letterSpacing: -0.1,
+                }}
+              > 
+                a new interactive dating show that anyone can participate in, powered by crypto
+              </div>
             </div>
           </div>
           <div
