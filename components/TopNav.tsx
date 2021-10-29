@@ -22,7 +22,7 @@ const TopNav = () => {
 const Container = styled.div`
     position: absolute;
     top: 40px;
-    z-index: 999;
+    z-index: 998;
 
     padding: 20px 30px;
 

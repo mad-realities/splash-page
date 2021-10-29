@@ -83,7 +83,7 @@ a:hover {
 }
 
 .tv-image-container {
-  height: 80vh;
+  height: 100%;
   width: 30vh;
   position: relative;
 }
