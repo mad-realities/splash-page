@@ -177,12 +177,12 @@ const Home: NextPage = () => {
           <h1 className="splash-page-h1">
             be a founding member of the first decentralized media network
           </h1>
-          <p className="splash-page-p font-bold">
-            Audience owned and audience governed. Creating content that drives chaotic and entertaining social
-            experiences.
-          </p>
-          <p className="splash-page-p font-bold">
-            Mad Realities is the MTV of a new kind of TV, with infinite possibliites.
+          <p className="splash-page-p">
+              <b>We believe the future of media is going to be entirely flipped on its head as web3 becomes more mainstream.</b> The creation of new forms of media will be collaborative, contributors will have ownership beyond zero-sum, meaningless credits, and the content will be formed around the sentiment of the community interacting with it as it is being created. 
+            </p>
+            
+          <p className="splash-page-p">
+            <b>Mad Realities is the MTV of a new kind of TV, with infinite possibliites.</b> Our shows are social experiences from conception to consumption. Audience owned and audience governed.
           </p>
           <ButtonLink href={DISCORD_INVITE_URL} target="_blank" style={{ backgroundColor: "#00B9F1", color: "black", border: "8px outset #00B9F1"}}>
             join our discord
@@ -222,7 +222,7 @@ const Home: NextPage = () => {
         </MobileOnly>
 
         <MobileOnly>
-        <Section style={{ padding: '0 0 50px 0', flexFlow: 'row'}}>
+        <Section style={{ padding: '0 0 50px 0', flexFlow: 'row', width: "100vw"}}>
             <div style={{ 
               display: 'flex', 
               flexFlow: 'column', 

@@ -24,7 +24,7 @@ const InviteCard = () => {
     <Container>
       <CardContainer
         style={{
-          width: "50vh",
+          width: "40vh",
           height: "60vh",
           position: "absolute",
           top: "50%",
