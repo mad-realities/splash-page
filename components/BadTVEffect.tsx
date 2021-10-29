@@ -11,6 +11,7 @@ import { RGBShiftShader } from "three/examples/jsm/shaders/RGBShiftShader";
 import BadTV from "../shaders/badTV";
 import BadTVStatic from "../shaders/badTVStatic";
 
+
 extend({
   EffectComposer,
   RenderPass,
