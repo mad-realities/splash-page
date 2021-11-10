@@ -247,6 +247,7 @@ const Home: NextPage = () => {
           style={{ marginRight: '-5px'}}
         >
           <Image 
+            className="right-img"
             src="/tv2.png" 
             layout='fill'
             objectFit='contain'
