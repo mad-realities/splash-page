@@ -97,6 +97,11 @@ a:hover {
     height: 100vw;
     width: 100%;
   }
+
+  .tv-image-container .right-img {
+    /* adding !important bcuz nextjs inline styles override this */
+    margin-right: -10px !important;
+  }
 }
 
 @media (max-width: 768px) {
