@@ -1,0 +1,262 @@
+$break-small: 600px;
+$break-large: 1194px;
+$break-tablet: 1120px;
+$break-xlarge: 1360px;
+
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $break-small) { @content; }
+  }@else if $media == tall-screens {
+    @media only screen and (min-height: 1000px) { @content; }
+  }@else if $media == short-screens {
+    @media only screen and (max-height: 850px) and (min-width: 900px) { @content; }
+  }@else if $media == medium-screens {
+    @media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) { @content; }
+  }@else if $media == tablets {
+    @media only screen and (min-width: $break-tablet - 1) and (max-width: $break-large - 1) { @content; }
+  }@else if $media == wide-screens {
+    @media only screen and (min-width: $break-large) { @content; }
+  }@else if $media == wider-screens {
+    @media only screen and (min-width: $break-xlarge) { @content; }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kite+One&display=swap');
+
+body {
+  // background: linear-gradient(180deg, rgba(25, 13, 100, 0) -10.16%, #05011D 88.28%);
+  background: #05011D;
+  color:  #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.hero {
+  background-image: url(/hero-background.png);
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode: color-dodge;
+  min-height: 100vh;
+  padding: 20px 0;
+  position: relative;
+
+  .heroContent {
+    max-width: 490px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .youHeard {
+    font-family: Kite One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 36px;
+    text-align: center;
+    margin: 30px 0 0;
+  }
+
+  .button {
+    border: 1px solid #FF1F8C;
+    color: #FF1F8C;
+    font-weight: bold;
+    display: block;
+    border-radius: 100px;
+    height: 44px;
+    line-height: 44px;
+  }
+
+  .worldsFirst {
+    font-size: 25px;
+    line-height: 31px;
+  }
+
+  @include respond-to(wide-screens) {
+    .starburst {
+      position: absolute;
+      top: 100px;
+      right: 200px;
+      height: 300px;
+      width: 300px;
+    }
+  }
+}
+
+/*================== About Section ================== */
+
+.about {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 48.44%, rgba(0, 0, 0, 0) 91.15%, rgba(0, 0, 0, 0.51) 100%);
+  text-align: center;
+  padding: 100px 0;
+  position: relative;
+
+  img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 290px;
+  }
+
+  img + img {
+    right: 0;
+    left: auto;
+    width: 400px;
+  }
+
+  .aboutIntro {
+    font-family: Helvetica;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-family: Helvetica Neue;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 43px;
+    letter-spacing: 0em;
+    text-align: center;
+    max-width: 624px;
+    margin: 0 auto 30px;
+  }
+
+  .button {
+    color: #4EC800;
+    border: 1px solid #4EC800;
+    line-height: 44px;
+    max-width: 444px;
+    display: block;
+    border-radius: 100px;
+    margin: 0 auto;
+  }
+
+  @include respond-to(wide-screens) {
+    .aboutIntro {
+      font-size: 65px;
+      line-height: 75px;
+
+      div {
+        margin-bottom: 10px;
+      }
+    }
+
+    .aboutIntro div:nth-child(1) {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 34px;
+    }
+
+    .aboutIntro div:nth-child(2) {
+      transform: rotate(16.29deg);
+    }
+
+    .aboutIntro div:nth-child(4) {
+      transform: rotate(-13.57deg);
+    }
+
+    .aboutIntro div:nth-child(6) {
+      font-size: 30px;
+      line-height: 34px;
+    }
+  }
+}
+
+
+/*================== Roadmap Section ================== */
+
+.roadmap {
+  background: url(/roadmap-background.png);
+
+  .roadmapInner {
+    max-width: 1236px;
+    margin: 0 auto;
+    padding: 40px 0;
+  }
+
+  h2 {
+    color: #87D7F5;
+    font-size: 40px;
+    line-height: 49px;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 37px;
+    text-transform: uppercase;
+  }
+
+  @include respond-to(wide-screens) {
+    .phaseStep {
+      font-family: Helvetica Neue;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 23px;
+      line-height: 31px;
+      padding: 14px 44px;
+    }
+  }
+}
+
+.phaseBlock {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.phaseStep + .phaseStep {
+  margin-left: 6px;
+}
+
+.phaseStep {
+  background: rgba(0,0,0,0.7);
+  border-radius: 9px;
+  padding: 12px 14px;
+  color:  #fff;
+
+  font-family: Helvetica Neue;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.colorPink { color: #FB6DF0; }
+.colorOrange { color: #FF9050; }
+.colorGreen { color: #4EC800; }
+.colorHotPink { color: #FF1F8C; }
+.colorYellow { color: #F5F849; }
+.colorPurple { color: #D99BFF; }
+.colorTeal { color: #55D1FF; }
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  cursor: image-set("/cursor.png" 1x, "/cursor@2x.png" 2x), auto;
+}
+
+a:hover,
+button:hover {
+  cursor: image-set("/pointer.png" 1x, "/pointer@2x.png" 2x), pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  color: magenta;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.image-overlay {
+  mix-blend-mode: overlay;
+}
