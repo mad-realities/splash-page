@@ -27,6 +27,7 @@ const Home: NextPage = () => {
       <Hero />
       <About />
       <Roadmap />
+      <Footer />
     </div>
   );
 };

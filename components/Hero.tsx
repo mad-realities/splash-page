@@ -4,6 +4,13 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <div className="hero">
+
+      <h1>Proof of Love</h1>
+
+      <div class="heroNav">
+        👾 Discord &nbsp;&nbsp;&nbsp;🐦 Twitter &nbsp;&nbsp;&nbsp;⛵ Opensea &nbsp;&nbsp;&nbsp;📸 Instagram
+      </div>
+
       <div class="heroContent">
         <p class="youHeard">
           YOU’VE HEARD OF PROOF OF STAKE.<br />
