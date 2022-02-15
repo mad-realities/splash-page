@@ -5,8 +5,8 @@ const About = () => {
     <div className="about">
       <img src="tvs-left.png" />
       <img src="tvs-right.png" />
-      <div class="aboutInner">
-        <div class="aboutIntro">
+      <div className="aboutInner">
+        <div className="aboutIntro">
           <div>our shows are</div>
           <div class="colorHotPink">created</div>
           <div class="colorPurple">participated</div>
