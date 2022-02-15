@@ -214,6 +214,32 @@ body {
       height: 480px;
       font-size: 20px;
       line-height: 23px;
+      padding-top: 60px;
+      div {
+        margin-bottom: 20px;
+      }
+    }
+
+    .aboutIntro div:nth-child(1) {
+      margin-bottom: 20px;
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    .aboutIntro div:nth-child(2) {
+      transform: rotate(16.29deg);
+      margin-bottom: 8px;
+    }
+
+    .aboutIntro div:nth-child(4) {
+      transform: rotate(-13.57deg);
+      margin-left: -56px;
+      margin-bottom: 0;
+    }
+
+    .aboutIntro div:nth-child(6) {
+      font-size: 20px;
+      line-height: 23px;
     }
 
     img {
