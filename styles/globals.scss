@@ -163,7 +163,8 @@ body {
 /*================== Text and Links ================== */
 @include respond-to(wide-screens) {
   .iconLinks a,
-  .heroNav a {
+  .heroNav a,
+  .button {
     transition: all .2s ease-in-out;
     display: inline-block;
 
@@ -322,12 +323,13 @@ body {
     font-family: Helvetica Neue;
     font-style: normal;
     font-weight: bold;
-    font-size: 45px;
+    font-size: 40px;
     line-height: 55px;
   }
 
   .iconLinks {
     text-align: center;
+    padding: 20px 0;
     
     a {
       display: inline-block;
@@ -363,14 +365,15 @@ body {
     line-height: 29px;
   }
 
+  .emailForm {
+    margin-bottom: 46px;
+  }
+
+
   @include respond-to(handhelds) {
     padding: 0 30px;
     background-position: 220px 20px;
     background-size: 170px;
-
-    .emailForm {
-      margin-bottom: 46px;
-    }
 
     p:first-child {
       font-size: 20px;
