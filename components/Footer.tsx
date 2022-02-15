@@ -3,31 +3,31 @@ import { FAQ_URL, DISCORD_INVITE_URL, SEASON_0_URL, MEMEBRSHIP_PASS_URL } from "
 const Roadmap = () => {
   return (
     <div className="footer">
-      <div class="footerInner">
+      <div className="footerInner">
 
         <p>KEEP UP WITH</p>
         
         <img src="/mad-logo.png" />
 
-        <p class="mad">
+        <p className="mad">
           At Mad Realities, our shows are created, participated, 
           and casted by you. Sign up to get notified about drops, 
           programming, and IRL events in NYC.
         </p>
 
-        <div class="emailForm">
+        <div className="emailForm">
           <input type="text" name="email" />
           sign up
         </div>
 
-        <p class="iconLinks">
+        <p className="iconLinks">
           <a href="#"><img src="/icon-insta.svg" /></a>
           <a href="#"><img src="/icon-twitter.svg" /></a>
           <a href="#"><img src="/icon-discord.svg" /></a>
           <a href="#"><img src="/icon-opensea.svg" /></a>
         </p>
 
-        <p class="copyright">Made with ❤ on the internet️. © Mad Realities 2021. All rights reserved.</p>
+        <p className="copyright">Made with ❤ on the internet️. © Mad Realities 2021. All rights reserved.</p>
       </div>
     </div>
   );

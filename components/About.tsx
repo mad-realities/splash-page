@@ -8,16 +8,16 @@ const About = () => {
       <div className="aboutInner">
         <div className="aboutIntro">
           <div>our shows are</div>
-          <div class="colorHotPink">created</div>
-          <div class="colorPurple">participated</div>
-          <div class="colorGreen">casted</div>
-          <div class="colorTeal">owned</div>
-          <div>by <span class="colorPurple">you</span>.</div>
+          <div className="colorHotPink">created</div>
+          <div className="colorPurple">participated</div>
+          <div className="colorGreen">casted</div>
+          <div className="colorTeal">owned</div>
+          <div>by <span className="colorPurple">you</span>.</div>
         </div>
 
         <p>Mad Realities is reimagining entertainment for the modern world, powered by crypto.</p>
 
-        <a href="https://google.com" class="button">join our discord</a>
+        <a href="https://google.com" className="button">join our discord</a>
       </div>
     </div>
   );
