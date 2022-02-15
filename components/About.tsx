@@ -2,7 +2,7 @@ import { FAQ_URL, DISCORD_INVITE_URL, SEASON_0_URL, MEMEBRSHIP_PASS_URL } from "
 
 const About = () => {
   return (
-    <div class="about">
+    <div className="about">
       <img src="tvs-left.png" />
       <img src="tvs-right.png" />
       <div class="aboutInner">
