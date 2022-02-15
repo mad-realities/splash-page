@@ -30,11 +30,11 @@ const Hero = () => {
         <a href="https://google.com" className="button">wait, what?</a>
       </div>
 
-      <div class="madRows">
-        <div class="dark"></div>
-        <div class="light"></div>
-        <div class="dark"></div>
-        <div class="light"></div>
+      <div className="madRows">
+        <div className="dark"></div>
+        <div className="light"></div>
+        <div className="dark"></div>
+        <div className="light"></div>
       </div>
     </div>
   );
