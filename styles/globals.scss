@@ -37,7 +37,7 @@ body {
   background-size: cover;
   background-blend-mode: color-dodge;
   min-height: 100vh;
-  padding: 150px 0;
+  padding: 150px 0 0;
   position: relative;
 
   h1 {
@@ -51,6 +51,19 @@ body {
     margin: 0;
     height: 136px;
     width: 115px;
+  }
+
+  .madRows {
+    div {
+      background: #000 url(/mr-row-dark.png);
+      background-size: auto 30px;
+      height: 30px;
+
+      &.light {
+        background: #fff url(/mr-row-light.png);
+        background-size: auto 30px;
+      }
+    }
   }
 
   .heroNav {
@@ -86,6 +99,7 @@ body {
     border-radius: 100px;
     height: 44px;
     line-height: 44px;
+    margin-bottom: 80px;
   }
 
   .worldsFirst {
