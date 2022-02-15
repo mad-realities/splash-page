@@ -20,6 +20,13 @@ const Roadmap = () => {
           sign up
         </div>
 
+        <p class="iconLinks">
+          <a href="#"><img src="/icon-insta.svg" /></a>
+          <a href="#"><img src="/icon-twitter.svg" /></a>
+          <a href="#"><img src="/icon-discord.svg" /></a>
+          <a href="#"><img src="/icon-opensea.svg" /></a>
+        </p>
+
         <p class="copyright">Made with ❤ on the internet️. © Mad Realities 2021. All rights reserved.</p>
       </div>
     </div>

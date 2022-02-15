@@ -41,13 +41,14 @@ body {
   position: relative;
 
   h1 {
-    background: url(/m-logo.png);
+    background: url(/m-logo.png) no-repeat top center;
     background-size: 100%;
     text-indent: -20000000px;
     display: block;
     position: absolute;
     top: 0px;
     left: 50px;
+    margin: 0;
     height: 136px;
     width: 115px;
   }
@@ -92,6 +93,48 @@ body {
     line-height: 31px;
   }
 
+  @include respond-to(handhelds) {
+    padding: 180px 15px 40px;
+
+    h1 {
+      width: 45px;
+      line-height: 53.22px;
+      left: 9px;
+      top: 0;
+    }
+
+    .heroNav {
+      font-size: 10px;
+      line-height: 12px;
+      top: 14px;
+      right: 9px;
+    }
+
+    .youHeard {
+      font-size: 15px;
+      line-height: 22px;
+    }
+
+    .proofLogo {
+      width: 320px;
+    }
+
+    .worldsFirst {
+      font-size: 15px;
+      line-height: 18px;
+      max-width: 260px;
+      margin: 0 auto 65px;
+    }
+
+    .starburst {
+      position: absolute;
+      top: 45px;
+      right: 4px;
+      height: 145px;
+      width: 145px;
+    }
+  }
+
   @include respond-to(wide-screens) {
     .starburst {
       position: absolute;
@@ -100,6 +143,19 @@ body {
       height: 300px;
       width: 300px;
     }
+  }
+}
+
+/*================== Text and Links ================== */
+@include respond-to(wide-screens) {
+  .iconLinks a,
+  .heroNav a {
+    transition: all .2s ease-in-out;
+    display: inline-block;
+
+    &:hover {
+      transform: scale(1.2);
+    }  
   }
 }
 
@@ -135,7 +191,6 @@ body {
   p {
     font-family: Helvetica Neue;
     font-size: 35px;
-    font-style: normal;
     font-weight: 700;
     line-height: 43px;
     letter-spacing: 0em;
@@ -152,6 +207,34 @@ body {
     display: block;
     border-radius: 100px;
     margin: 0 auto;
+  }
+
+  @include respond-to(handhelds) {
+    .aboutIntro {
+      height: 480px;
+      font-size: 20px;
+      line-height: 23px;
+    }
+
+    img {
+      left: -98px;
+      width: 195px;
+    }
+
+    img + img {
+      right: -160px;
+      width: 270px;
+    }
+
+    p {
+      font-size: 20px;
+      line-height: 24px;
+      max-width: 338px;
+    }
+
+    .button {
+      margin: 0 15px 30px;
+    }
   }
 
   @include respond-to(wide-screens) {
@@ -203,6 +286,20 @@ body {
     line-height: 55px;
   }
 
+  .iconLinks {
+    text-align: center;
+    
+    a {
+      display: inline-block;
+      margin: 0 16px;
+
+      img {
+        width: 27px;
+        height: 27px;
+      }
+    }
+  }
+
   p.mad {
     font-weight: bold;
     font-size: 25px;
@@ -225,6 +322,38 @@ body {
     font-size: 25px;
     line-height: 29px;
   }
+
+  @include respond-to(handhelds) {
+    padding: 0 30px;
+    background-position: 220px 20px;
+    background-size: 170px;
+
+    .emailForm {
+      margin-bottom: 46px;
+    }
+
+    p:first-child {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    img {
+      margin-left: -5px;
+      width: 160px;
+    }
+
+    p.mad {
+      font-size: 10px;
+      line-height: 11px;
+      width: 260px;
+      margin-bottom: 20px;
+    }
+
+    .copyright {
+      font-size: 10px;
+      line-height: 12px;
+    }
+  }
 }
 
 .footerInner {
@@ -242,7 +371,7 @@ body {
   .roadmapInner {
     max-width: 1236px;
     margin: 0 auto;
-    padding: 40px 0;
+    padding: 40px 15px;
   }
 
   h2 {

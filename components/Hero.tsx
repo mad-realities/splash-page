@@ -8,7 +8,10 @@ const Hero = () => {
       <h1>Proof of Love</h1>
 
       <div class="heroNav">
-        👾 Discord &nbsp;&nbsp;&nbsp;🐦 Twitter &nbsp;&nbsp;&nbsp;⛵ Opensea &nbsp;&nbsp;&nbsp;📸 Instagram
+        <a href="#">👾 Discord</a> &nbsp;&nbsp;&nbsp;
+        <a href="#">🐦 Twitter</a> &nbsp;&nbsp;&nbsp;
+        <a href="#">⛵ Opensea</a> &nbsp;&nbsp;&nbsp;
+        <a href="#">📸 Instagram</a>
       </div>
 
       <div class="heroContent">
@@ -19,7 +22,7 @@ const Hero = () => {
           IT’S TIME FOR
         </p>
 
-        <img src="/proofoflove_logo.png" width="436" height="312" />
+        <img src="/proofoflove_logo.png" width="436" height="312" class="proofLogo" />
         <img src="/new-show-dropped.png" width="622" height="622" class="starburst" />
 
         <p class="worldsFirst">the world’s <em>first interactive</em> <span class="colorPurple">dating show</span>, powered by crypto.</p>
