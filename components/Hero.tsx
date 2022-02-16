@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="hero">
 
-      <a href={PROOF_URL} className="madLogo"><h1>Proof of Love</h1></a>
+      <a href={PROOF_URL} className="madLogo" target="_blank"><h1>Proof of Love</h1></a>
 
       <div className="heroNav">
         <a href={DISCORD_INVITE_URL} target="_blank">👾 Discord</a>
@@ -28,7 +28,7 @@ const Hero = () => {
 
         <p className="worldsFirst">the world’s <em>first interactive</em> <span className="colorPurple">dating show</span> where community decide what happens (and who happens).</p>
 
-        <a href={PROOF_URL} className="button">wait, what?</a>
+        <a href={PROOF_URL} className="button" target="_blank">wait, what?</a>
       </div>
 
       <div className="madRows">
