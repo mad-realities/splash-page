@@ -17,7 +17,7 @@ const Roadmap = () => {
 
         <div className="emailForm">
           <input type="text" name="email" />
-          sign up
+          <input type="submit" value="sign up" />
         </div>
 
         <p className="iconLinks">
