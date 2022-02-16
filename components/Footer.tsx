@@ -16,7 +16,7 @@ const Roadmap = () => {
         </p>
 
         <div className="emailForm">
-          <button data-tf-popup="yCKSQ56C" data-tf-iframe-props="title=sign up to receive emails + texts" data-tf-medium="snippet">Sign me up</button>
+          <button data-tf-popup="yCKSQ56C" data-tf-auto-close="1000" data-tf-iframe-props="title=sign up to receive emails + texts" data-tf-medium="snippet">Sign me up</button>
           <script src="//embed.typeform.com/next/embed.js"></script>
         </div>
 

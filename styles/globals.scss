@@ -353,14 +353,14 @@ body {
 
 /*================== Footer Section ================== */
 .footer {
-  background: url(/frens.png) no-repeat right 30px;
-  background-size: 440px;
 
   p {
     margin: 0;
   }
 
   .footerInner {
+    background: url(/frens.png) no-repeat right 30px;
+    background-size: 440px;
     max-width: 1236px;
     margin: 0 auto;
     padding: 30px 15px 60px;
