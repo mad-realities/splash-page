@@ -11,7 +11,7 @@ const About = () => {
           <div className="colorHotPink">created</div>
           <div className="colorPurple">participated</div>
           <div className="colorGreen">casted</div>
-          <div className="colorTeal">owned</div>
+          <div className="colorTeal">decided</div>
           <div>by <span className="colorPurple">you</span>.</div>
         </div>
 

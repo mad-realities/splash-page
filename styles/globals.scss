@@ -134,6 +134,7 @@ body {
     }
 
     .proofLogo {
+      height: auto;
       width: 320px;
     }
 
@@ -230,11 +231,14 @@ body {
   }
 
   @include respond-to(handhelds) {
+    padding: 100px 0 0px;
+
     .aboutIntro {
       height: 480px;
-      font-size: 20px;
-      line-height: 23px;
+      font-size: 30px;
+      line-height: 36px;
       padding-top: 60px;
+
       div {
         margin-bottom: 20px;
       }
@@ -432,6 +436,14 @@ body {
     font-size: 30px;
     line-height: 37px;
     text-transform: uppercase;
+  }
+
+  @include respond-to(handhelds) {
+    padding: 0 15px 40px;
+
+    h2 {
+      margin-top: 0;
+    }
   }
 
   @include respond-to(wide-screens) {
