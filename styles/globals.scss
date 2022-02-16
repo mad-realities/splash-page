@@ -405,7 +405,8 @@ body {
       padding-left: 20px;
     }
 
-    input[type=submit] {
+    input[type=submit],
+    button {
       height: 60px;
       line-height: 60px;
       background: #FF1F8C;

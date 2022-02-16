@@ -16,9 +16,8 @@ const Roadmap = () => {
         </p>
 
         <div className="emailForm">
-          <div className="klaviyo-form-RXgEci"></div>
-          <input type="text" name="email" />
-          <input type="submit" value="sign up" />
+          <button data-tf-popup="yCKSQ56C" data-tf-iframe-props="title=sign up to receive emails + texts" data-tf-medium="snippet">Sign me up</button>
+          <script src="//embed.typeform.com/next/embed.js"></script>
         </div>
 
         <p className="iconLinks">
