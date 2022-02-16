@@ -395,12 +395,14 @@ body {
 
     input[type=text] {
       background: #000;
+      color: #fff;
       border: 1px solid #fff;
       width: 610px;
       height: 60px;
       border-radius: 8px;
       margin-right: 10px;
       float: left;
+      padding-left: 20px;
     }
 
     input[type=submit] {
