@@ -40,7 +40,8 @@ body {
   padding: 150px 0 0;
   position: relative;
 
-  h1 {
+  a.madLogo {
+    display: block;
     background: url(/m-logo.png) no-repeat top center;
     background-size: 100%;
     text-indent: -20000000px;
@@ -51,6 +52,10 @@ body {
     margin: 0;
     height: 136px;
     width: 115px;
+
+    h1 {
+      display: none;
+    }
   }
 
   .madRows {
@@ -118,7 +123,7 @@ body {
       margin: 0 -15px;
     }
 
-    h1 {
+    a.madLogo {
       width: 45px;
       line-height: 53.22px;
       left: 9px;
@@ -173,7 +178,9 @@ body {
 @include respond-to(wide-screens) {
   .iconLinks a,
   .heroNav a,
-  .button {
+  .button,
+  a.proofImage,
+  a.madLogo {
     transition: all .2s ease-in-out;
     display: inline-block;
 
