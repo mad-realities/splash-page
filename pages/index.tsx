@@ -22,6 +22,7 @@ const Home: NextPage = () => {
         <meta name="twitter:title" content="mad realities" />
         <meta name="twitter:description" content="a new interactive dating show that anyone can participate in, powered by crypto" />
         <meta name="twitter:url" content="https://www.madrealities.xyz" />
+        <link rel="shortcut icon" href="/mad-icon.png" />
       </Head>
       <Loading />
       <Hero />

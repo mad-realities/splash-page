@@ -1,4 +1,4 @@
-import { FAQ_URL, DISCORD_INVITE_URL, SEASON_0_URL, MEMEBRSHIP_PASS_URL } from "../constants/urls";
+import { FAQ_URL, DISCORD_INVITE_URL, INSTAGRAM_URL, TWITTER_URL, SEASON_0_URL, MEMEBRSHIP_PASS_URL } from "../constants/urls";
 
 const Roadmap = () => {
   return (
@@ -16,15 +16,16 @@ const Roadmap = () => {
         </p>
 
         <div className="emailForm">
+          <div className="klaviyo-form-RXgEci"></div>
           <input type="text" name="email" />
           <input type="submit" value="sign up" />
         </div>
 
         <p className="iconLinks">
-          <a href="#"><img src="/icon-insta.svg" /></a>
-          <a href="#"><img src="/icon-twitter.svg" /></a>
-          <a href="#"><img src="/icon-discord.svg" /></a>
-          <a href="#"><img src="/icon-opensea.svg" /></a>
+          <a href={INSTAGRAM_URL} target="_blank"><img src="/icon-insta.svg" /></a>
+          <a href={TWITTER_URL} target="_blank"><img src="/icon-twitter.svg" /></a>
+          <a href={DISCORD_INVITE_URL} target="_blank"><img src="/icon-discord.svg" /></a>
+          <a href={MEMEBRSHIP_PASS_URL} target="_blank"><img src="/icon-opensea.svg" /></a>
         </p>
 
         <p className="copyright">Made with ❤ on the internet️. © Mad Realities 2021. All rights reserved.</p>
