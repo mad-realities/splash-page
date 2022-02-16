@@ -36,7 +36,7 @@ body {
   background-position: center center;
   background-size: cover;
   background-blend-mode: color-dodge;
-  min-height: 100vh;
+
   padding: 150px 0 0;
   position: relative;
 
@@ -116,6 +116,18 @@ body {
     line-height: 31px;
   }
 
+  .starburst {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    height: 200px;
+    width: 200px;
+  }
+
+  @include respond-to(wide-screens) {
+    min-height: 100vh;
+  }
+
   @include respond-to(handhelds) {
     padding: 180px 15px 0;
 
@@ -166,16 +178,6 @@ body {
       width: 145px;
     }
   }
-
-  @include respond-to(wide-screens) {
-    .starburst {
-      position: absolute;
-      top: 200px;
-      right: 200px;
-      height: 300px;
-      width: 300px;
-    }
-  }
 }
 
 /*================== Text and Links ================== */
@@ -208,13 +210,13 @@ body {
     left: 0;
     top: 0;
     bottom: 0;
-    width: 290px;
+    width: 190px;
   }
 
   img + img {
     right: 0;
     left: auto;
-    width: 400px;
+    width: 200px;
   }
 
   .aboutIntro {
@@ -226,20 +228,20 @@ body {
 
   p {
     font-family: Helvetica Neue;
-    font-size: 35px;
     font-weight: 700;
-    line-height: 43px;
     letter-spacing: 0em;
     text-align: center;
-    max-width: 624px;
+    max-width: 338px;
     margin: 0 auto 30px;
+    font-size: 20px;
+    line-height: 24px;
   }
 
   .button {
     color: #4EC800;
     border: 1px solid #4EC800;
     line-height: 44px;
-    max-width: 444px;
+    max-width: 404px;
     display: block;
     border-radius: 100px;
     margin: 0 auto;
@@ -291,18 +293,33 @@ body {
       width: 270px;
     }
 
-    p {
-      font-size: 20px;
-      line-height: 24px;
-      max-width: 338px;
-    }
-
     .button {
       margin: 0 15px 30px;
     }
   }
 
   @include respond-to(wide-screens) {
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 290px;
+    }
+
+    img + img {
+      right: 0;
+      left: auto;
+      width: 400px;
+    }
+
+    p {
+      max-width: 624px;
+      font-size: 35px;
+      line-height: 43px;
+    }
+
     .aboutIntro {
       font-size: 65px;
       line-height: 75px;
@@ -337,10 +354,16 @@ body {
 /*================== Footer Section ================== */
 .footer {
   background: url(/frens.png) no-repeat right 30px;
-  background-size: 640px;
+  background-size: 440px;
 
   p {
     margin: 0;
+  }
+
+  .footerInner {
+    max-width: 1236px;
+    margin: 0 auto;
+    padding: 30px 15px 60px;
   }
 
   p:first-child {
@@ -423,7 +446,7 @@ body {
 
 
   @include respond-to(handhelds) {
-    padding: 0 30px;
+    // padding: 0 30px;
     background-position: 220px 20px;
     background-size: 170px;
 
@@ -462,13 +485,6 @@ body {
   }
 }
 
-.footerInner {
-  max-width: 1236px;
-  margin: 0 auto;
-  padding: 30px 0 60px;
-}
-
-
 /*================== Roadmap Section ================== */
 
 .roadmap {
@@ -484,6 +500,7 @@ body {
     color: #87D7F5;
     font-size: 40px;
     line-height: 49px;
+    margin-top: 0;
   }
 
   h3 {
@@ -495,8 +512,8 @@ body {
   @include respond-to(handhelds) {
     padding: 0 15px 40px;
 
-    h2 {
-      margin-top: 0;
+    .roadmapInner {
+      padding: 0;
     }
   }
 
