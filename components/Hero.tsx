@@ -51,7 +51,9 @@ const Hero = () => {
         </p>
 
         <a href={PROOF_URL} className="proofImage" target="_blank"><img src="/proofoflove_logo.png" width="436" height="312" className="proofLogo" /></a>
-        <img src="/new-show-dropped.png" width="622" height="622" className="starburst" />
+        <a href={PROOF_URL}>
+          <img src="/new-show-dropped.png" width="622" height="622" className="starburst" />
+        </a>
 
         <p className="worldsFirst">the world’s <em>first interactive</em> <span className="colorPurple">dating show</span> where the community decides what happens (and who happens).</p>
 

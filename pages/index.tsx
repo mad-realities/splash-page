@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://www.madrealities.xyz/cover-photo.png?utm_source=twitter" />
         <meta name="twitter:title" content="mad realities" />
-        <meta name="twitter:description" content="a new interactive dating show that anyone can participate in, powered by crypto" />
+        <meta name="twitter:description" content="Interactive TV created, participated, cast, and decided by you." />
         <meta name="twitter:url" content="https://www.madrealities.xyz" />
         <link rel="shortcut icon" href="/mad-icon.png" />
         <link rel="apple-touch-icon image_src" href="mad-icon-touch.png" />
