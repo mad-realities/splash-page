@@ -3,26 +3,29 @@ import Image from "next/image";
 
 const Hero = () => {
 
-  var bannerScrollInterview = null;
+  let bannerScrollInterview = 0;
 
   var scrollBanners = function() {
-    var offset = (document.documentElement.scrollTop / 8) + "px"
+    let offset = (document.documentElement.scrollTop / 8) + "px"
 
-    document.querySelector('.madRows div:nth-child(1)').style.backgroundPosition = "-" + offset;
-    document.querySelector('.madRows div:nth-child(2)').style.backgroundPosition = offset;
-    document.querySelector('.madRows div:nth-child(3)').style.backgroundPosition = "-" + offset;
-    document.querySelector('.madRows div:nth-child(4)').style.backgroundPosition = offset;    
+    let row1 = document.querySelector<HTMLElement>('.madRows div:nth-child(1)')!
+    let row2 = document.querySelector<HTMLElement>('.madRows div:nth-child(2)')!
+    let row3 = document.querySelector<HTMLElement>('.madRows div:nth-child(3)')!
+    let row4 = document.querySelector<HTMLElement>('.madRows div:nth-child(4)')!
+
+    row1.style.backgroundPosition = "-" + offset;
+    row2.style.backgroundPosition = offset;
+    row3.style.backgroundPosition = "-" + offset;
+    row4.style.backgroundPosition = offset;    
   }
 
   if(typeof window !== "undefined") {
     window.addEventListener("scroll", function(){
-      bannerScrollInterview = setInterval(scrollBanners, 100);
-      console.log("Start")
+      bannerScrollInterview = window.setInterval(scrollBanners, 100);
     })
 
     window.addEventListener("scrollstop", function(){
-      clearInterval(bannerScrollInterview);
-      console.log("Stop")
+      window.clearInterval(bannerScrollInterview);
     })
   }
 
