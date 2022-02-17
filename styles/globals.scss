@@ -447,8 +447,10 @@ body {
 
   @include respond-to(handhelds) {
     // padding: 0 30px;
-    background-position: 220px 20px;
-    background-size: 170px;
+    .footerInner {
+      background-position: 220px 20px;
+      background-size: 170px;
+    }
 
     .emailForm {
 
