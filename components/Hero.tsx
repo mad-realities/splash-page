@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Hero = () => {
 
-  var bannerScrollInterview;
+  var bannerScrollInterview = null;
 
   var scrollBanners = function() {
     var offset = (document.documentElement.scrollTop / 8) + "px"
