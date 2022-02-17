@@ -2,6 +2,30 @@ import { FAQ_URL, DISCORD_INVITE_URL, SEASON_0_URL, MEMEBRSHIP_PASS_URL, INSTAGR
 import Image from "next/image";
 
 const Hero = () => {
+
+  var bannerScrollInterview;
+
+  var scrollBanners = function() {
+    var offset = (document.documentElement.scrollTop / 8) + "px"
+
+    document.querySelector('.madRows div:nth-child(1)').style.backgroundPosition = "-" + offset;
+    document.querySelector('.madRows div:nth-child(2)').style.backgroundPosition = offset;
+    document.querySelector('.madRows div:nth-child(3)').style.backgroundPosition = "-" + offset;
+    document.querySelector('.madRows div:nth-child(4)').style.backgroundPosition = offset;    
+  }
+
+  if(typeof window !== "undefined") {
+    window.addEventListener("scroll", function(){
+      bannerScrollInterview = setInterval(scrollBanners, 100);
+      console.log("Start")
+    })
+
+    window.addEventListener("scrollstop", function(){
+      clearInterval(bannerScrollInterview);
+      console.log("Stop")
+    })
+  }
+
   return (
     <div className="hero">
 
