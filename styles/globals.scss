@@ -488,7 +488,8 @@ body {
 /*================== Roadmap Section ================== */
 
 .roadmap {
-  background: url(/roadmap-background.png);
+  background: url(/roadmap-background.png) center center;
+  background-size: cover;
 
   .roadmapInner {
     max-width: 1236px;
