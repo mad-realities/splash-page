@@ -5,16 +5,8 @@ const Roadmap = () => {
     <div className="footer">
       <div className="footerInner">
 
-        <p>KEEP UP WITH</p>
-        
-        <img src="/mad-logo.png" />
-
-        <p className="mad">
-          At Mad Realities, our shows are created, participated, 
-          and casted by you. Sign up to get notified about drops, 
-          programming, and IRL events in NYC.
-        </p>
-
+        {/*<p>KEEP UP WITH</p>*/}
+        {/*<img src="/mad-logo.png" />*/}
         <div className="emailForm">
           <div id="community-embed"></div>
           <script async data-community-embed-id="72c91a4a-602c-4428-ae32-7090799b5bb1" src="https://mgu-embed.community.com/embed.js"></script>

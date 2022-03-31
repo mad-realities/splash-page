@@ -224,7 +224,7 @@ body {
     display: inline-block;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.07);
     }  
   }
 }
@@ -394,7 +394,7 @@ body {
   }
 
   .footerInner {
-    background: url(/frens.png) no-repeat right 30px;
+    background: url(/frens.png) no-repeat center 30px;
     background-size: 440px;
     max-width: 1236px;
     margin: 0 auto;
@@ -450,6 +450,7 @@ body {
   .emailForm {
     margin-bottom: 46px;
     overflow: hidden;
+    min-height: 200px;
 
     input[type=text] {
       background: #000;
