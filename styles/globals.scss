@@ -31,6 +31,34 @@ body {
   margin: 0;
 }
 
+@include respond-to(handhelds) {
+  .heroButtons,
+  .buttonOptions {
+    margin: 0 auto;
+    max-width: none;
+    padding: 0 15px;
+
+    a {
+      margin: 0 0 20px;
+    }
+  }
+}
+
+@include respond-to(wide-screens) {
+  .heroButtons,
+  .buttonOptions {
+    max-width: 500px;
+    margin: 0 auto 60px;
+    display: flex;
+
+    a {
+      font-weight: bold;
+      min-width: 48%;
+      margin: 0 5px 20px;
+    }
+  }    
+}
+
 .hero {
   background-image: url(/hero-background.png);
   background-position: center center;
@@ -108,7 +136,12 @@ body {
     border-radius: 100px;
     height: 44px;
     line-height: 44px;
-    margin-bottom: 80px;
+
+    &.watchNow {
+      background: #DBFF00;
+      border-color: transparent;
+      color: #000;
+    }
   }
 
   .worldsFirst {
@@ -241,11 +274,17 @@ body {
     color: #4EC800;
     border: 1px solid #4EC800;
     line-height: 44px;
-    max-width: 404px;
+    // max-width: 404px;
     display: block;
     border-radius: 100px;
-    margin: 0 auto;
+    
+    &.nftPasses {
+      background: #FF1F8C;
+      border-color: transparent;
+      color: #000;
+    }
   }
+
 
   @include respond-to(handhelds) {
     padding: 100px 0 0px;
@@ -291,10 +330,6 @@ body {
     img + img {
       right: -160px;
       width: 270px;
-    }
-
-    .button {
-      margin: 0 15px 30px;
     }
   }
 

@@ -16,8 +16,8 @@ const Roadmap = () => {
         </p>
 
         <div className="emailForm">
-          <button data-tf-popup="yCKSQ56C" data-tf-auto-close="1000" data-tf-iframe-props="title=sign up to receive emails + texts" data-tf-medium="snippet">Sign me up</button>
-          <script src="//embed.typeform.com/next/embed.js"></script>
+          <div id="community-embed"></div>
+          <script async data-community-embed-id="72c91a4a-602c-4428-ae32-7090799b5bb1" src="https://mgu-embed.community.com/embed.js"></script>
         </div>
 
         <p className="iconLinks">
