@@ -395,10 +395,10 @@ body {
 
   .footerInner {
     background: url(/frens.png) no-repeat center 30px;
-    background-size: 440px;
+    background-size: 540px;
     max-width: 1236px;
     margin: 0 auto;
-    padding: 30px 15px 60px;
+    padding: 200px 15px 60px;
   }
 
   p:first-child {
@@ -484,8 +484,9 @@ body {
   @include respond-to(handhelds) {
     // padding: 0 30px;
     .footerInner {
-      background-position: 220px 20px;
-      background-size: 170px;
+      // background-position: 220px 20px;
+      background-size: 300px;
+      padding-top: 150px;
     }
 
     .emailForm {
