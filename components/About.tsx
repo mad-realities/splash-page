@@ -17,7 +17,10 @@ const About = () => {
 
         <p>Mad Realities is reimagining entertainment for the modern world, powered by crypto.</p>
 
-        <a href={DISCORD_INVITE_URL} className="button">join our discord</a>
+        <div className="buttonOptions">
+          <a href={MEMEBRSHIP_PASS_URL} className="button nftPasses">our NFT passes</a>
+          <a href={DISCORD_INVITE_URL} className="button">join our discord</a>
+        </div>
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ export const FAQ_URL =
   "https://madrealities.notion.site/FAQ-d6308bae12e9468cb81f988cb8d4bed7";
 export const DISCORD_INVITE_URL = "https://discord.gg/Bg2MYJccAc";
 export const INSTAGRAM_URL = "https://www.instagram.com/madrealities/";
+export const YOUTUBE_URL =
+  "https://www.youtube.com/channel/UCJjane-NIEN4bIrCGpVUM-Q";
 export const TWITTER_URL = "https://www.twitter.com/madrealities/";
 export const SEASON_0_URL =
   "https://opensea.io/collection/mad-realities-genesis-membership-pass";

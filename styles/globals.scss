@@ -31,6 +31,34 @@ body {
   margin: 0;
 }
 
+@include respond-to(handhelds) {
+  .heroButtons,
+  .buttonOptions {
+    margin: 0 auto;
+    max-width: none;
+    padding: 0 15px;
+
+    a {
+      margin: 0 0 20px;
+    }
+  }
+}
+
+@include respond-to(wide-screens) {
+  .heroButtons,
+  .buttonOptions {
+    max-width: 500px;
+    margin: 0 auto 60px;
+    display: flex;
+
+    a {
+      font-weight: bold;
+      min-width: 48%;
+      margin: 0 5px 20px;
+    }
+  }    
+}
+
 .hero {
   background-image: url(/hero-background.png);
   background-position: center center;
@@ -108,7 +136,12 @@ body {
     border-radius: 100px;
     height: 44px;
     line-height: 44px;
-    margin-bottom: 80px;
+
+    &.watchNow {
+      background: #DBFF00;
+      border-color: transparent;
+      color: #000;
+    }
   }
 
   .worldsFirst {
@@ -191,7 +224,7 @@ body {
     display: inline-block;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.07);
     }  
   }
 }
@@ -241,11 +274,17 @@ body {
     color: #4EC800;
     border: 1px solid #4EC800;
     line-height: 44px;
-    max-width: 404px;
+    // max-width: 404px;
     display: block;
     border-radius: 100px;
-    margin: 0 auto;
+    
+    &.nftPasses {
+      background: #FF1F8C;
+      border-color: transparent;
+      color: #000;
+    }
   }
+
 
   @include respond-to(handhelds) {
     padding: 100px 0 0px;
@@ -291,10 +330,6 @@ body {
     img + img {
       right: -160px;
       width: 270px;
-    }
-
-    .button {
-      margin: 0 15px 30px;
     }
   }
 
@@ -359,11 +394,11 @@ body {
   }
 
   .footerInner {
-    background: url(/frens.png) no-repeat right 30px;
-    background-size: 440px;
+    background: url(/frens.png) no-repeat center 30px;
+    background-size: 540px;
     max-width: 1236px;
     margin: 0 auto;
-    padding: 30px 15px 60px;
+    padding: 200px 15px 60px;
   }
 
   p:first-child {
@@ -415,6 +450,7 @@ body {
   .emailForm {
     margin-bottom: 46px;
     overflow: hidden;
+    min-height: 200px;
 
     input[type=text] {
       background: #000;
@@ -448,8 +484,9 @@ body {
   @include respond-to(handhelds) {
     // padding: 0 30px;
     .footerInner {
-      background-position: 220px 20px;
-      background-size: 170px;
+      // background-position: 220px 20px;
+      background-size: 300px;
+      padding-top: 150px;
     }
 
     .emailForm {
